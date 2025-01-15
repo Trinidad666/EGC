@@ -13,7 +13,7 @@ Por hacer
 
 
 
-## Mackup
+## Mockup
 Por hacer
 
 ## Gamma de colores + Logo
