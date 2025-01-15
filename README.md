@@ -5,10 +5,7 @@
   A través de nuestra plataforma, proporcionamos un servicio único y accesible, similar a una aplicación de mensajería instantánea, que permite a los usuarios interactuar en tiempo real con expertos en informática, hackers éticos y profesionales del sector.
   La misión de ECS es garantizar la seguridad digital de nuestros usuarios mediante un enfoque personalizado, facilitando la comunicación directa con técnicos altamente capacitados para resolver problemas y ofrecer soluciones eficaces en el ámbito de la ciberseguridad.
 
-</details>
-
-
-# Diseño de nuestra aplicación
+<summary># Diseño de nuestra aplicación</summary>
 Por hacer
 
 
@@ -20,17 +17,14 @@ Por hacer
 Por hacer
 
 
-# Funcionalidades
+<summary># Funcionalidades</summary>
 - Funcionalidades de Registro e inicio de sesión.(Víctor)
 - Que los usuarios puedan tener contactos o conversación con técnicos informáticos.(Hugo)
 - Los usuarios pueden crear una tabla de técnicos informáticos. (Víctor)
 - Que las empresas pongan anuncios para contratar gente como técnicos informáticos.(Hugo)
 
-<details>
-  <summary># Título Grande de la Sección</summary>
-  ## Subtítulo Más Pequeño
-  ### Otro Subtítulo
-  Aquí va el contenido detallado.
+
 </details>
+
 
 
