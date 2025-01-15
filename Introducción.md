@@ -9,7 +9,7 @@ La misión de ECS es garantizar la seguridad digital de nuestros usuarios median
 
 
 # Funcionalidades
-Funcionalidades de Registro e inicio de sesión.(Víctor)
-Que los usuarios puedan tener contactos o conversación con técnicos informáticos.(Hugo)
-Los usuarios pueden crear una tabla de técnicos informáticos. (Víctor)
-Que las empresas pongan anuncios para contratar gente como técnicos informáticos.(Hugo)
+- Funcionalidades de Registro e inicio de sesión.(Víctor)
+- Que los usuarios puedan tener contactos o conversación con técnicos informáticos.(Hugo)
+- Los usuarios pueden crear una tabla de técnicos informáticos. (Víctor)
+- Que las empresas pongan anuncios para contratar gente como técnicos informáticos.(Hugo)
