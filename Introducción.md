@@ -11,7 +11,13 @@ La misión de ECS es garantizar la seguridad digital de nuestros usuarios median
 # Diseño de nuestra aplicación
 Por hacer
 
-# Mackup
+
+
+## Mackup
+Por hacer
+
+## Gamma de colores + Logo
+Por hacer
 
 
 # Funcionalidades
