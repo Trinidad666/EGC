@@ -1,5 +1,5 @@
 <details>
-  <sumari># Introducción</sumari>
+  <summary># Introducción</summary>
   Enterprise Cyber Security (ECS) es una empresa innovadora dedicada a ofrecer servicios de ciberseguridad especializados para usuarios que buscan asistencia en la protección de su información digital. 
 
 A través de nuestra plataforma, proporcionamos un servicio único y accesible, similar a una aplicación de mensajería instantánea, que permite a los usuarios interactuar en tiempo real con expertos en informática, hackers éticos y profesionales del sector. 
