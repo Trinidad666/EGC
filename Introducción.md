@@ -8,8 +8,19 @@ Además, ECS ofrece a las empresas la posibilidad de publicar anuncios para cont
 La misión de ECS es garantizar la seguridad digital de nuestros usuarios mediante un enfoque personalizado, facilitando la comunicación directa con técnicos altamente capacitados para resolver problemas y ofrecer soluciones eficaces en el ámbito de la ciberseguridad.
 
 
+# Diseño de nuestra aplicación
+Por hacer
+
+
+ 
+
+
 # Funcionalidades
 - Funcionalidades de Registro e inicio de sesión.(Víctor)
 - Que los usuarios puedan tener contactos o conversación con técnicos informáticos.(Hugo)
 - Los usuarios pueden crear una tabla de técnicos informáticos. (Víctor)
 - Que las empresas pongan anuncios para contratar gente como técnicos informáticos.(Hugo)
+
+
+
+
