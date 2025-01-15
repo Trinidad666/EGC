@@ -26,6 +26,11 @@ Por hacer
 - Los usuarios pueden crear una tabla de técnicos informáticos. (Víctor)
 - Que las empresas pongan anuncios para contratar gente como técnicos informáticos.(Hugo)
 
-
+<details>
+  <summary># Título Grande de la Sección</summary>
+  ## Subtítulo Más Pequeño
+  ### Otro Subtítulo
+  Aquí va el contenido detallado.
+</details>
 
 
