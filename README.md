@@ -13,6 +13,14 @@ Por hacer
 ## Mockup
 Por hacer
 
+
+
+
+
+
+
+
+
 ## Gamma de colores + Logo
 Por hacer
 </details>
