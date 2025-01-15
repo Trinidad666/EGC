@@ -1,9 +1,7 @@
 <details>
   <summary>Introducción</summary>
-  
-  Enterprise Cyber Chat (ECC) es una empresa innovadora dedicada a ofrecer servicios de ciberseguridad especializados para usuarios que buscan asistencia en la protección de su información digital. 
-  A través de nuestra plataforma, proporcionamos un servicio único y accesible, similar a una aplicación de mensajería instantánea, que permite a los usuarios interactuar en tiempo real con expertos en informática, hackers éticos y profesionales del sector.
-  La misión de ECS es garantizar la seguridad digital de nuestros usuarios mediante un enfoque personalizado, facilitando la comunicación directa con técnicos altamente capacitados para resolver problemas y ofrecer soluciones eficaces en el ámbito de la ciberseguridad.
+  Ofrecemos un servicio de chat especializado en cybserguridad donde los usuarios que se loguean a la plataforma puedan consultar dudas a especialistas
+  Proporcionar soluciones o una cierta inmediatez en las soluciones a problemas de ciberseguridad a usuarios y pequeñas empresas
 </details>
 
 
@@ -25,7 +23,6 @@ Por hacer
 - Funcionalidades de Registro e inicio de sesión.(Víctor)
 - Que los usuarios puedan tener contactos o conversación con técnicos informáticos.(Hugo)
 - Los usuarios pueden crear una tabla de técnicos informáticos. (Víctor)
-- Que las empresas pongan anuncios para contratar gente como técnicos informáticos.(Hugo)
 </details>
 
 
