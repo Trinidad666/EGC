@@ -29,6 +29,7 @@ Por hacer
 <details>
 <summary>Funcionalidades</summary>
 Funcionalidades que vamos a implementar:
+
 - Funcionalidades de Registro e inicio de sesión.(Víctor)
 - Que los usuarios puedan tener contactos o conversación con técnicos informáticos.(Hugo)
 - Los usuarios pueden crear una tabla de técnicos informáticos. (Víctor)
@@ -37,7 +38,8 @@ Funcionalidades que vamos a implementar:
 - Backups (script)
 
 
-Seguridad (ne función de vuestro proyecto):
+Seguridad (en función de vuestro proyecto):
+
 - MySQL (crear más de un usuario, securizar la DB, triggers)
 - Protección de código fuente
 - toda la parte de monitorización y seguridad que vais a implementar
