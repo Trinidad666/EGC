@@ -59,9 +59,13 @@ Cheat Engine no está diseñado para comunicaciones en tiempo real ni para envia
 
 
 
+
 Resumen
 Para implementar mensajería estilo WhatsApp con WebSocket:
 
 Ideal: Utiliza ejabberd o Chat Engine, ya que están diseñados para comunicaciones en tiempo real.
 Posible, pero requiere trabajo extra: Con Vercel, necesitarías implementar tu propio backend para manejar WebSockets.
 Imposible: Con Cheat Engine, ya que no está relacionado con mensajería ni redes.
+
+
+
