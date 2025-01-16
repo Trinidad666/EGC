@@ -22,8 +22,12 @@ Vercel es una plataforma de despliegue para aplicaciones front-end. No proporcio
 
 https://www.ejabberd.im¿Es posible?
 
+¿Es posible?
+
 Sí, definitivamente.
+
 Cómo funciona:
+
 ejabberd es un servidor XMPP diseñado específicamente para comunicación en tiempo real, como mensajería instantánea. Aunque XMPP no usa WebSocket de forma nativa, ejabberd soporta conexiones WebSocket para facilitar la integración con aplicaciones modernas.
 Ejabberd sería una opción sólida para construir una aplicación estilo WhatsApp, dado que también incluye características como gestión de presencia, chats grupales y mensajes offline.
 
