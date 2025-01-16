@@ -49,7 +49,19 @@ Por hacer
 
 
 ## Gamma de colores + Logo
-Por hacer
+
+### Nuestra gamma de colores:
+
+![image](https://github.com/user-attachments/assets/c999e1eb-701f-43bd-8a99-e5fd0f23e867)
+
+### Nuestro Logo:
+
+![image](https://github.com/user-attachments/assets/5c7f7f1a-5b9e-46bb-95c8-06bbda5e914a) ![image](https://github.com/user-attachments/assets/6a32dba5-2314-45ec-afcd-cc5793b663e4)
+
+
+
+
+
 </details>
 
 
