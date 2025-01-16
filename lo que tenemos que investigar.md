@@ -7,3 +7,18 @@ https://www.google.com/search?client=opera-gx&q=portainer&sourceid=opera&ie=UTF-
 # vercel
 
 https://vercel.com
+
+
+# ejabberd
+
+https://www.ejabberd.im
+
+
+# chatengine
+
+https://chatengine.io
+
+
+# cheatengine
+
+https://www.cheatengine.org
