@@ -28,12 +28,13 @@ Por hacer
 
 <details>
 <summary>Funcionalidades</summary>
-- Funcionalidades de Registro e inicio de sesión.(Víctor)
-- Que los usuarios puedan tener contactos o conversación con técnicos informáticos.(Hugo)
-- Los usuarios pueden crear una tabla de técnicos informáticos. (Víctor)
-- Docker
-- FW
-- Backups (script)
+Funcionalidades que vamos a implementar:
+  - Funcionalidades de Registro e inicio de sesión.(Víctor)
+  - Que los usuarios puedan tener contactos o conversación con técnicos informáticos.(Hugo)
+  - Los usuarios pueden crear una tabla de técnicos informáticos. (Víctor)
+  - Docker
+  - FW
+  - Backups (script)
 
 Seguridad (ne función de vuestro proyecto):
 - MySQL (crear más de un usuario, securizar la DB, triggers)
