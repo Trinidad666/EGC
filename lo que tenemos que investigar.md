@@ -22,7 +22,7 @@ Vercel es una plataforma de despliegue para aplicaciones front-end. No proporcio
 
 # ejabberd
 
-https://www.ejabberd.im¿Es posible?
+https://www.ejabberd.im
 
 ## ¿Es posible?
 
