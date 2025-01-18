@@ -18,17 +18,26 @@
 
   # Material Messaging App Concept
   https://codepen.io/ThomasDaubenton/pen/QMqaBN
-  
-  
+  ![image](https://github.com/user-attachments/assets/9b322906-8ead-4d2a-ba92-3e964af13b26)
+
+
+  # Discord Mockup
+  https://codepen.io/odensc/pen/vxpMPp
+  ![image](https://github.com/user-attachments/assets/3d085bc8-4ab1-4b66-8061-8894e0c203a2)
 
 
   
 </details>
 
+
+
+
 <details>
   <summary>Enviar email a la empresa</summary>
-  ## Responsive Contact Form
+  # Responsive Contact Form
   https://codepen.io/wgnr/pen/ExKzNJ
+  ![image](https://github.com/user-attachments/assets/f0c035c2-7470-4fbc-9de9-dfbdb799f797)
+
 
   ##
 
