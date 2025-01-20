@@ -110,5 +110,8 @@ q
 
 
 ## Enlaces de como usar Ejabberd con Websocket
+
+#### Getting started with WebSocket API in ejabberd
+
 https://www.process-one.net/blog/getting-started-with-websocket-api-in-ejabberd/
 
