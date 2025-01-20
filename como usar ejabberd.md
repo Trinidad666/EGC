@@ -92,7 +92,7 @@ Una vez que ejabberd está en funcionamiento, puedes conectarte a tu servidor us
 
 ### Conclusión
 
-Ejabberd puede funcionar sin XAMPP porque no requiere de Apache, MySQL, ni PHP. Simplemente necesitas instalar ejabberd directamente, configurarlo adecuadamente, y luego usar clientes XMPP para conectarte al servidor. La instalación y configuración es sencilla y bien documentada, por lo que no deberías tener problemas para ponerlo en marcha sin necesidad de otros servidores o herramientas como XAMPP.<br><br><br>
+Ejabberd puede funcionar sin XAMPP porque no requiere de Apache, MySQL, ni PHP. Simplemente necesitas instalar ejabberd directamente, configurarlo adecuadamente, y luego usar clientes XMPP para conectarte al servidor. La instalación y configuración es sencilla y bien documentada, por lo que no deberías tener problemas para ponerlo en marcha sin necesidad de otros servidores o herramientas como XAMPP.<br>
 
 ## Enlaces de como usar Ejabberd con Websocket
 
