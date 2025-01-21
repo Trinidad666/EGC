@@ -27,7 +27,9 @@ taba columna
 <br>
 
 # Usuarios
-
+============================================================================
+Almacena la información básica de cada usuario, como nombre, correo electrónico y número de teléfono.
+============================================================================
 id_usuario
 
 nombre_usuario
@@ -50,6 +52,10 @@ fecha_ultimo_acceso
 
 # Chats
 
+============================================================================
+Registra los diferentes chats, ya sean individuales o grupales, incluyendo detalles como el nombre del chat y su tipo.
+============================================================================
+
 id_chat
 
 nombre_chat
@@ -63,6 +69,10 @@ fecha_creacion
 
 
 # Participantes
+
+============================================================================
+Mantiene un registro de qué usuarios participan en cada chat, indicando su fecha de ingreso y salida.
+============================================================================
 
 id_participante
 
@@ -79,6 +89,10 @@ fecha_salida
 
 
 # Mensajes
+
+============================================================================
+Contiene los mensajes enviados en los chats, incluyendo el contenido, tipo de mensaje y fecha de envío.
+============================================================================
 
 id_mensaje
 
@@ -98,6 +112,10 @@ fecha_envio
 
 # Archivos
 
+============================================================================
+Almacena información sobre los archivos adjuntos en los mensajes, como imágenes, videos o documentos.
+============================================================================
+
 id_archivo
 
 id_mensaje
@@ -114,6 +132,10 @@ tamano_archivo
 
 # Grupos
 
+============================================================================
+Guarda detalles específicos de los chats grupales, como el administrador del grupo y su descripción.
+============================================================================
+
 id_grupo
 
 id_chat
@@ -129,6 +151,10 @@ foto_grupo
 
 
 # Notificaciones
+
+============================================================================
+Registra las notificaciones enviadas a los usuarios, indicando el tipo de notificación y su contenido.
+============================================================================
 
 id_notificacion
 
@@ -150,6 +176,10 @@ fecha
 
 # Configuración del Usuario
 
+============================================================================
+Almacena las preferencias y configuraciones personales de cada usuario, como ajustes de privacidad y notificaciones.
+============================================================================
+
 id_usuario
 
 notificaciones
@@ -164,6 +194,10 @@ privacidad
 
 # Bloqueos
 
+============================================================================
+Lleva un registro de los usuarios que han sido bloqueados por otros usuarios, incluyendo la fecha del bloqueo.
+============================================================================
+
 id_bloqueo
 
 id_usuario
@@ -177,6 +211,10 @@ fecha_bloqueo
 
 
 # Llamadas
+
+============================================================================
+Registra información sobre las llamadas de voz o video realizadas entre usuarios, incluyendo la duración y fecha de la llamada.
+============================================================================
 
 id_llamada
 
