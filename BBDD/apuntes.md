@@ -27,9 +27,11 @@ taba columna
 <br>
 
 # Usuarios
+
 ============================================================================
 Almacena la información básica de cada usuario, como nombre, correo electrónico y número de teléfono.
 ============================================================================
+
 id_usuario
 
 nombre_usuario
