@@ -50,6 +50,7 @@ fecha_ultimo_acceso
 
 
 <br>
+<br>
 
 
 # Chats
@@ -67,6 +68,7 @@ tipo_chat
 fecha_creacion
 
 
+<br>
 <br>
 
 
@@ -87,6 +89,7 @@ fecha_ingreso
 fecha_salida
 
 
+<br>
 <br>
 
 
@@ -110,6 +113,7 @@ fecha_envio
 
 
 <br>
+<br>
 
 
 # Archivos
@@ -130,6 +134,7 @@ tamano_archivo
 
 
 <br>
+<br>
 
 
 # Grupos
@@ -149,6 +154,7 @@ descripcion
 foto_grupo
 
 
+<br>
 <br>
 
 
@@ -174,6 +180,7 @@ fecha
 
 
 <br>
+<br>
 
 
 # Configuración del Usuario
@@ -192,6 +199,7 @@ privacidad
 
 
 <br>
+<br>
 
 
 # Bloqueos
@@ -209,6 +217,7 @@ id_usuario_bloqueado
 fecha_bloqueo
 
 
+<br>
 <br>
 
 
