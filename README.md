@@ -113,7 +113,33 @@ Seguridad (en función de vuestro proyecto):
 - Protección de código fuente
 - toda la parte de monitorización y seguridad que vais a implementar
 </details>
+
+
+<details>
+<summary>Arquitectura del Sistema</summary>
+Estos seran los componentes de tecnología que utilizaremos en el sistema:
+  
+- NGINX
+- MySQL
+- PHP / HTML / CSS / Js
+- Bind9
+- Docker 
+- Ejabber
+- Composer
+- Websocket
+- IPTables
+
+</details>
+
+
 <br><br><br>
+
+
+
+
+
+
+
 
 
 # Tema sobre la WEB
