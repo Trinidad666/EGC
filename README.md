@@ -94,6 +94,14 @@ Por hacer
 
 </details>
 
+<details>
+<summary>Esquema de la Web</summary>
+De momento este es nuestro esquema de nuestra web ECC:
+
+![image](https://github.com/user-attachments/assets/d29a31b2-477b-47cb-b0c9-4ed494235236)
+
+</details>
+
 
 <details>
 <summary>Funcionalidades</summary>
