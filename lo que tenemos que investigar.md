@@ -3,6 +3,11 @@
 https://www.google.com/search?client=opera-gx&q=portainer&sourceid=opera&ie=UTF-8&oe=UTF-8
 <br><br><br><br>
 
+
+
+<details>
+  <summary>Posibles Herramientas lara el CHat</summary>
+
 # Vercel
 https://vercel.com
 
@@ -85,5 +90,6 @@ Ideal: Utiliza ejabberd o Chat Engine, ya que están diseñados para comunicacio
 Posible, pero requiere trabajo extra: Con Vercel, necesitarías implementar tu propio backend para manejar WebSockets.
 Imposible: Con Cheat Engine, ya que no está relacionado con mensajería ni redes.
 
+</details>
 
 
