@@ -6,7 +6,7 @@ https://www.google.com/search?client=opera-gx&q=portainer&sourceid=opera&ie=UTF-
 
 
 <details>
-  <summary>Posibles Herramientas lara el CHat</summary>
+  <summary>Posibles Herramientas para el Chat</summary>
 
 # Vercel
 https://vercel.com
@@ -91,5 +91,17 @@ Posible, pero requiere trabajo extra: Con Vercel, necesitarías implementar tu p
 Imposible: Con Cheat Engine, ya que no está relacionado con mensajería ni redes.
 
 </details>
+
+<br><br><br><br>
+
+<details>
+  <summary>futuri</summary>
+
+
+
+  
+</details>
+
+
 
 
