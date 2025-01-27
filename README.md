@@ -106,6 +106,12 @@ De momento este es nuestro esquema de la bbdd de ECC:
 
 </details>
 
+<details>
+<summary>Diagrama de red</summary>
+
+![image](https://github.com/user-attachments/assets/575cc38e-2fde-4cbe-a35d-f735b1ca5bf2)
+
+</details>
 
 <details>
 <summary>Funcionalidades</summary>
