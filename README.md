@@ -4,9 +4,11 @@
   <summary>Introducción</summary>
   Ofrecemos un servicio de chat especializado en cybserguridad donde los usuarios que se loguean a la plataforma puedan consultar dudas a especialistas
   Proporcionar soluciones o una cierta inmediatez en las soluciones a problemas de ciberseguridad a usuarios y pequeñas empresas
+
+
+
+  <br>
   
-  
-  Nuestra empres se llama ECC es una empresa que ofrece una plataforma de chat similar a Discord y WhatsApp, diseñada para facilitar la comunicación en tiempo real entre usuarios. Al igual que Discord, ECC permite la creación de servidores y canales temáticos,   ofreciendo opciones de mensajería de texto, voz y video. Además, incorpora características de WhatsApp, como la posibilidad de compartir archivos multimedia y realizar llamadas de voz y video de alta calidad. ECC se destaca por su enfoque en la personalización y la seguridad, permitiendo a los usuarios ajustar la plataforma según sus necesidades y garantizando la protección de los datos compartidos. Esta combinación de funcionalidades la convierte en una alternativa robusta para quienes buscan una experiencia de chat integral y segura.
 
 
 
