@@ -2,9 +2,9 @@
 
 <details>
   <summary>Introducción</summary>
-  Ofrecemos un servicio de chat especializado en cybserguridad donde los usuarios que se loguean a la plataforma puedan consultar dudas a especialistas
-  Proporcionar soluciones o una cierta inmediatez en las soluciones a problemas de ciberseguridad a usuarios y pequeñas empresas
-
+Ofrecemos un servicio de chat especializado en en informática y otros sectores, donde los usuarios registrados pueden consultar dudas directamente con expertos. Nuestro objetivo es brindar soluciones rápidas y efectivas a problemas de ciberseguridad, tanto para usuarios individuales como para pequeñas empresas.
+Nuestra plataforma compite con otras herramientas de mensajería como Telegram y Discord, especialmente en lo que respecta a la creación de grupos y redes de usuarios. Sin embargo, en nuestra plataforma, todos los chats son privados entre los usuarios conectados.
+Al registrarse en nuestra web, los usuarios podrán acceder a grupos ya creados por especialistas en informática y otros sectores relacionados, los cuales estarán disponibles en modalidades públicas o privadas. Además, los usuarios podrán crear sus propios grupos de conversación para compartir información y resolver dudas con otros usuarios.
 
 
   <br>
@@ -23,20 +23,6 @@ Por hacer
 
 
 ## Mockup
-
-### Registro:
-
-* Así es como se vería la sección donde se registrarían nuestros usuarios. En el formulario de registro, el usuario deberá ingresar su nombre, primer apellido, un nombre de usuario, su correo electrónico, número de teléfono y una contraseña, la cual deberá confirmar nuevamente.
-
-![image](https://github.com/user-attachments/assets/587a3bd2-9e8c-4737-8d00-9a2e71e7e9d7)
-
-
-### Inicio Sesión:
-
-* Así es como se vería nuestro inicio de sesión. El usuario solo deberá ingresar su correo electrónico y contraseña.
-
-![image](https://github.com/user-attachments/assets/37ec7c4c-e221-415c-9b8d-cca2adff63e8)
-
 
 ### Home:
 
@@ -73,20 +59,34 @@ Por hacer
 ![image](https://github.com/user-attachments/assets/6d88b906-7cba-4fa5-85a2-c13a1306e03a)
 
 
-### Catálogo:
+### Grupos:
 
 * En el catálogo, el usuario podrá buscar temarios sobre ciberseguridad utilizando el buscador, y se le mostrarán diferentes temarios relacionados con el tema.
 
 ![image](https://github.com/user-attachments/assets/f4d5ecfe-2ffa-4a6c-ab0d-04bd5b7ac2f7)
 
 
-### Crear Catálogo:
+### Crear Grupo:
 
 * En "Crear catálogo", el usuario podrá subir una imagen, añadir un título y un texto, y deberá ingresar su nombre de usuario en un apartado. Al final, tendrá un botón para crear el catálogo.
 
 ![image](https://github.com/user-attachments/assets/4f9d1aca-e141-44e7-944d-6b20dd196d3d)
 
 
+### Registro:
+
+* Así es como se vería la sección donde se registrarían nuestros usuarios. En el formulario de registro, el usuario deberá ingresar su nombre, primer apellido, un nombre de usuario, su correo electrónico, número de teléfono y una contraseña, la cual deberá confirmar nuevamente.
+
+![image](https://github.com/user-attachments/assets/587a3bd2-9e8c-4737-8d00-9a2e71e7e9d7)
+
+
+### Inicio Sesión:
+
+* Así es como se vería nuestro inicio de sesión. El usuario solo deberá ingresar su correo electrónico y contraseña.
+
+![image](https://github.com/user-attachments/assets/37ec7c4c-e221-415c-9b8d-cca2adff63e8)
+
+<br>
 
 ## Gamma de colores + Logo
 
