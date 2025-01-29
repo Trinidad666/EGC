@@ -159,22 +159,55 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 
   
 - PHP / HTML / CSS / JS:
-  - PHP: Lenguaje de programación del lado del servidor.
-  - HTML: Lenguaje para estructurar contenido web.
-  - CSS: Estilos y diseño web.
-  - JS: Lenguaje para interactividad en el navegador.
+  - PHP:
+
+    Lenguaje de programación del lado del servidor.
+
     
-- Bind9: Servidor DNS que resuelve nombres de dominio a direcciones IP.
+  - HTML:
+
+    Lenguaje para estructurar contenido web.
+
+    
+  - CSS:
+
+    Estilos y diseño web.
+
+    
+  - JS:
   
-- Docker: Plataforma para crear y gestionar contenedores de aplicaciones.
+    Lenguaje para interactividad en el navegador.
+
+    
+    
+- Bind9:
+
+  Servidor DNS que resuelve nombres de dominio a direcciones IP.
+
   
-- Ejabberd: Servidor de mensajería instantánea basado en XMPP.
+- Docker:
+
+  Plataforma para crear y gestionar contenedores de aplicaciones.
+
   
-- Composer: Herramienta para gestionar dependencias en PHP.
+- Ejabberd:
+
+  Servidor de mensajería instantánea basado en XMPP.
   
-- WebSocket: Protocolo para comunicación en tiempo real entre cliente y servidor.
   
-- IPTables: Firewall en Linux para controlar el tráfico de red.
+- Composer:
+
+  Herramienta para gestionar dependencias en PHP.
+  
+  
+- WebSocket:
+
+  Protocolo para comunicación en tiempo real entre cliente y servidor.
+  
+  
+- IPTables:
+
+  Firewall en Linux para controlar el tráfico de red.
   
 
 </details>
