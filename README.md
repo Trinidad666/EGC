@@ -4,7 +4,6 @@
   <summary>Introducción</summary>
 Nuestra empresa, EGC (Enterprise Global Chat), ofrece un servicio de chat especializado en informática y otros sectores, donde los usuarios registrados pueden consultar sus dudas directamente con expertos. Nuestro objetivo es proporcionar soluciones rápidas y efectivas, tanto para usuarios individuales como para pequeñas empresas.
 <br>
-<br>
 
 
 
@@ -99,10 +98,9 @@ Por hacer
 ![image](https://github.com/user-attachments/assets/5c7f7f1a-5b9e-46bb-95c8-06bbda5e914a) ![image](https://github.com/user-attachments/assets/6a32dba5-2314-45ec-afcd-cc5793b663e4)
 
 
-
-
-
 </details>
+<br>
+
 
 <details>
 <summary>Nuestros esquemas</summary>
@@ -115,6 +113,8 @@ De momento este es nuestro esquema de la bbdd de ECC:
 ![image](https://github.com/user-attachments/assets/238fc073-fcfb-4ff9-98d6-5fb9bc589641)
 
 </details>
+<br>
+
 
 <details>
 <summary>Diagrama de red</summary>
@@ -122,6 +122,9 @@ De momento este es nuestro esquema de la bbdd de ECC:
 ![image](https://github.com/user-attachments/assets/575cc38e-2fde-4cbe-a35d-f735b1ca5bf2)
 
 </details>
+<br>
+
+
 
 <details>
 <summary>Funcionalidades</summary>
@@ -141,6 +144,8 @@ Seguridad (en función de vuestro proyecto):
 - Protección de código fuente
 - toda la parte de monitorización y seguridad que vais a implementar
 </details>
+<br>
+
 
 
 <details>
@@ -210,9 +215,8 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
   ![image](https://github.com/user-attachments/assets/3d085bc8-4ab1-4b66-8061-8894e0c203a2)
 
 
-  
 </details>
-
+<br>
 
 
 
@@ -233,7 +237,7 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 
 
 </details>
-
+<br>
 
 
 
@@ -252,7 +256,7 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 
 
 </details>
-
+<br>
 
 
 <details>
@@ -290,7 +294,7 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
   #
 
 </details>
-
+<br>
 
 
 
