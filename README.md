@@ -148,64 +148,64 @@ Seguridad (en función de vuestro proyecto):
 <summary>Arquitectura del Sistema</summary>
 Estos seran los componentes de tecnología que utilizaremos en el sistema:
   
-- ####NGINX:
+- NGINX:
   
   Servidor web y proxy inverso, muy eficiente en gestionar tráfico y carga.
 
   
-- ####MySQL:
+- MySQL:
 
   Base de datos relacional para almacenar y gestionar datos.
 
   
-- ####PHP / HTML / CSS / JS:
-  - #####PHP:
+- PHP / HTML / CSS / JS:
+  - PHP:
 
     Lenguaje de programación del lado del servidor.
 
     
-  - #####HTML:
+  - HTML:
 
     Lenguaje para estructurar contenido web.
 
     
-  - #####CSS:
+  - CSS:
 
     Estilos y diseño web.
 
     
-  - #####JS:
+  - JS:
   
     Lenguaje para interactividad en el navegador.
 
     
     
-- ####Bind9:
+- Bind9:
 
   Servidor DNS que resuelve nombres de dominio a direcciones IP.
 
   
-- ####Docker:
+- Docker:
 
   Plataforma para crear y gestionar contenedores de aplicaciones.
 
   
-- ####Ejabberd:
+- jabberd:
 
   Servidor de mensajería instantánea basado en XMPP.
   
   
-- ####Composer:
+- Composer:
 
   Herramienta para gestionar dependencias en PHP.
   
   
-- ####WebSocket:
+- WebSocket:
 
   Protocolo para comunicación en tiempo real entre cliente y servidor.
   
   
-- ####IPTables:
+- IPTables:
 
   Firewall en Linux para controlar el tráfico de red.
   
