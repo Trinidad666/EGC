@@ -94,7 +94,8 @@ Por hacer
 
 ### Nuestro Logo:
 
-![image](https://github.com/user-attachments/assets/5c7f7f1a-5b9e-46bb-95c8-06bbda5e914a) ![image](https://github.com/user-attachments/assets/6a32dba5-2314-45ec-afcd-cc5793b663e4)
+![ECS](https://github.com/user-attachments/assets/6ba6de8e-952c-4265-9db4-ab254b4884f4)![ECS-removebg-preview](https://github.com/user-attachments/assets/b2d76a7f-7e46-4059-be29-cce46e304726)
+
 
 
 </details>
