@@ -64,15 +64,14 @@ Por hacer
 
 * En el catálogo, el usuario podrá buscar temarios sobre ciberseguridad utilizando el buscador, y se le mostrarán diferentes temarios relacionados con el tema.
 
-![image](https://github.com/user-attachments/assets/f4d5ecfe-2ffa-4a6c-ab0d-04bd5b7ac2f7)
+![image](https://github.com/user-attachments/assets/e68bcc31-368f-4f8c-a04e-0e3e9245ff63)
 
 
 ### Crear Grupo:
 
 * En "Crear catálogo", el usuario podrá subir una imagen, añadir un título y un texto, y deberá ingresar su nombre de usuario en un apartado. Al final, tendrá un botón para crear el catálogo.
 
-![image](https://github.com/user-attachments/assets/4f9d1aca-e141-44e7-944d-6b20dd196d3d)
-
+![image](https://github.com/user-attachments/assets/12724ed0-f878-4d0b-bd73-a0c204ee2e36)
 
 ### Registro:
 
