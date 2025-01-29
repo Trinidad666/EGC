@@ -148,7 +148,7 @@ Seguridad (en función de vuestro proyecto):
 <summary>Arquitectura del Sistema</summary>
 Estos seran los componentes de tecnología que utilizaremos en el sistema:
   
-- NGINX:
+- #NGINX:
   
   Servidor web y proxy inverso, muy eficiente en gestionar tráfico y carga.
 
