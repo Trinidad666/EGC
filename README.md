@@ -211,9 +211,28 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
   
 
 </details>
+<br>
+
+<details>
+<summary>Sistems Operativos</summary>
+  
+- Ubuntu Server
+  
+- Alpine (Docker)
+
+
+  
+</details>
+<br>
+
+
+
 
 
 <br><br><br>
+
+
+
 
 
 
