@@ -149,7 +149,9 @@ Seguridad (en función de vuestro proyecto):
 Estos seran los componentes de tecnología que utilizaremos en el sistema:
   
 - NGINX:
+  
   Servidor web y proxy inverso, muy eficiente en gestionar tráfico y carga.
+
   
 - MySQL: Base de datos relacional para almacenar y gestionar datos.
   
