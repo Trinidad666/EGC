@@ -132,9 +132,6 @@ Funcionalidades que vamos a implementar:
 - Funcionalidades de Registro e inicio de sesión.(Víctor)
 - Que los usuarios puedan tener contactos o conversación con técnicos informáticos.(Hugo)
 - Los usuarios pueden crear una tabla de técnicos informáticos. (Víctor)
-- Docker
-- FW
-- Backups (script)
 
 
 Seguridad (en función de vuestro proyecto):
