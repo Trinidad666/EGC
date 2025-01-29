@@ -2,7 +2,7 @@
 
 <details>
   <summary>Introducción</summary>
-
+<br>
 Ofrecemos un servicio de chat especializado en en informática y otros sectores, donde los usuarios registrados pueden consultar dudas directamente con expertos. Nuestro objetivo es brindar soluciones rápidas y efectivas a problemas de ciberseguridad, tanto para usuarios individuales como para pequeñas empresas.
 Nuestra plataforma compite con otras herramientas de mensajería como Telegram y Discord, especialmente en lo que respecta a la creación de grupos y redes de usuarios. Sin embargo, en nuestra plataforma, todos los chats son privados entre los usuarios conectados.
 Al registrarse en nuestra web, los usuarios podrán acceder a grupos ya creados por especialistas en informática y otros sectores relacionados, los cuales estarán disponibles en modalidades públicas o privadas. Además, los usuarios podrán crear sus propios grupos de conversación para compartir información y resolver dudas con otros usuarios.
