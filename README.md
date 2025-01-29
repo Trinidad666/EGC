@@ -1,7 +1,7 @@
 # Intoducción
 
 <details>
-  <summary>Introducción</summary>
+  <summary>Eplicacion de EGC</summary>
 Nuestra empresa, EGC (Enterprise Global Chat), ofrece un servicio de chat especializado en diversos sectores como informática, negocios, economía, entre otros. Los usuarios registrados pueden consultar sus dudas directamente con expertos. Nuestro objetivo es brindar soluciones rápidas y efectivas, tanto para usuarios individuales como para pequeñas empresas.
 <br>
 <br>
