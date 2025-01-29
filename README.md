@@ -4,6 +4,7 @@
   <summary>Introducción</summary>
 Nuestra empresa, EGC (Enterprise Global Chat), ofrece un servicio de chat especializado en informática y otros sectores, donde los usuarios registrados pueden consultar sus dudas directamente con expertos. Nuestro objetivo es proporcionar soluciones rápidas y efectivas, tanto para usuarios individuales como para pequeñas empresas.
 <br>
+<br>
 
 
 
