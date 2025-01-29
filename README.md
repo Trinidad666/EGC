@@ -153,7 +153,10 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
   Servidor web y proxy inverso, muy eficiente en gestionar tráfico y carga.
 
   
-- MySQL: Base de datos relacional para almacenar y gestionar datos.
+- MySQL:
+
+  Base de datos relacional para almacenar y gestionar datos.
+
   
 - PHP / HTML / CSS / JS:
   - PHP: Lenguaje de programación del lado del servidor.
