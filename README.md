@@ -219,7 +219,8 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 <details>
 <summary>Sistems Operativos</summary>
 
-Estos son los Sistemas operativos que vamos a implementar en la Maquina virtuales.
+Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuales.
+
 
 - Ubuntu Server
   
