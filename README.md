@@ -213,9 +213,14 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 </details>
 <br>
 
+
+
+
 <details>
 <summary>Sistems Operativos</summary>
-  
+
+Estos son los Sistemas operativos que vamos a implementar en la Maquina virtuales.
+
 - Ubuntu Server
   
 - Alpine (Docker)
