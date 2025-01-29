@@ -4,6 +4,7 @@
   <summary>Introducción</summary>
 Nuestra empresa, EGC (Enterprise Global Chat), ofrece un servicio de chat especializado en diversos sectores como informática, negocios, economía, entre otros. Los usuarios registrados pueden consultar sus dudas directamente con expertos. Nuestro objetivo es brindar soluciones rápidas y efectivas, tanto para usuarios individuales como para pequeñas empresas.
 <br>
+<br>
   
 Nuestra plataforma compite con otras herramientas de mensajería, como Telegram, Skype, Discord, y más, especialmente en lo que respecta a la creación de grupos y redes de usuarios. Sin embargo, en nuestra plataforma, todos los chats son privados entre los usuarios conectados, permitiendo conversaciones directas y seguras.
 <br>
