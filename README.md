@@ -18,7 +18,6 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 
 <details>
 <summary>Diseño de nuestra aplicación</summary>
-Por hacer
 
 
 ## Mockup
