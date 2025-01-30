@@ -236,6 +236,29 @@ Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuale
 
 
 
+<details>
+<summary>Hardware</summary>
+
+Todas las VM tienen la misma capacidad de memoria RAM, CPU y disco duro, menos la VM Docker.
+
+MV:
+- RAM --> 2 GB
+- CPU --> 1 (1 socket & 1 cores)
+- HD --> 14 GB
+<br>
+
+MV Docker:
+- RAM --> 4 GB
+- CPU --> 4 (2 sockets & 2 cores)
+- HD --> 60 GB
+
+  
+</details>
+<br>
+
+
+
+
 <br><br><br>
 
 
