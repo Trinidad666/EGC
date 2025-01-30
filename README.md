@@ -235,13 +235,26 @@ Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuale
 
 
 
+<details>
+<summary>Arquitectura SW</summary>
+
+Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuales.
+
+
+- Ubuntu Server
+  
+- Alpine (Docker)
+
+
+  
+</details>
+<br>
+
+
+
 
 
 <br><br><br>
-
-
-
-
 
 
 
