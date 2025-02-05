@@ -16,6 +16,11 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 
 
 
+
+
+
+
+
 <details>
 <summary>Diseño de nuestra aplicación</summary>
 
@@ -96,10 +101,16 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 ![ECS](https://github.com/user-attachments/assets/6ba6de8e-952c-4265-9db4-ab254b4884f4)![image](https://github.com/user-attachments/assets/03bae469-1db6-44f0-bc5f-c439e731b600)
 
 
-
-
 </details>
 <br>
+
+
+
+
+
+
+
+
 
 
 <details>
@@ -123,6 +134,23 @@ De momento este es nuestro esquema de la bbdd de EGC:
 
 </details>
 <br>
+
+
+
+
+
+<details>
+<summary>Docker</summary>
+
+
+
+</details>
+<br>
+
+
+
+
+
 
 
 
