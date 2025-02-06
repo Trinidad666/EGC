@@ -114,7 +114,7 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 
 
 <details>
-<summary>📊 Nuestros esquemas</summary>
+<summary>🗺️ Nuestros esquemas</summary>
 De momento este es nuestro esquema de nuestra web EGC:
 
 ![image](https://github.com/user-attachments/assets/d29a31b2-477b-47cb-b0c9-4ed494235236)
@@ -128,7 +128,7 @@ De momento este es nuestro esquema de la bbdd de EGC:
 
 
 <details>
-<summary>Diagrama de red</summary>
+<summary>📊 Diagrama de red</summary>
 
 ![image](https://github.com/user-attachments/assets/575cc38e-2fde-4cbe-a35d-f735b1ca5bf2)
 
@@ -140,7 +140,7 @@ De momento este es nuestro esquema de la bbdd de EGC:
 
 
 <details>
-<summary>Docker</summary>
+<summary>🐋 Docker</summary>
 
 
 
@@ -155,7 +155,7 @@ De momento este es nuestro esquema de la bbdd de EGC:
 
 
 <details>
-<summary>Funcionalidades</summary>
+<summary>⚙️ Funcionalidades</summary>
 Funcionalidades que vamos a implementar:
 
 - Funcionalidades de Registro e inicio de sesión.(Víctor)
@@ -174,7 +174,7 @@ Seguridad (en función de vuestro proyecto):
 
 
 <details>
-<summary>Arquitectura del Sistema</summary>
+<summary>🖥️ Arquitectura del Sistema</summary>
 Estos seran los componentes de tecnología que utilizaremos en el sistema:
   
 - NGINX:
@@ -246,7 +246,7 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 
 
 <details>
-<summary>Sistems Operativos</summary>
+<summary>🐧 Sistems Operativos</summary>
 
 Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuales.
 
@@ -254,6 +254,8 @@ Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuale
 - Ubuntu Server
   
 - Alpine (Docker)
+
+- Firewall
 
 
   
@@ -264,7 +266,7 @@ Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuale
 
 
 <details>
-<summary>Hardware</summary>
+<summary>🔲 Hardware</summary>
 
 Todas las VM tienen la misma capacidad de memoria RAM, CPU y disco duro, menos la VM Docker.
 
@@ -298,7 +300,7 @@ MV Docker:
 # Tema sobre la WEB
 
 <details>
-  <summary>Chat</summary>
+  <summary>🇹🇩 Chat</summary>
   
   # Chat Interface Concept
   
