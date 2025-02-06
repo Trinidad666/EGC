@@ -109,6 +109,25 @@ Si accedemos a **Portainer** y vamos a la sección de **Contenedores**, podemos 
 
 
 
+Si ponemos en el navegador **http://100.77.20.22:8082** podemos ver que hemos entrado dentro de la página Web de RBooks.
+
+![image](https://github.com/user-attachments/assets/574a6d8b-f4c5-4d1b-94d8-e1fc120731d3)
+
+
+Ahora tenemos que poner la base de datos en el **phpmyadmin** para que pueda salir las tablas y funcione los registros en la página Web poniendo en el navegador **http://100.77.20.22:81**.
+Para poder entrar dentro del **phpmyadmin** ponemos:
+* Servidor --> miDB
+* Usuario --> root
+* Contraseña --> 1234
+ 
+![image](https://github.com/user-attachments/assets/c53a9069-f0ab-4231-a811-68cecc4c103c)
+
+
+
+
+
+
+
 
 
 
