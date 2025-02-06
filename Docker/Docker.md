@@ -123,8 +123,13 @@ Para poder entrar dentro del **phpmyadmin** ponemos:
 ![image](https://github.com/user-attachments/assets/c53a9069-f0ab-4231-a811-68cecc4c103c)
 
 
+Creamos la base de datos poniendo el nombre **rbooks**.
+![image](https://github.com/user-attachments/assets/04b92b6c-414e-4112-bf8d-d7967d416278)
 
 
+Para poder importar el archivo **sql** en el phpmyadmin tenemos que entrar dentro de la base de datos rbooks, clicamso en **Importar** y ponemos el archivo sql que tenemos que es **bbdd-rbooks.sql** y clicamos en boton importar.
+
+![image](https://github.com/user-attachments/assets/2c2f841b-84cb-4e38-a4b2-d93207c67853)
 
 
 
