@@ -132,7 +132,9 @@ Para poder importar el archivo **sql** en el phpmyadmin tenemos que entrar dentr
 ![image](https://github.com/user-attachments/assets/2c2f841b-84cb-4e38-a4b2-d93207c67853)
 
 
+Ahora vamos dentro del archivo **conexion_be.php** que esta dentro de las carpetas ***web/php_in-sing/conexion_be.php*** y cambiamos la direccion de la base de datos para poder tener conexión entre la página web y la base de datos.
 
+![image](https://github.com/user-attachments/assets/89863329-095d-4ba2-a6ff-69adf2947224)
 
 
 
