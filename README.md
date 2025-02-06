@@ -300,7 +300,8 @@ MV Docker:
 # Tema sobre la WEB
 
 <details>
-  <summary>🇹🇩 Chat</summary>
+  <summary>![image](https://github.com/user-attachments/assets/2e25c7fd-13c6-4dae-aa64-ea5f846e240c)
+ Chat</summary>
   
   # Chat Interface Concept
   
