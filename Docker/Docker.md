@@ -108,14 +108,12 @@ Si accedemos a **Portainer** y vamos a la sección de **Contenedores**, podemos 
 
 
 
-
-Si ponemos en el navegador **http://100.77.20.22:8082** podemos ver que hemos entrado dentro de la página Web de RBooks.
+Si accedemos al navegador y ponemos **http://100.77.20.22:8082**, podremos ver que hemos ingresado correctamente a la página web de RBooks.
 
 ![image](https://github.com/user-attachments/assets/574a6d8b-f4c5-4d1b-94d8-e1fc120731d3)
 
 
-Ahora tenemos que poner la base de datos en el **phpmyadmin** para que pueda salir las tablas y funcione los registros en la página Web poniendo en el navegador **http://100.77.20.22:81**.
-Para poder entrar dentro del **phpmyadmin** ponemos:
+Ahora, debemos cargar la base de datos en **phpMyAdmin** para que las tablas se muestren correctamente y los registros funcionen en la página web. Para ello, accedemos a **http://100.77.20.22:81** en el navegador.
 * Servidor --> miDB
 * Usuario --> root
 * Contraseña --> 1234
@@ -123,16 +121,16 @@ Para poder entrar dentro del **phpmyadmin** ponemos:
 ![image](https://github.com/user-attachments/assets/c53a9069-f0ab-4231-a811-68cecc4c103c)
 
 
-Creamos la base de datos poniendo el nombre **rbooks**.
+Creamos la base de datos con el nombre **rbooks**.
 ![image](https://github.com/user-attachments/assets/04b92b6c-414e-4112-bf8d-d7967d416278)
 
 
-Para poder importar el archivo **sql** en el phpmyadmin tenemos que entrar dentro de la base de datos rbooks, clicamso en **Importar** y ponemos el archivo sql que tenemos que es **bbdd-rbooks.sql** y clicamos en boton importar.
+Para poder importar el archivo **sql** en **phpMyAdmin**, debemos ingresar en la base de datos **rbooks**, hacer clic en *Importar*, seleccionar el archivo **bbdd-rbooks.sql** y luego hacer clic en el botón *Importar*.
 
 ![image](https://github.com/user-attachments/assets/2c2f841b-84cb-4e38-a4b2-d93207c67853)
 
 
-Ahora vamos dentro del archivo **conexion_be.php** que esta dentro de las carpetas ***web/php_in-sing/conexion_be.php*** y cambiamos la direccion de la base de datos para poder tener conexión entre la página web y la base de datos.
+A continuación, accedemos al archivo **conexion_be.php**, que se encuentra en la ruta ***web/php_in-sing/conexion_be.php***, y modificamos la dirección de la base de datos para establecer la conexión entre la página web y la base de datos.
 
 ![image](https://github.com/user-attachments/assets/89863329-095d-4ba2-a6ff-69adf2947224)
 
