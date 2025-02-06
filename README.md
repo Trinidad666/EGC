@@ -384,7 +384,7 @@ MV Docker:
 
 
 <details>
-  <summary>🔲 Diseños graficos</summary>
+  <summary>🎨 Diseños graficos</summary>
   
   # 🔲 H Y P E R H E D R O N 🔲
 
