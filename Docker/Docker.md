@@ -87,5 +87,35 @@ networks:
 ```
 
 
+A continuación, crearemos el archivo **Dockerfile** y añadiremos el siguiente código para que funcione:
+
+![image](https://github.com/user-attachments/assets/fdf3e8b4-c8e5-4f59-8688-1e79b32abbb1)
+
+
+Este comando permite forzar la recreación de los contenedores en el **docker**.
+
+![image](https://github.com/user-attachments/assets/152d72fb-a268-4556-888d-92b322e7e909)
+
+
+Si accedemos a **Portainer** y vamos a la sección de **Contenedores**, podemos ver que se ha creado de forma correcta.
+
+![image](https://github.com/user-attachments/assets/8b4ad89a-204d-4f24-87a1-d69f03bb1b1a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
