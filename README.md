@@ -300,8 +300,7 @@ MV Docker:
 # Tema sobre la WEB
 
 <details>
-  <summary>![image](https://github.com/user-attachments/assets/2e25c7fd-13c6-4dae-aa64-ea5f846e240c)
- Chat</summary>
+  <summary>💬 Chat</summary>
   
   # Chat Interface Concept
   
@@ -344,7 +343,7 @@ MV Docker:
 
 
 <details>
-  <summary>Enviar email a la empresa</summary>
+  <summary>📧 Enviar email a la empresa</summary>
   
   # Responsive Contact Form
   
@@ -365,7 +364,7 @@ MV Docker:
 
 
 <details>
-  <summary>Registrar | Inicio</summary>
+  <summary>📝|▶️ Registrar | Inicio</summary>
   
   # Responsive Registration Form
   
@@ -382,8 +381,10 @@ MV Docker:
 <br>
 
 
+
+
 <details>
-  <summary>Diseños graficos</summary>
+  <summary>🔲 Diseños graficos</summary>
   
   # 🔲 H Y P E R H E D R O N 🔲
 
