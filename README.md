@@ -159,20 +159,28 @@ Docker es una plataforma que permite crear, distribuir y ejecutar aplicaciones e
 # Que ventajas y descentajas da el Docker
 
 
-##Ventajas✅
+## Ventajas✅
 
 · **Portabilidad**: Los contenedores funcionan igual en cualquier sistema con Docker instalado.
+
 · **Eficiencia**: Consume menos recursos que las máquinas virtuales porque comparte el sistema operativo.
+
 · **Escalabilidad**: Facilita la gestión y despliegue de múltiples instancias de aplicaciones.
+
 · **Rápido despliegue**: Permite automatizar e implementar aplicaciones en segundos.
+
 · **Aislamiento**: Evita conflictos entre dependencias de diferentes aplicaciones.
 
 
-##Desventajas❌
+
+## Desventajas❌
 
 · **Rendimiento**: Puede ser menos eficiente que una ejecución nativa.
+
 · **Persistencia de datos**: Manejo de almacenamiento más complejo.
+
 · **Seguridad**: Comparte el kernel del host, lo que puede generar vulnerabilidades.
+
 
 
   
