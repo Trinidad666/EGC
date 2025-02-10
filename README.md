@@ -149,7 +149,7 @@ De momento este es nuestro esquema de la bbdd de EGC:
 <summary>🐋 Docker</summary>
 
   
-# Introduccion a la instalación de la web
+# Introducción a la instalación de la web
 
 Guardamos el contenido de la página web en una carpeta llamada web y la comprimimos en un archivo zip. Luego, la exportaremos a la máquina Alpine desde cmd utilizando el siguiente comando:
 
