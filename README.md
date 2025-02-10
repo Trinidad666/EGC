@@ -141,6 +141,8 @@ De momento este es nuestro esquema de la bbdd de EGC:
 
 <details>
 <summary>🐋 Docker</summary>
+
+  
 # Introduccion a la instalación de la web
 
 Guardamos el contenido de la página web en una carpeta llamada web y la comprimimos en un archivo zip. Luego, la exportaremos a la máquina Alpine desde cmd utilizando el siguiente comando:
@@ -265,6 +267,7 @@ Ahora, debemos cargar la base de datos en **phpMyAdmin** para que las tablas se 
 
 
 Creamos la base de datos con el nombre **rbooks**.
+
 ![image](https://github.com/user-attachments/assets/04b92b6c-414e-4112-bf8d-d7967d416278)
 
 
