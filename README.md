@@ -329,12 +329,14 @@ A continuación, accedemos al archivo **conexion_be.php**, que se encuentra en l
 ## context: .
 
 •	Define el directorio base donde Docker buscará los archivos necesarios para construir la imagen.
+
 •	En este caso, el **.** (punto) indica que el contexto de construcción es el directorio donde se encuentra el archivo docker-compose.yml.
 
 
 ## dockerfile: Dockerfile
 
 •	Indica al Docker qué archivo usar para construir la imagen. En este caso, se usará el Dockerfile que está en el contexto definido arriba (.).
+
 •	Permite personalizar la imagen en lugar de usar una predefinida.
 
 
@@ -348,6 +350,58 @@ Define la variable de entorno PHP_INI_DIR, que indica la ubicación del archivo 
 
 ## Dockerfile Vs docker-compose
 ![image](https://github.com/user-attachments/assets/7dbc6d20-f0fb-4d98-9a43-3b748478d106)
+
+
+
+## Dockerfile
+
+### 1️⃣ FROM php:8-fpm-alpine
+
+```
+FROM php:8-fpm-alpine
+```
+
+Define la imagen base como php:8-fpm-alpine.
+
+
+
+### 2️⃣ Instalación de dependencias y extensiones
+
+```
+RUN apk add --no-cache libpng-dev libjpeg-turbo-dev libwebp-dev \
+    && docker-php-ext-install mysqli pdo pdo_mysql
+```
+
+Usa apk add --no-cache para instalar dependencias en Alpine Linux:
+
+•	libpng-dev, libjpeg-turbo-dev, libwebp-dev: Bibliotecas necesarias para manipulación de imágenes en PHP.
+
+
+Luego, instala extensiones de PHP con docker-php-ext-install:
+
+•	mysqli: Extensión para conectarse a bases de datos MySQL.
+
+•	pdo y pdo_mysql: Permiten usar PDO (PHP Data Objects) con MySQL.
+
+
+
+
+### 3️⃣ (Opcional) Ajustar php.ini para habilitar mysqli
+
+```
+# RUN echo "extension=mysqli.so" >> /usr/local/etc/php/conf.d/docker-php-ext-mysqli.ini
+```
+
+Agrega manualmente la línea **extension=mysqli.so** al archivo de configuración de PHP. Se usará cuando PHP no detecta automáticamente la extensión mysqli.
+
+
+🔹 ¿Cuándo usarlo?
+
+Si mysqli no se activa correctamente después de instalarlo con docker-php-ext-install para asegurar de que PHP cargue la extensión en cada inicio.
+
+
+
+
 
 
 
