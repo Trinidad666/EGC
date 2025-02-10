@@ -390,7 +390,7 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 
 
 <details>
-<summary>🐧 Sistems Operativos</summary>
+<summary>🐧 Sistemas Operativos</summary>
 
 Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuales.
 
@@ -444,7 +444,7 @@ MV Docker:
 # Tema sobre la WEB
 
 <details>
-  <summary>💬 Chat</summary>
+  <summary>🇹🇩 Chat</summary>
   
   # Chat Interface Concept
   
