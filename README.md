@@ -322,7 +322,7 @@ A continuación, accedemos al archivo **conexion_be.php**, que se encuentra en l
 ![image](https://github.com/user-attachments/assets/89863329-095d-4ba2-a6ff-69adf2947224)
 
 
-
+<br>
 
 # Las mejoras que hemos añadido
 
@@ -343,6 +343,8 @@ A continuación, accedemos al archivo **conexion_be.php**, que se encuentra en l
 
 Define la variable de entorno PHP_INI_DIR, que indica la ubicación del archivo de configuración de PHP (php.ini) dentro del contenedor.
 
+<br>
+<br>
 
 ## Dockerfile Vs docker-compose
 ![image](https://github.com/user-attachments/assets/7dbc6d20-f0fb-4d98-9a43-3b748478d106)
