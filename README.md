@@ -148,6 +148,31 @@ De momento este es nuestro esquema de la bbdd de EGC:
 <details>
 <summary>🐋 Docker</summary>
 
+# ¿Que es el Docker?
+
+Docker es una plataforma que permite crear, distribuir y ejecutar aplicaciones en contenedores. Un contenedor es un entorno ligero y portátil que incluye todo lo necesario para ejecutar un software, como código, bibliotecas y dependencias, asegurando que funcione igual en cualquier sistema. Docker facilita la gestión y escalabilidad de aplicaciones, optimizando el uso de recursos y mejorando la eficiencia en desarrollo y despliegue. Se basa en imágenes preconfiguradas y permite automatizar procesos, haciéndolo ideal para entornos de desarrollo, pruebas y producción en la nube o servidores locales.
+
+![image](https://github.com/user-attachments/assets/c191ed6f-5e29-40d3-87d6-49e7c332e7da)
+
+
+
+# Que ventajas y descentajas da el Docker
+
+##Ventajas✅
+
+· **Portabilidad**: Los contenedores funcionan igual en cualquier sistema con Docker instalado.
+· **Eficiencia**: Consume menos recursos que las máquinas virtuales porque comparte el sistema operativo.
+· **Escalabilidad**: Facilita la gestión y despliegue de múltiples instancias de aplicaciones.
+· **Rápido despliegue**: Permite automatizar e implementar aplicaciones en segundos.
+· **Aislamiento**: Evita conflictos entre dependencias de diferentes aplicaciones.
+
+##Desventajas❌
+
+· **Rendimiento**: Puede ser menos eficiente que una ejecución nativa.
+· **Persistencia de datos**: Manejo de almacenamiento más complejo.
+· **Seguridad**: Comparte el kernel del host, lo que puede generar vulnerabilidades.
+
+
   
 # Introducción a la instalación de la web
 
