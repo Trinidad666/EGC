@@ -323,6 +323,32 @@ A continuación, accedemos al archivo **conexion_be.php**, que se encuentra en l
 
 
 
+
+# Las mejoras que hemos añadido
+
+## context: .
+
+•	Define el directorio base donde Docker buscará los archivos necesarios para construir la imagen.
+•	En este caso, el **.** (punto) indica que el contexto de construcción es el directorio donde se encuentra el archivo docker-compose.yml.
+
+
+## dockerfile: Dockerfile
+
+•	Indica al Docker qué archivo usar para construir la imagen. En este caso, se usará el Dockerfile que está en el contexto definido arriba (.).
+•	Permite personalizar la imagen en lugar de usar una predefinida.
+
+
+
+## PHP_INI_DIR: /usr/local/etc/php
+
+Define la variable de entorno PHP_INI_DIR, que indica la ubicación del archivo de configuración de PHP (php.ini) dentro del contenedor.
+
+
+## Dockerfile Vs docker-compose
+![image](https://github.com/user-attachments/assets/7dbc6d20-f0fb-4d98-9a43-3b748478d106)
+
+
+
 </details>
 <br>
 
