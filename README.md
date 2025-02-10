@@ -443,7 +443,7 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
   Servidor web y proxy inverso, muy eficiente en gestionar tráfico y carga.
 
   
-- MySQL:
+- No MySQL:
 
   Base de datos relacional para almacenar y gestionar datos.
 
