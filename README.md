@@ -161,7 +161,7 @@ Docker es una plataforma que permite crear, distribuir y ejecutar aplicaciones e
 
 ## Ventajas✅
 
-· **Portabilidad**: Los contenedores funcionan igual en cualquier sistema con Docker instalado.
+· **Portabilidad de contenedores**: Los contenedores funcionan igual en cualquier sistema con Docker instalado.
 
 · **Eficiencia**: Consume menos recursos que las máquinas virtuales porque comparte el sistema operativo.
 
