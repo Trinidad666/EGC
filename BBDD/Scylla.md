@@ -2,6 +2,7 @@
 
 ScyllaDB es una base de datos NoSQL increíblemente rápida y escalable para aplicaciones que hacen un uso intensivo de los datos y requieren un alto rendimiento y una baja latencia . Empresas como Comcast, Starbucks, Discord y Zillow confían en ella y es capaz de realizar millones de operaciones por segundo y escalar petabytes.
 
+![image](https://github.com/user-attachments/assets/94cbeb93-d71a-43fc-b66a-6c041380dd82)
 
 <br>
 <br>
