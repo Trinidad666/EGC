@@ -321,10 +321,16 @@ A continuación, accedemos al archivo **conexion_be.php**, que se encuentra en l
 
 ![image](https://github.com/user-attachments/assets/89863329-095d-4ba2-a6ff-69adf2947224)
 
-
+<br>
+<br>
 <br>
 
 # Las mejoras que hemos añadido
+
+Estos son los comandos que le hemos puesto en el archivo **docker-compose.yml**.
+
+<br>
+<br>
 
 ## context: .
 
