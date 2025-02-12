@@ -136,7 +136,7 @@ De momento este es nuestro esquema de la bbdd de EGC:
 
 **Diagrama de BBDD**
 
-![image](https://github.com/user-attachments/assets/e4cd3a99-e81d-458b-91ea-cc46e836b93e)
+![image](https://github.com/user-attachments/assets/9c0d2cf5-3e4d-4817-a4f3-1303068c33a2)
 
 </details>
 <br>
