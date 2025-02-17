@@ -563,11 +563,21 @@ La copia de seguridad es un proceso que duplica información para recuperarla en
 
 # ¿Cuál es la importancia de las mismas?
 
+Imagina que tienes un cuaderno donde apuntas cosas muy importantes para tu escuela. Si ese cuaderno se pierde o se rompe, perderías todo lo que has escrito, lo que sería muy malo. Los mismos problemas pueden pasar con la información de un negocio, así que es muy importante hacer copias de todo, como si tuvieras una segunda versión del cuaderno guardada en otro lugar, para que si algo pasa, no pierdas lo importante.
+
 
 
 # ¿Qué tipos de copias de seguridad se deben hacer? Explicar en qué consiste y la periodicidad de las mismas.
 
+Para determinar qué información debe incluirse en las copias de seguridad, se debe hacer un inventario y clasificar los activos según su importancia para el negocio. Los criterios de clasificación incluyen:
 
+· Confidencialidad: (confidencial, interna, pública).
+
+· Utilidad: (clientes, ventas, personal).
+
+· Impacto: (daño de imagen, consecuencias legales, económicas, paralización de la actividad).
+
+Esto ayuda a establecer medidas de seguridad y decidir qué información proteger, como datos de clientes, ventas o personal, y su frecuencia de respaldo.
 
 # ¿Qué estrategias se deben seguir?
 
