@@ -553,9 +553,56 @@ MV Docker:
 <br>
 
 
+<details>
+<summary>📄🛡️ Backup (Copias de Segiridad)</summary>
+  
+# ¿Qué es una copia de seguridad?
+
+La copia de seguridad es un proceso que duplica información para recuperarla en caso de fallo. En el ámbito empresarial, es esencial para garantizar la continuidad del negocio y mantener la confianza de los clientes. Parte de los planes de seguridad y contingencia, asegurando la protección, periodicidad y recuperación de los datos.
+
+
+# ¿Cuál es la importancia de las mismas?
+
+
+
+# ¿Qué tipos de copias de seguridad se deben hacer? Explicar en qué consiste y la periodicidad de las mismas.
+
+
+
+# ¿Qué estrategias se deben seguir?
+
+
+
+# ¿Dónde se van a ubicar las copias?
+
+
+
+# ¿Qué información se va a copiar? Por qué?
+
+
+
+
+  
+</details>
+<br>
+
+
 
 
 <br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
