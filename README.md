@@ -573,11 +573,11 @@ Imagina que tienes un cuaderno donde apuntas cosas muy importantes para tu escue
 
 Para determinar qué información debe incluirse en las copias de seguridad, se debe hacer un inventario y clasificar los activos según su importancia para el negocio. Los criterios de clasificación incluyen:
 
-· Confidencialidad: (confidencial, interna, pública).
+* Confidencialidad: (confidencial, interna, pública).
 
-· Utilidad: (clientes, ventas, personal).
+* Utilidad: (clientes, ventas, personal).
 
-· Impacto: (daño de imagen, consecuencias legales, económicas, paralización de la actividad).
+* Impacto: (daño de imagen, consecuencias legales, económicas, paralización de la actividad).
 
 Esto ayuda a establecer medidas de seguridad y decidir qué información proteger, como datos de clientes, ventas o personal, y su frecuencia de respaldo.
 
@@ -587,20 +587,20 @@ Esto ayuda a establecer medidas de seguridad y decidir qué información protege
 
 La estrategia 3-2-1 es una buena práctica para las copias de seguridad, ya que diversifica las copias para asegurar que al menos una sea recuperable en caso de fallo. Sus claves son:
 
-· 3: Mantener tres copias del archivo importante (el original y dos copias).
+* 3: Mantener tres copias del archivo importante (el original y dos copias).
 
-· 2: Almacenar las copias en dos soportes diferentes (por ejemplo, un disco duro externo y la nube) para protegerlas de diferentes riesgos.
+* 2: Almacenar las copias en dos soportes diferentes (por ejemplo, un disco duro externo y la nube) para protegerlas de diferentes riesgos.
 
-· 1: Guardar una copia fuera de la empresa (como en la nube) para protegerla frente a incidentes en la ubicación física del negocio.
+* 1: Guardar una copia fuera de la empresa (como en la nube) para protegerla frente a incidentes en la ubicación física del negocio.
 
 
 Por ejemplo, si tenemos el archivo "listadoproveedores.ots", siguiendo la estrategia 3-2-1:
 
-· Archivo original: Se guarda en nuestro equipo.
+* Archivo original: Se guarda en nuestro equipo.
 
-· Primera copia: Se guarda en un disco duro externo.
+* Primera copia: Se guarda en un disco duro externo.
 
-· Segunda copia: Se guarda en un servicio de almacenamiento en la nube (que también cumple la regla de "fuera de la empresa").
+* Segunda copia: Se guarda en un servicio de almacenamiento en la nube (que también cumple la regla de "fuera de la empresa").
 
 
 Esta estrategia garantiza que, incluso si ocurre un problema en el equipo o en el disco duro, siempre tendremos acceso a al menos una copia segura de los datos.
@@ -612,13 +612,13 @@ Esta estrategia garantiza que, incluso si ocurre un problema en el equipo o en e
 El soporte elegido para las copias de seguridad depende de la cantidad de datos, el sistema de copia y la inversión. Entre las opciones:
 
 
-· Cintas magnéticas (DAT/DDS y LTO): Económicas, ideales para grandes volúmenes de datos y con vida útil superior a 30 años.
+* Cintas magnéticas (DAT/DDS y LTO): Económicas, ideales para grandes volúmenes de datos y con vida útil superior a 30 años.
 
-· Discos duros (HDD y SSD): Ofrecen mayor facilidad y rendimiento, especialmente con configuraciones RAID, que mejoran la integridad y tolerancia a fallos.
+* Discos duros (HDD y SSD): Ofrecen mayor facilidad y rendimiento, especialmente con configuraciones RAID, que mejoran la integridad y tolerancia a fallos.
 
-· NAS: Dispositivos centralizados que permiten gestionar copias de seguridad de varios equipos, fáciles de usar y con aplicaciones que facilitan la recuperación de datos.
+* NAS: Dispositivos centralizados que permiten gestionar copias de seguridad de varios equipos, fáciles de usar y con aplicaciones que facilitan la recuperación de datos.
 
-· Nube: Almacenamiento externo, fuera de la empresa, que garantiza disponibilidad y protección de los datos ante incidentes internos.
+* Nube: Almacenamiento externo, fuera de la empresa, que garantiza disponibilidad y protección de los datos ante incidentes internos.
 
 
 La elección debe alinearse con la política de seguridad y la capacidad de la empresa.
