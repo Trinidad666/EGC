@@ -698,6 +698,15 @@ echo "[$(date)] - Respaldo finalizado."
 
 
 ## Recuperación de las copias de seguridad
+Hemos creado este escript para recuperar copias de seguridad cifradas desde un servidor remoto y restaurarlas en una carpeta local. A continuación, se describe brevemente cómo funciona.
+
+1. Crear carpeta de logs si no existe.
+2. Redirigir salida estándar y errores al archivo de log.
+3. Verificar conexión SSH con el servidor.
+4. Verificar si la carpeta de destino existe en el servidor remoto.
+5. Crear carpeta de recuperación si no existe.
+6. Descargar copias desde el servidor remoto.
+7. Descrifrar los archivos descargados.
 
 ```
 #!/bin/bash
