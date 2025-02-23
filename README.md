@@ -624,7 +624,153 @@ Además, hemos decidido implementar un sistema de almacenamiento en la nube para
 
 
 
-  
+# Códigos del Backup
+
+## Copias de seguridad
+```
+#!/bin/bash
+
+# Configuración
+USUARIO_DESTINO="hugo"
+IP_DESTINO="192.168.6.10"
+CARPETA_ORIGEN="/home/hugo/buckup/origen"
+CARPETA_DESTINO="/home/hugo/destino"
+CARPETA_TEMP="/tmp/backup_encrypt"
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"  # Obtiene la ruta del script
+LOG_DIR="$SCRIPT_DIR/logs"
+TIMESTAMP="$(date '+%H.%M_%d-%m-%Y')"  # Formato de fecha y hora
+LOG_FILE="$LOG_DIR/backup_$TIMESTAMP.log"
+CLAVE_CIFRADO="alumno"
+
+# Crear carpeta de logs si no existe
+mkdir -p "$LOG_DIR"
+
+# Redirigir salida estándar y errores al archivo de log
+exec >> "$LOG_FILE" 2>&1
+
+echo "[$(date)] - Iniciando respaldo con cifrado..."
+
+# Verificar conexión SSH con el destino
+if ! nc -z "$IP_DESTINO" 22; then
+    echo "[$(date)] - Error: No se puede conectar a $IP_DESTINO en el puerto 22."
+    exit 1
+fi
+
+# Verificar si la carpeta de origen existe
+if [ ! -d "$CARPETA_ORIGEN" ]; then
+    echo "[$(date)] - Error: La carpeta de origen no existe: $CARPETA_ORIGEN"
+    exit 1
+fi
+
+# Crear carpeta temporal para los archivos cifrados
+mkdir -p "$CARPETA_TEMP"
+
+# Cifrar archivos manteniendo la estructura original
+echo "[$(date)] - Cifrando archivos..."
+tar -czf - -C "$(dirname "$CARPETA_ORIGEN")" "$(basename "$CARPETA_ORIGEN")" | \
+gpg --symmetric --cipher-algo AES256 --passphrase "$CLAVE_CIFRADO" --batch -o "$CARPETA_TEMP/backup.tar.gz.gpg"
+
+# Crear carpeta destino en el servidor remoto si no existe
+ssh "$USUARIO_DESTINO@$IP_DESTINO" "mkdir -p $CARPETA_DESTINO"
+
+# Enviar archivos cifrados al servidor remoto
+echo "[$(date)] - Enviando archivos cifrados..."
+if rsync -avz -e "ssh -p 22" "$CARPETA_TEMP/backup.tar.gz.gpg" "$USUARIO_DESTINO@$IP_DESTINO:$CARPETA_DESTINO/"; then
+    echo "[$(date)] - Respaldo cifrado enviado con éxito."
+else
+    echo "[$(date)] - Error: Fallo en la sincronización con rsync."
+    exit 1
+fi
+
+# Limpiar archivos temporales
+rm -rf "$CARPETA_TEMP"
+
+# Instrucciones para descifrar en el destino
+echo "[$(date)] - Para descifrar en el servidor destino, ejecutar:"
+echo "  gpg --decrypt --passphrase \"$CLAVE_CIFRADO\" --batch $CARPETA_DESTINO/backup.tar.gz.gpg | tar -xz -C $CARPETA_DESTINO"
+
+echo "[$(date)] - Respaldo finalizado."
+```
+
+
+## Recuperación de las copias de seguridad
+
+```
+#!/bin/bash
+
+# Configuración
+USUARIO_DESTINO="hugo"
+IP_DESTINO="192.168.6.10"
+CARPETA_DESTINO="/home/hugo/destino"
+CARPETA_RECUPERACION="/home/hugo/buckup/recuperacion_copias"
+CLAVE_CIFRADO="alumno"  # La clave para descifrar
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"  # Ubicación del script
+LOG_DIR="$SCRIPT_DIR/log_recuperacion"  # Nueva carpeta de logs
+TIMESTAMP="$(date '+%H.%M_%d-%m-%Y')"
+LOG_FILE="$LOG_DIR/recuperacion_$TIMESTAMP.log"
+
+# Crear carpeta de logs si no existe
+mkdir -p "$LOG_DIR"
+
+# Redirigir salida estándar y errores al archivo de log
+exec >> "$LOG_FILE" 2>&1
+
+echo "[$(date)] - Iniciando recuperación de backups..."
+echo "[$(date)] - El script se está ejecutando desde: $SCRIPT_DIR"
+
+# Verificar conexión SSH con el servidor
+echo "[$(date)] - Comprobando conexión SSH..."
+if ! ssh -q -o ConnectTimeout=5 "$USUARIO_DESTINO@$IP_DESTINO" exit; then
+    echo "[$(date)] - Error: No se puede conectar a $IP_DESTINO mediante SSH."
+    exit 1
+fi
+
+# Verificar si la carpeta de destino existe en el servidor remoto
+echo "[$(date)] - Verificando existencia de $CARPETA_DESTINO en el servidor..."
+if ! ssh "$USUARIO_DESTINO@$IP_DESTINO" "[ -d '$CARPETA_DESTINO' ]"; then
+    echo "[$(date)] - Error: La carpeta destino no existe en el servidor remoto."
+    exit 1
+fi
+
+# Crear carpeta de recuperación si no existe
+echo "[$(date)] - Creando carpeta de recuperación en $CARPETA_RECUPERACION..."
+if ! mkdir -p "$CARPETA_RECUPERACION"; then
+    echo "[$(date)] - Error: No se pudo crear $CARPETA_RECUPERACION. Verifica permisos."
+    exit 1
+fi
+
+# Descargar copias desde el servidor remoto
+echo "[$(date)] - Descargando backups desde $CARPETA_DESTINO..."
+if rsync -avz -e "ssh -p 22" "$USUARIO_DESTINO@$IP_DESTINO:$CARPETA_DESTINO/" "$CARPETA_RECUPERACION/"; then
+    echo "[$(date)] - Backups recuperados con éxito en $CARPETA_RECUPERACION."
+else
+    echo "[$(date)] - Error: Fallo en la recuperación con rsync."
+    exit 1
+fi
+
+# Descrifrar los archivos descargados
+echo "[$(date)] - Desencriptando archivos..."
+for archivo in "$CARPETA_RECUPERACION"/*.tar.gz.gpg; do
+    if [ -f "$archivo" ]; then
+        echo "[$(date)] - Desencriptando $archivo..."
+        gpg --quiet --batch --yes --passphrase "$CLAVE_CIFRADO" --decrypt "$archivo" | tar -xz -C "$CARPETA_RECUPERACION"
+        if [ $? -eq 0 ]; then
+            echo "[$(date)] - Archivo $archivo descifrado con éxito."
+            rm -f "$archivo"  # Eliminar el archivo cifrado después del descifrado
+        else
+            echo "[$(date)] - Error al descifrar el archivo $archivo."
+            exit 1
+        fi
+    else
+        echo "[$(date)] - No se encontraron archivos cifrados para descifrar en $CARPETA_RECUPERACION."
+    fi
+done
+
+echo "[$(date)] - Proceso de recuperación finalizado correctamente."
+
+```
+
+
 </details>
 <br>
 
