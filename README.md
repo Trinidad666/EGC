@@ -830,7 +830,8 @@ Prueba iniciar sesión en el servidor sin que te pida la contraseña:
 ssh hugo@192.168.6.10
 
 ```
-
+<br>
+<br>
 
 
 ## Recibir las copias a la carpeta destino
@@ -838,7 +839,7 @@ ssh hugo@192.168.6.10
 El comando sudo chown -R hugo:hugo /home/hugo/buckup cambia el propietario y el grupo de todos los archivos y subdirectorios dentro de /home/hugo/buckup al usuario hugo
 
 ```
-sudo chown -R hugo: hugo /home/hugo/buckup
+sudo chown -R hugo:hugo /home/hugo/buckup
 
 ```
 
@@ -852,6 +853,52 @@ sudo chown -R hugo: hugo /home/hugo/buckup
 
 * /home/hugo/buckup: Especifica la carpeta a la que se aplicará el cambio.
 
+<br>
+
+
+Establece permisos de lectura, escritura y ejecución para el propietario, y solo lectura y ejecución para el grupo y otros usuarios en los archivos dentro de /home/hugo/destino.
+
+```
+sudo chmod -R 755 /home/hugo/destino
+
+```
+
+* sudo: Ejecuta el comando con privilegios de superusuario.
+
+* chmod: Modifica los permisos de archivos o directorios.
+
+* -R: Aplica el cambio de permisos recursivamente a todos los archivos y subdirectorios dentro del directorio.
+
+* 755: Establece los permisos de lectura, escritura y ejecución para el propietario (7 = lectura, escritura y ejecución), y solo lectura y ejecución para el grupo y los otros usuarios (5 = lectura y ejecución).
+
+* /home/hugo/destino: Especifica la ruta del directorio al cual se le aplican los permisos.
+
+
+<br>
+<br>
+
+
+## Recibir las copias a la carpeta de recuperación
+
+El comando sudo chown -R hugo:hugo /home/hugo/buckup cambia el propietario y el grupo de todos los archivos y subdirectorios dentro de /home/hugo/buckup al usuario hugo
+
+```
+sudo chown -R hugo:hugo /home/hugo/buckup
+
+```
+
+* sudo: Ejecuta el comando con privilegios de superusuario.
+
+* chown: Cambia el propietario de un archivo o directorio.
+
+* -R: Aplica el cambio de propietario de forma recursiva (a todos los archivos y subdirectorios dentro de /home/hugo/buckup).
+
+* hugo:: Establece el usuario propietario como hugo y el grupo como hugo.
+
+* /home/hugo/buckup: Especifica la carpeta a la que se aplicará el cambio.
+
+<br>
+<br>
 
 
 El comando sudo chmod -R u+w /home/hugo/buckup otorga permisos de escritura al usuario propietario en todos los archivos y subdirectorios dentro de /home/hugo/buckup, recursivamente.
