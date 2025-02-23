@@ -618,25 +618,18 @@ También crearemos una máquina virtual en Proxmox que funcionará como servidor
 # Códigos del Backup
 
 ## Copias de seguridad
-Creación de carpetas de log: Si no existe, crea automáticamente la carpeta de logs para almacenar los registros de la ejecución del script.
+Hemos creado este script en Bash para automatizar el proceso de realizar una copia de seguridad cifrada de una carpeta en un sistema local y transferirla de forma segura a un servidor remoto. A continuación, os mostraremos que hace cada parte del codigo:
 
-Redirección de salida y errores: Redirige tanto la salida estándar como los errores generados durante la ejecución del script a un archivo de log, para llevar un registro detallado de cada acción.
-
-Verificación de la conexión SSH: Verifica si es posible establecer una conexión SSH con el servidor de destino en el puerto 22, asegurando que el servidor esté accesible antes de continuar.
-
-Comprobación de la existencia de la carpeta de origen: Verifica que la carpeta de origen (de donde se tomará la copia de seguridad) exista antes de proceder. Si no existe, el script se detiene.
-
-Creación de carpeta temporal para archivos cifrados: Si todo está en orden, crea una carpeta temporal en el sistema local para almacenar los archivos cifrados antes de enviarlos al servidor remoto.
-
-Cifrado de archivos: Utiliza el comando tar para empaquetar y comprimir los archivos de la carpeta de origen manteniendo la estructura de directorios original, y luego los cifra con gpg usando un algoritmo de cifrado fuerte (AES256), con una clave predefinida.
-
-Creación de carpeta destino en el servidor remoto: Si la carpeta de destino en el servidor remoto no existe, el script la crea para poder almacenar la copia de seguridad cifrada.
-
-Envío de archivos cifrados al servidor remoto: Utiliza rsync para transferir los archivos cifrados al servidor remoto de manera eficiente, aprovechando el protocolo SSH. Si la transferencia es exitosa, se registra en el log.
-
-Limpieza de archivos temporales: Una vez enviados los archivos, el script elimina la carpeta temporal local para liberar espacio y mantener el sistema limpio.
-
-Instrucciones para descifrar en el destino: Al finalizar, el script imprime las instrucciones necesarias para descifrar y restaurar la copia de seguridad en el servidor de destino, proporcionando la clave de cifrado y el comando adecuado.
+1. Creación de carpetas de log si no existe.
+2. Redirigir salida estándar y errores al archivo de log.
+3. Verificar conexión SSH con el destino.
+4. Verificar si la carpeta de origen existe.
+5. Crear carpeta temporal para los archivos cifrados.
+6. Cifrar archivos manteniendo la estructura original.
+7. Crear carpeta destino en el servidor remoto si no existe.
+8. Enviar archivos cifrados al servidor remoto.
+9. Limpiar archivos temporales.
+10. Instrucciones para descifrar en el destino.
 
 ```
 #!/bin/bash
