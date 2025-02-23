@@ -782,6 +782,94 @@ done
 echo "[$(date)] - Proceso de recuperación finalizado correctamente."
 
 ```
+<br>
+
+
+## Autenticación SSH sin Contraseña para un Script
+
+Para evitar que el script solicite una contraseña al ejecutar los comandos SSH y rsync, debes configurar la autenticación sin contraseña mediante claves SSH.
+
+
+### Generar una clave SSH en el cliente
+
+
+
+```
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
+
+```
+
+Esto generará un par de claves:
+
+* ~/.ssh/id_rsa (clave privada)
+* ~/.ssh/id_rsa.pub (clave pública)
+
+
+
+### Copiar la clave pública al servidor destino
+
+Usa el siguiente comando para copiar automáticamente la clave pública al servidor:
+
+```
+ssh-copy-id hugo@192.168.6.10
+
+```
+
+Si no tienes ssh-copy-id, puedes hacerlo manualmente con:
+
+```
+cat ~/.ssh/id_rsa.pub | ssh hugo@192.168.6.10 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+
+```
+
+### Verificar la autenticación sin contraseña
+
+Prueba iniciar sesión en el servidor sin que te pida la contraseña:
+
+```
+ssh hugo@192.168.6.10
+
+```
+
+
+
+## Recibir las copias a la carpeta destino
+
+El comando sudo chown -R hugo:hugo /home/hugo/buckup cambia el propietario y el grupo de todos los archivos y subdirectorios dentro de /home/hugo/buckup al usuario hugo
+
+```
+sudo chown -R hugo: hugo /home/hugo/buckup
+
+```
+
+* sudo: Ejecuta el comando con privilegios de superusuario.
+
+* chown: Cambia el propietario de un archivo o directorio.
+
+* -R: Aplica el cambio de propietario de forma recursiva (a todos los archivos y subdirectorios dentro de /home/hugo/buckup).
+
+* hugo:: Establece el usuario propietario como hugo y el grupo como hugo.
+
+* /home/hugo/buckup: Especifica la carpeta a la que se aplicará el cambio.
+
+
+
+El comando sudo chmod -R u+w /home/hugo/buckup otorga permisos de escritura al usuario propietario en todos los archivos y subdirectorios dentro de /home/hugo/buckup, recursivamente.
+
+```
+sudo chmod -R u+w /home/hugo/buckup
+
+```
+
+* sudo: Ejecuta el comando con privilegios de superusuario.
+
+* chmod: Modifica los permisos de archivos o directorios.
+
+* -R: Aplica los cambios de permisos recursivamente.
+
+* -u+w: Agrega permiso de escritura (+w) al usuario propietario (u).
+
+* /home/hugo/buckup: Carpeta a la que se aplicará el cambio.
 
 
 </details>
