@@ -568,7 +568,7 @@ Por ello, realizar copias de seguridad regularmente es esencial. Es como tener u
 
 
 # ¿Qué copias de seguridad hariamosa?
-Para determinar qué información debe incluirse en las copias de seguridad, se debe hacer un inventario y clasificar los activos según su importancia para el negocio. Los criterios de clasificación incluyen:
+Para definir qué información debe incluirse en las copias de seguridad, primero es necesario realizar un inventario de activos y clasificar los datos según su importancia para el negocio. Esta clasificación nos permitirá priorizar la protección de la información crítica y definir estrategias adecuadas de respaldo:
 
 * Confidencialidad: (confidencial, interna, pública).
 
@@ -579,27 +579,19 @@ Para determinar qué información debe incluirse en las copias de seguridad, se 
 Esto ayuda a establecer medidas de seguridad y decidir qué información proteger, como datos de clientes, ventas o personal, y su frecuencia de respaldo.
 
 
-# ¿Qué estrategias seguiriamos?
+# ¿Qué estrategias seguiríamos?
+Para garantizar la seguridad y disponibilidad de nuestros datos, aplicaremos la estrategia 3-2-1 de copias de seguridad, una de las mejores prácticas en la gestión de respaldos. Su objetivo es diversificar el almacenamiento de las copias para minimizar el riesgo de pérdida de información y asegurar la posibilidad de recuperación en caso de fallo. Sus principios clave son:
 
-La estrategia 3-2-1 es una buena práctica para las copias de seguridad, ya que diversifica las copias para asegurar que al menos una sea recuperable en caso de fallo. Sus claves son:
+* 3 copias: Mantener tres versiones de cada archivo importante: el original y al menos dos copias de respaldo.
+* 2 soportes diferentes: Almacenar las copias en al menos dos tipos de medios distintos (por ejemplo, un disco duro externo y almacenamiento en la nube) para mitigar riesgos como fallos mecánicos o corrupción de datos.
+* 1 copia fuera de la empresa: Guardar al menos una copia en una ubicación externa (como un servicio de almacenamiento en la nube) para proteger la información ante desastres físicos, robos o ciberataques en la infraestructura local.
 
-* 3: Mantener tres copias del archivo importante (el original y dos copias).
+Ejemplo práctico
+Si trabajamos con un archivo crítico llamado "listadoproveedores.ots", podríamos aplicar la estrategia 3-2-1 de la siguiente manera:
 
-* 2: Almacenar las copias en dos soportes diferentes (por ejemplo, un disco duro externo y la nube) para protegerlas de diferentes riesgos.
-
-* 1: Guardar una copia fuera de la empresa (como en la nube) para protegerla frente a incidentes en la ubicación física del negocio.
-
-
-Por ejemplo, si tenemos el archivo "listadoproveedores.ots", siguiendo la estrategia 3-2-1:
-
-* Archivo original: Se guarda en nuestro equipo.
-
-* Primera copia: Se guarda en un disco duro externo.
-
-* Segunda copia: Se guarda en un servicio de almacenamiento en la nube (que también cumple la regla de "fuera de la empresa").
-
-
-Esta estrategia garantiza que, incluso si ocurre un problema en el equipo o en el disco duro, siempre tendremos acceso a al menos una copia segura de los datos.
+* Archivo original: Se almacena en el equipo principal donde se trabaja con él.
+* Primera copia de seguridad: Se guarda en un disco duro externo o servidor NAS local.
+* Segunda copia de seguridad: Se sube a un servicio de almacenamiento en la nube (cumpliendo también con la regla de "ubicación externa").
 
 
 # ¿Dónde se van a ubicar las copias?
@@ -607,6 +599,8 @@ Esta estrategia garantiza que, incluso si ocurre un problema en el equipo o en e
 Por el momento, almacenaremos nuestras copias de seguridad en Google Drive y en discos duros externos como medida preventiva ante cualquier incidente inesperado, garantizando que siempre tengamos acceso a nuestros datos en caso de fallos o imprevistos.
 
 Además, hemos decidido implementar un sistema de almacenamiento en la nube para reforzar aún más la seguridad y disponibilidad de la información. Actualmente, estamos en proceso de evaluación y configuración de este servicio, asegurándonos de elegir la mejor opción en términos de fiabilidad, cifrado y accesibilidad.
+
+También crearemos una máquina virtual en Proxmox que funcionará como servidor central para almacenar toda la información, bases de datos y código fuente de nuestro proyecto. Además, configuraremos copias de seguridad automatizadas y medidas de seguridad como firewalls y cifrado para garantizar la integridad y protección de los datos.
 
 
 # Esto sera la información que copiaremos para asegurar nuestro proyecto:
@@ -624,6 +618,7 @@ Además, hemos decidido implementar un sistema de almacenamiento en la nube para
 # Códigos del Backup
 
 ## Copias de seguridad
+
 ```
 #!/bin/bash
 
