@@ -559,12 +559,9 @@ MV Docker:
 
 **https://www.incibe.es/sites/default/files/contenidos/guias/guia-copias-de-seguridad.pdf**
   
-# ¿Qué es una copia de seguridad?
+# ¿Qué es una copia de seguridad y que importancia tiene?
 
 Una copia de seguridad es un proceso que permite duplicar y almacenar información con el fin de recuperarla en caso de pérdida o fallo del sistema. En el ámbito empresarial, resulta fundamental para garantizar la continuidad del negocio y mantener la confianza de los clientes. Forma parte de los planes de seguridad y contingencia, asegurando la protección, disponibilidad y recuperación de los datos de manera eficiente y periódica.
-
-
-# ¿Cuál es la importancia de las mismas?
 
 Imagina que tienes un cuaderno en el que anotas información crucial para tu escuela. Si lo pierdes o se daña, toda esa información desaparecería, lo que sería un gran problema. Lo mismo ocurre con los datos de un negocio: si no se cuenta con una copia de seguridad, cualquier fallo, error humano o ciberataque podría ocasionar la pérdida definitiva de información valiosa.
 Por ello, realizar copias de seguridad regularmente es esencial. Es como tener una segunda versión de tu cuaderno guardada en un lugar seguro, lista para ser utilizada en caso de emergencia, evitando así pérdidas irreparables y garantizando la estabilidad de la información.
