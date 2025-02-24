@@ -616,8 +616,6 @@ También crearemos una máquina virtual en Proxmox que funcionará como servidor
 
 
 # Códigos del Backup
-Hemos modificado los códigos para que todas las máquinas se almacenen en el mismo lugar.
-
 ## Copias de seguridad
 Hemos creado este script en Bash para automatizar el proceso de realizar una copia de seguridad cifrada de una carpeta en un sistema local y transferirla de forma segura a un servidor remoto. A continuación, os mostraremos que hace cada parte del codigo:
 
