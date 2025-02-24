@@ -850,7 +850,7 @@ sudo chown -R hugo:hugo /home/hugo/buckup
 
 * -R: Aplica el cambio de propietario de forma recursiva (a todos los archivos y subdirectorios dentro de /home/hugo/buckup).
 
-* hugo:: Establece el usuario propietario como hugo y el grupo como hugo.
+* hugo:hugo : Establece el usuario propietario como hugo y el grupo como hugo.
 
 * /home/hugo/buckup: Especifica la carpeta a la que se aplicará el cambio.
 
