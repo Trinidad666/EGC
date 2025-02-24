@@ -617,7 +617,7 @@ También crearemos una máquina virtual en Proxmox que funcionará como servidor
 
 # Códigos del Backup
 ## Copias de seguridad
-Hemos creado este script en Bash para automatizar el proceso de realizar una copia de seguridad cifrada de una carpeta en un sistema local y transferirla de forma segura a un servidor remoto. A continuación, os mostraremos que hace cada parte del codigo:
+Hemos creado este script en Bash para automatizar el proceso de realizar una copia de seguridad cifrada de una carpeta en un sistema local y transferirla de forma segura a un servidor remoto. A continuación, os mostraremos que hace cada parte del código:
 
 1. Creación de carpetas de log si no existe.
 2. Redirigir salida estándar y errores al archivo de log.
@@ -628,7 +628,7 @@ Hemos creado este script en Bash para automatizar el proceso de realizar una cop
 7. Crear carpeta destino en el servidor remoto si no existe.
 8. Enviar archivos cifrados al servidor remoto.
 9. Limpiar archivos temporales.
-10. Instrucciones para descifrar en el destino.
+10. Instrucciones para descifrar el destino.
 
 ```
 #!/bin/bash
@@ -699,7 +699,7 @@ echo "[$(date)] - Respaldo finalizado."
 
 
 ## Recuperación de las copias de seguridad
-Hemos creado este escript para recuperar copias de seguridad cifradas desde un servidor remoto y restaurarlas en una carpeta local. A continuación, se describe brevemente cómo funciona.
+Hemos creado este script para recuperar copias de seguridad cifradas desde un servidor remoto y restaurarlas en una carpeta local. A continuación, se describe brevemente cómo funciona.
 
 1. Crear carpeta de logs si no existe.
 2. Redirigir salida estándar y errores al archivo de log.
