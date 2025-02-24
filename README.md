@@ -695,6 +695,8 @@ echo "  gpg --decrypt --passphrase \"$CLAVE_CIFRADO\" --batch $CARPETA_DESTINO/b
 echo "[$(date)] - Respaldo finalizado."
 ```
 
+<br>
+
 
 ## Recuperación de las copias de seguridad
 Hemos creado este escript para recuperar copias de seguridad cifradas desde un servidor remoto y restaurarlas en una carpeta local. A continuación, se describe brevemente cómo funciona.
