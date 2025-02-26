@@ -925,6 +925,22 @@ sudo chmod -R u+w /home/hugo/buckup
 
 
 
+<details>
+<summary>📧 Servidor de Correos</summary>
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
 
 <br><br><br>
 
