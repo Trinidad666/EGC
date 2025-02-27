@@ -929,7 +929,17 @@ sudo chmod -R u+w /home/hugo/buckup
 <summary>🧱🔥 PFSense</summary>
 
 # ¿Qué es PFSense?
+Es una distribución de FreeBSD adaptado como Firewall y Router. Es de codigo abierto y se puede instalar en dispositivos físicos y virtuales.
+Es sostenido comercialmente por Electric Sheep Fecing LLC, ademas de ser de código abierto.
+PFSense prporciona funciones avanzadas de seguridad y networking, y es conocido por ser una solución de firewall de alto rendimiento. Ahora os mostraremos unas cáracterísticas que hemos encontrado.
 
+* **Firewall avanzado:**
+* **Enrutamiento:**
+* **VPN:**
+* **Proxy y filtrado web:**
+* **Balanceo de carga y redundancia:**
+* **Seguridad:**
+* **Interfaz gráfica:**
 
 
 
