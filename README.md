@@ -926,7 +926,12 @@ sudo chmod -R u+w /home/hugo/buckup
 
 
 <details>
-<summary>📧 Servidor de Correos</summary>
+<summary>🧱🔥 PFSense</summary>
+
+# ¿Qué es PFSense?
+
+
+
 
 
 </details>
