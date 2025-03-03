@@ -132,7 +132,8 @@ De momento este es nuestro esquema de la bbdd de EGC:
 
 **Diagrama de RED**
 
-![image](https://github.com/user-attachments/assets/575cc38e-2fde-4cbe-a35d-f735b1ca5bf2)
+![Esquema-Red-Visual-Paradigm](https://github.com/user-attachments/assets/0e365779-b6c6-4654-9f4b-aa757ba3182c)
+
 
 **Diagrama de BBDD**
 
