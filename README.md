@@ -618,27 +618,30 @@ También crearemos una máquina virtual en Proxmox que funcionará como servidor
 
 # Códigos del Backup
 ## Copias de seguridad
-Hemos creado este script en Bash para automatizar el proceso de realizar una copia de seguridad cifrada de una carpeta en un sistema local y transferirla de forma segura a un servidor remoto. A continuación, os mostraremos que hace cada parte del código:
+Hemos creado este script en Bash para automatizar la copia de seguridad cifrada de archivos desde servidores remotos a un sistema local. Su objetivo es garantizar que los respaldos sean descargados, cifrados y almacenados de forma segura, manteniendo un historial controlado mediante la gestión de copias previas y registros en un archivo de log. A continuación, os mostraremos que hace cada parte del código:
 
-1. Creación de carpetas de log si no existe.
-2. Redirigir salida estándar y errores al archivo de log.
-3. Verificar conexión SSH con el destino.
-4. Verificar si la carpeta de origen existe.
-5. Crear carpeta temporal para los archivos cifrados.
-6. Cifrar archivos manteniendo la estructura original.
-7. Crear carpeta destino en el servidor remoto si no existe.
-8. Enviar archivos cifrados al servidor remoto.
-9. Limpiar archivos temporales.
-10. Instrucciones para descifrar el destino.
+1. Configuración de usuarios de los ordenadores de destino, IPs de los ordenadores, carpeta local de respaldo, rutas en los ordenadores remotos, carpeta de logs, formato de fecha y hora; y archivo de log.
+2. Crear la carpeta de logs si no existe.
+3. Redirigir la salida estándar y los errores al archivo de log.
+4. Escribir en el log el inicio de la ejecución.
+5. Preguntar al usuario a quién desea enviar los archivos.
+6. Verificar si el usuario ingresado es válido.
+7. Obtener el índice del usuario seleccionado.
+8. Verificar si el índice fue encontrado.
+9. Obtener las configuraciones correspondientes para el usuario seleccionado.
+10. Buscar los archivos de respaldo específicos para el usuario seleccionado.
+11. Verificar si se han encontrado archivos de respaldo.
+12. Verificar si el destino está accesible.
+13. Bucle para enviar los archivos de respaldo.
 
 ```
 #!/bin/bash
 
 # Configuración
-USUARIO_DESTINO="hugo"
-IP_DESTINO="192.168.6.10"
-CARPETA_ORIGEN="/home/hugo/buckup/origen"
-CARPETA_DESTINO="/home/hugo/destino"
+USUARIOS_ORIGEN=("hugo" "cliente")  # Lista de usuarios en diferentes ordenadores
+IPS_ORIGEN=("192.168.6.10" "192.168.6.11")  # IPs de los ordenadores remotos
+CARPETAS_ORIGEN=("/home/hugo/origen" "/home/cliente/origen")  # Rutas de las carpetas a copiar
+CARPETA_DESTINO="/home/hugo/buckup-all/destino"  # Se guardará en el equipo local
 CARPETA_TEMP="/tmp/backup_encrypt"
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"  # Obtiene la ruta del script
 LOG_DIR="$SCRIPT_DIR/logs"
@@ -652,46 +655,76 @@ mkdir -p "$LOG_DIR"
 # Redirigir salida estándar y errores al archivo de log
 exec >> "$LOG_FILE" 2>&1
 
-echo "[$(date)] - Iniciando respaldo con cifrado..."
+echo "[$(date)] - Iniciando respaldo remoto con cifrado..."
 
-# Verificar conexión SSH con el destino
-if ! nc -z "$IP_DESTINO" 22; then
-    echo "[$(date)] - Error: No se puede conectar a $IP_DESTINO en el puerto 22."
+# Verificar que las listas de usuarios, IPs y carpetas tengan la misma cantidad de elementos
+if [ ${#USUARIOS_ORIGEN[@]} -ne ${#IPS_ORIGEN[@]} ] || [ ${#USUARIOS_ORIGEN[@]} -ne ${#CARPETAS_ORIGEN[@]} ]; then
+    echo "[$(date)] - Error: Las listas de usuarios, IPs y carpetas de origen deben tener la misma cantidad de elementos."
     exit 1
 fi
 
-# Verificar si la carpeta de origen existe
-if [ ! -d "$CARPETA_ORIGEN" ]; then
-    echo "[$(date)] - Error: La carpeta de origen no existe: $CARPETA_ORIGEN"
-    exit 1
-fi
+# Bucle para procesar cada origen
+for i in "${!USUARIOS_ORIGEN[@]}"; do
+    USUARIO_ORIGEN="${USUARIOS_ORIGEN[$i]}"
+    IP_ORIGEN="${IPS_ORIGEN[$i]}"
+    CARPETA_ORIGEN="${CARPETAS_ORIGEN[$i]}"
 
-# Crear carpeta temporal para los archivos cifrados
-mkdir -p "$CARPETA_TEMP"
+    echo "[$(date)] - Conectando a $USUARIO_ORIGEN@$IP_ORIGEN..."
+    
+    # Verificar conexión SSH con el equipo remoto
+    if ! nc -z "$IP_ORIGEN" 22; then
+        echo "[$(date)] - Error: No se puede conectar a $IP_ORIGEN en el puerto 22."
+        continue  # Continuar con el siguiente origen si no se puede conectar
+    fi
 
-# Cifrar archivos manteniendo la estructura original
-echo "[$(date)] - Cifrando archivos..."
-tar -czf - -C "$(dirname "$CARPETA_ORIGEN")" "$(basename "$CARPETA_ORIGEN")" | \
-gpg --symmetric --cipher-algo AES256 --passphrase "$CLAVE_CIFRADO" --batch -o "$CARPETA_TEMP/backup.tar.gz.gpg"
+    # Crear carpeta temporal para los archivos cifrados
+    mkdir -p "$CARPETA_TEMP"
 
-# Crear carpeta destino en el servidor remoto si no existe
-ssh "$USUARIO_DESTINO@$IP_DESTINO" "mkdir -p $CARPETA_DESTINO"
+    # Copiar archivos desde el equipo remoto
+    echo "[$(date)] - Descargando archivos desde el servidor remoto $IP_ORIGEN..."
+    if rsync -avz -e "ssh -p 22" "$USUARIO_ORIGEN@$IP_ORIGEN:$CARPETA_ORIGEN/" "$CARPETA_TEMP/"; then
+        echo "[$(date)] - Archivos descargados con éxito desde $IP_ORIGEN."
+    else
+        echo "[$(date)] - Error: Fallo en la sincronización con rsync desde $IP_ORIGEN."
+        rm -rf "$CARPETA_TEMP"
+        continue  # Continuar con el siguiente origen si rsync falla
+    fi
 
-# Enviar archivos cifrados al servidor remoto
-echo "[$(date)] - Enviando archivos cifrados..."
-if rsync -avz -e "ssh -p 22" "$CARPETA_TEMP/backup.tar.gz.gpg" "$USUARIO_DESTINO@$IP_DESTINO:$CARPETA_DESTINO/"; then
-    echo "[$(date)] - Respaldo cifrado enviado con éxito."
-else
-    echo "[$(date)] - Error: Fallo en la sincronización con rsync."
-    exit 1
-fi
+    # Crear carpeta específica para el usuario en el destino
+    USUARIO_DESTINO="$CARPETA_DESTINO/$USUARIO_ORIGEN"
+    mkdir -p "$USUARIO_DESTINO"
 
-# Limpiar archivos temporales
-rm -rf "$CARPETA_TEMP"
+    # Gestionar el número máximo de copias (3)
+    echo "[$(date)] - Verificando copias anteriores en $USUARIO_DESTINO..."
+    ARCHIVOS_ANTIGUOS=($(ls -t $USUARIO_DESTINO/backup_${USUARIO_ORIGEN}_*.tar.gz.gpg))
+    NUM_COPIAS=${#ARCHIVOS_ANTIGUOS[@]}
+    
+    if [ $NUM_COPIAS -ge 3 ]; then
+        # Eliminar las copias más antiguas (mantener solo las 2 más recientes)
+        ARCHIVOS_A_ELIMINAR=("${ARCHIVOS_ANTIGUOS[@]:2}")
+        echo "[$(date)] - Eliminando copias antiguas: ${ARCHIVOS_A_ELIMINAR[@]}"
+        rm -f "${ARCHIVOS_A_ELIMINAR[@]}"
+    fi
 
-# Instrucciones para descifrar en el destino
-echo "[$(date)] - Para descifrar en el servidor destino, ejecutar:"
-echo "  gpg --decrypt --passphrase \"$CLAVE_CIFRADO\" --batch $CARPETA_DESTINO/backup.tar.gz.gpg | tar -xz -C $CARPETA_DESTINO"
+    # Cifrar archivos manteniendo la estructura original
+    echo "[$(date)] - Cifrando archivos descargados desde $IP_ORIGEN..."
+    tar -czf - -C "$CARPETA_TEMP" . | \
+    gpg --symmetric --cipher-algo AES256 --passphrase "$CLAVE_CIFRADO" --batch -o "$USUARIO_DESTINO/backup_${USUARIO_ORIGEN}_${TIMESTAMP}.tar.gz.gpg"
+
+    if [ $? -eq 0 ]; then
+        echo "[$(date)] - Respaldo cifrado de $USUARIO_ORIGEN almacenado en: $USUARIO_DESTINO/backup_${USUARIO_ORIGEN}_${TIMESTAMP}.tar.gz.gpg"
+    else
+        echo "[$(date)] - Error en el cifrado del respaldo desde $IP_ORIGEN."
+    fi
+
+    # Limpiar archivos temporales
+    rm -rf "$CARPETA_TEMP"
+
+done
+
+# Instrucciones para descifrar
+echo "[$(date)] - Para descifrar en este equipo, ejecutar:"
+echo "  gpg --decrypt --passphrase \"$CLAVE_CIFRADO\" --batch $CARPETA_DESTINO/<usuario>/backup_<usuario>_<timestamp>.tar.gz.gpg | tar -xz -C $CARPETA_DESTINO/<usuario>"
 
 echo "[$(date)] - Respaldo finalizado."
 ```
@@ -700,88 +733,103 @@ echo "[$(date)] - Respaldo finalizado."
 
 
 ## Recuperación de las copias de seguridad
-Hemos creado este script para recuperar copias de seguridad cifradas desde un servidor remoto y restaurarlas en una carpeta local. A continuación, se describe brevemente cómo funciona.
+Hemos creado este script para transferir copias de seguridad cifradas (.tar.gz.gpg) desde una máquina local a un servidor remoto, asegurando que los respaldos sean enviados de manera segura y organizada. Su propósito es automatizar la transferencia de respaldos mientras se registran los eventos en un archivo de log para garantizar trazabilidad. A continuación, se describe brevemente cómo funciona.
 
-1. Crear carpeta de logs si no existe.
-2. Redirigir salida estándar y errores al archivo de log.
-3. Verificar conexión SSH con el servidor.
-4. Verificar si la carpeta de destino existe en el servidor remoto.
-5. Crear carpeta de recuperación si no existe.
-6. Descargar copias desde el servidor remoto.
-7. Descrifrar los archivos descargados.
+1. Tenemos la configuración de los usuarios en los ordenes de destino, IPs, carpeta local donde esta respaldado, rutas en los ordenadores remotos, carpetas log, formato de la fecha y hora; y el archivo log.
+2. Crear la carpeta de logs si no existe.
+3. Redirigir la salida estándar y los errores al archivo de log.
+4. Escribir en el log el inicio de la ejecución.
+5. Preguntar al usuario a quién desea enviar los archivos.
+6. Verificar si el usuario ingresado es válido.
+7. Obtener el índice del usuario seleccionado.
+8. Verificar si el índice fue encontrado.
+9. Obtener las configuraciones correspondientes para el usuario seleccionado.
+10. Buscar los archivos de respaldo específicos para el usuario seleccionado.
+11. Verificar si se han encontrado archivos de respaldo.
+12. Verificar si el destino está accesible.
+13. Bucle para enviar los archivos de respaldo.
 
 ```
 #!/bin/bash
 
 # Configuración
-USUARIO_DESTINO="hugo"
-IP_DESTINO="192.168.6.10"
-CARPETA_DESTINO="/home/hugo/destino"
-CARPETA_RECUPERACION="/home/hugo/buckup/recuperacion_copias"
-CLAVE_CIFRADO="alumno"  # La clave para descifrar
-SCRIPT_DIR="$(dirname "$(realpath "$0")")"  # Ubicación del script
-LOG_DIR="$SCRIPT_DIR/log_recuperacion"  # Nueva carpeta de logs
-TIMESTAMP="$(date '+%H.%M_%d-%m-%Y')"
-LOG_FILE="$LOG_DIR/recuperacion_$TIMESTAMP.log"
+USUARIOS_DESTINO=("hugo" "cliente")  # Usuarios en los ordenadores de destino
+IPS_DESTINO=("192.168.6.10" "192.168.6.11")  # IPs de los ordenadores de destino
+CARPETA_DESTINO_LOCAL="/home/hugo/buckup-all/destino"  # Carpeta local donde están los respaldos
+CARPETA_DESTINO_REMOTO=("/home/hugo/recuperacion" "/home/cliente/recuperacion")  # Rutas en los ordenadores remotos
+LOG_DIR="/home/hugo/buckup-all/logs-recup"  # Carpeta de logs
+TIMESTAMP="$(date '+%H.%M_%d-%m-%Y')"  # Formato de fecha y hora
+LOG_FILE="$LOG_DIR/transferencia_$TIMESTAMP.log"  # Archivo de log
 
-# Crear carpeta de logs si no existe
+# Crear la carpeta de logs si no existe
 mkdir -p "$LOG_DIR"
 
-# Redirigir salida estándar y errores al archivo de log
+# Redirigir la salida estándar y los errores al archivo de log
 exec >> "$LOG_FILE" 2>&1
 
-echo "[$(date)] - Iniciando recuperación de backups..."
-echo "[$(date)] - El script se está ejecutando desde: $SCRIPT_DIR"
+# Escribir en el log el inicio de la ejecución
+echo "[$(date)] - Iniciando transferencia de respaldos."
 
-# Verificar conexión SSH con el servidor
-echo "[$(date)] - Comprobando conexión SSH..."
-if ! ssh -q -o ConnectTimeout=5 "$USUARIO_DESTINO@$IP_DESTINO" exit; then
-    echo "[$(date)] - Error: No se puede conectar a $IP_DESTINO mediante SSH."
+# Preguntar al usuario a quién desea enviar los archivos
+echo "[$(date)] - ¿A qué ordenador deseas enviar los archivos? (hugo/cliente)"
+read -p "Escribe 'hugo' o 'cliente': " USUARIO_SELECCIONADO
+
+# Verificar si el usuario ingresado es válido
+if [[ ! " ${USUARIOS_DESTINO[@]} " =~ " ${USUARIO_SELECCIONADO} " ]]; then
+    echo "[$(date)] - Error: Usuario '$USUARIO_SELECCIONADO' no válido. Selecciona entre 'hugo' o 'cliente'."
     exit 1
 fi
 
-# Verificar si la carpeta de destino existe en el servidor remoto
-echo "[$(date)] - Verificando existencia de $CARPETA_DESTINO en el servidor..."
-if ! ssh "$USUARIO_DESTINO@$IP_DESTINO" "[ -d '$CARPETA_DESTINO' ]"; then
-    echo "[$(date)] - Error: La carpeta destino no existe en el servidor remoto."
-    exit 1
-fi
-
-# Crear carpeta de recuperación si no existe
-echo "[$(date)] - Creando carpeta de recuperación en $CARPETA_RECUPERACION..."
-if ! mkdir -p "$CARPETA_RECUPERACION"; then
-    echo "[$(date)] - Error: No se pudo crear $CARPETA_RECUPERACION. Verifica permisos."
-    exit 1
-fi
-
-# Descargar copias desde el servidor remoto
-echo "[$(date)] - Descargando backups desde $CARPETA_DESTINO..."
-if rsync -avz -e "ssh -p 22" "$USUARIO_DESTINO@$IP_DESTINO:$CARPETA_DESTINO/" "$CARPETA_RECUPERACION/"; then
-    echo "[$(date)] - Backups recuperados con éxito en $CARPETA_RECUPERACION."
-else
-    echo "[$(date)] - Error: Fallo en la recuperación con rsync."
-    exit 1
-fi
-
-# Descrifrar los archivos descargados
-echo "[$(date)] - Desencriptando archivos..."
-for archivo in "$CARPETA_RECUPERACION"/*.tar.gz.gpg; do
-    if [ -f "$archivo" ]; then
-        echo "[$(date)] - Desencriptando $archivo..."
-        gpg --quiet --batch --yes --passphrase "$CLAVE_CIFRADO" --decrypt "$archivo" | tar -xz -C "$CARPETA_RECUPERACION"
-        if [ $? -eq 0 ]; then
-            echo "[$(date)] - Archivo $archivo descifrado con éxito."
-            rm -f "$archivo"  # Eliminar el archivo cifrado después del descifrado
-        else
-            echo "[$(date)] - Error al descifrar el archivo $archivo."
-            exit 1
-        fi
-    else
-        echo "[$(date)] - No se encontraron archivos cifrados para descifrar en $CARPETA_RECUPERACION."
+# Obtener el índice del usuario seleccionado
+INDEX=-1
+for i in "${!USUARIOS_DESTINO[@]}"; do
+    if [ "${USUARIOS_DESTINO[$i]}" == "$USUARIO_SELECCIONADO" ]; then
+        INDEX=$i
+        break
     fi
 done
 
-echo "[$(date)] - Proceso de recuperación finalizado correctamente."
+# Verificar si el índice fue encontrado
+if [ $INDEX -eq -1 ]; then
+    echo "[$(date)] - Error: No se encontró el índice del usuario seleccionado."
+    exit 1
+fi
+
+# Obtener las configuraciones correspondientes para el usuario seleccionado
+USUARIO_DESTINO="${USUARIOS_DESTINO[$INDEX]}"
+IP_DESTINO="${IPS_DESTINO[$INDEX]}"
+CARPETA_DESTINO_USUARIO="${CARPETA_DESTINO_REMOTO[$INDEX]}"
+
+# Buscar los archivos de respaldo específicos para el usuario seleccionado
+ARCHIVOS_ANTIGUOS=($(ls $CARPETA_DESTINO_LOCAL/$USUARIO_DESTINO/backup_*.tar.gz.gpg 2>/dev/null))
+
+# Verificar si se han encontrado archivos de respaldo
+if [ ${#ARCHIVOS_ANTIGUOS[@]} -eq 0 ]; then
+    echo "[$(date)] - Error: No hay archivos de respaldo para enviar para el usuario $USUARIO_DESTINO en la carpeta $CARPETA_DESTINO_LOCAL/$USUARIO_DESTINO."
+    exit 1
+fi
+
+# Verificar si el destino está accesible
+echo "[$(date)] - Conectando a $USUARIO_DESTINO@$IP_DESTINO..."
+
+if ! nc -z "$IP_DESTINO" 22; then
+    echo "[$(date)] - Error: No se puede conectar a $IP_DESTINO en el puerto 22."
+    exit 1
+fi
+
+# Bucle para enviar los archivos de respaldo
+for archivo in "${ARCHIVOS_ANTIGUOS[@]}"; do
+    echo "[$(date)] - Enviando archivo $archivo a $USUARIO_DESTINO@$IP_DESTINO:$CARPETA_DESTINO_USUARIO..."
+    
+    # Usar rsync para transferir el archivo de respaldo al destino remoto
+    if rsync -avz -e "ssh -p 22" "$archivo" "$USUARIO_DESTINO@$IP_DESTINO:$CARPETA_DESTINO_USUARIO/"; then
+        echo "[$(date)] - Archivo $archivo enviado exitosamente a $USUARIO_DESTINO@$IP_DESTINO."
+    else
+        echo "[$(date)] - Error al enviar el archivo $archivo a $USUARIO_DESTINO@$IP_DESTINO."
+    fi
+done
+
+echo "[$(date)] - Transferencia de respaldos finalizada."
 
 ```
 <br>
