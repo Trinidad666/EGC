@@ -135,7 +135,7 @@ De momento este es nuestro esquema de la bbdd de EGC:
 ![Esquema-Red-Visual-Paradigm](https://github.com/user-attachments/assets/0e365779-b6c6-4654-9f4b-aa757ba3182c)
 
 
-**Diagrama de BBDD**
+## Diagrama de BBDD
 Como podemos ver en nuestro diagrama, la tabla **users** se conecta a la tabla **channels** utilizando las tablas de relación **file** y **messages**. También, la tabla usuarios tiene, en conexión aparte, la tabla **friends** y la de **private_chat**.
 
 ![image](https://github.com/user-attachments/assets/83c84646-cc9a-4c70-adc8-d07163e21911)
