@@ -145,7 +145,9 @@ Como podemos ver en nuestro esquema de red, las máquinas de nuestro Proxmox se 
 ## Diagrama de BBDD
 Como podemos ver en nuestro diagrama, la tabla **users** se conecta a la tabla **channels** utilizando las tablas de relación **file** y **messages**. También, la tabla usuarios tiene, en conexión aparte, la tabla **friends** y la de **private_chat**.
 
-![image](https://github.com/user-attachments/assets/83c84646-cc9a-4c70-adc8-d07163e21911)
+![image](https://github.com/user-attachments/assets/85f18a06-47c9-456a-a205-418cb8c9fab3)
+
+
 
 
 </details>
