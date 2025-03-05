@@ -136,8 +136,10 @@ De momento este es nuestro esquema de la bbdd de EGC:
 
 
 **Diagrama de BBDD**
+Como podemos ver en nuestro diagrama, la tabla **users** se conecta a la tabla **channels** utilizando las tablas de relación **file** y **messages**. También, la tabla usuarios tiene, en conexión aparte, la tabla **friends** y la de **private_chat**.
 
-![image](https://github.com/user-attachments/assets/9c0d2cf5-3e4d-4817-a4f3-1303068c33a2)
+![image](https://github.com/user-attachments/assets/83c84646-cc9a-4c70-adc8-d07163e21911)
+
 
 </details>
 <br>
