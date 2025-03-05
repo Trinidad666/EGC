@@ -131,7 +131,16 @@ De momento este es nuestro esquema de la bbdd de EGC:
 <summary>📊 Nuestros Diagramas</summary>
 
 ## Diagrama de RED
-Como podemos ver en nuestro esquema de red, las máquinas de nuestro **Proxmox** se conectan al switch (vmbr0), que a su vez se conecta al router de IFP, proporcionándonos la conexión a Internet. Dentro de nuestro **Proxmox**, contamos con una máquina virtual (MV) que actúa como router y se conecta a través de **pfSense**, que funciona como el firewall de nuestro proyecto. Además, se conecta a los equipos de **DNS** y **WEB**, que contienen el servidor **NGINX**, nuestra base de datos **MongoDB**, a una MV llamada **cliente** que utilizamos como prueba para verificar si nuestra web funciona correctamente, otra MV que contiene nuestro **Docker**, otra con nuestro **servidor de correo** y, finalmente, a la MV donde se almacenarán nuestros **backups** de **copias de seguridad** y **recuperación**.
+Como podemos ver en nuestro esquema de red, las máquinas de nuestro Proxmox se conectan al switch (vmbr0), que a su vez se conecta al router de IFP, proporcionándonos la conexión a Internet. Ahora, os mostraremos las máquinas virtuales que contiene nuestro **Proxmox**:
+
+1. Contamos con una máquina virtual (MV) que actúa como router y se conecta a través de **pfSense**, que funciona como el firewall de nuestro proyecto.
+2. Tenemos una con el **DNS**.
+3. Tenemos una MV donde almacenaremos la **WEB** y el **NGINX**.
+4. Una con la bas de datos de **MongoDB**.
+5. Contamos con una a la que hemos llamado **cliente** que utilizamos como prueba para verificar si nuestra web funciona correctamente.
+6. Otra que contiene nuestro **Docker**.
+7. Nuestro **servidor de correo**.
+8. Contamos con una MV donde se almacenarán nuestros **backups** de **copias de seguridad** y **recuperación**.
 
 ![Esquema-Red-Visual-Paradigm](https://github.com/user-attachments/assets/0e365779-b6c6-4654-9f4b-aa757ba3182c)
 
