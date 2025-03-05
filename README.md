@@ -1003,6 +1003,14 @@ pfSense proporciona funciones avanzadas de seguridad y networking, y es conocido
 * **Interfaz gráfica:** 
 
 
+Configuramos la interfaz de la dirección IP con la opción número 2, ahora te muestro los pasos que nos apareceran:
+1. Nos preguntara si lo configuramos vía DHCP, hay que decir que no.
+2. Añadimos la nueva dirección IP: 192.168.56.110
+3. Nos preguntaran que mascara de subneteo utilizaremos: 24
+4. Luego le damos al **ENTER**
+5. Nos preguntara si queremos configurar una dirección IPv6 en la interfaz LAN. Le decimos que no y le volovemos a dar **ENTER**
+6. Luego nos pregunta si queremos un DHCP en el servidor LAN, le decimos que si. Añadimos el inicio del rango de IP del cliente(192.168.56.150) y luego el final del rengo(192.168.56.160).
+
 ![image](https://github.com/user-attachments/assets/b3f88415-07a5-4233-b5e2-9fdbbb605306)
 
 ![image](https://github.com/user-attachments/assets/df295417-9c40-47aa-a465-9330569609dd)
