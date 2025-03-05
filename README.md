@@ -115,13 +115,10 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 
 <details>
 <summary>🗺️ Nuestros esquemas</summary>
-De momento este es nuestro esquema de nuestra web EGC:
+Este es nuestro esquema de nuestra web EGC:
 
 ![image](https://github.com/user-attachments/assets/d29a31b2-477b-47cb-b0c9-4ed494235236)
 
-De momento este es nuestro esquema de la bbdd de EGC:
-
-![image](https://github.com/user-attachments/assets/238fc073-fcfb-4ff9-98d6-5fb9bc589641)
 
 </details>
 <br>
