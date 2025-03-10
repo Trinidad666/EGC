@@ -1221,8 +1221,95 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
   
 </details>
 
+<br>
+
+<details>
+  <summary>🌐🔗💬 WebSocket</summary>
+
+# WebSocket
+
+<br>
+
+## Qué es WebSocket
+
+WebSocket es un protocolo de comunicación que proporciona un canal de comunicación bidireccional y persistente entre el cliente (por ejemplo, un navegador web) y un servidor. A diferencia de los métodos tradicionales de comunicación HTTP, donde cada solicitud del cliente al servidor crea una nueva conexión y debe cerrarse después de recibir la respuesta, WebSocket mantiene una conexión abierta, lo que permite que los datos se intercambien de manera continua sin necesidad de abrir nuevas conexiones.
+
+![image](https://github.com/user-attachments/assets/02d4268b-ba83-4c6c-b205-21311c6c01ff)
+
+<br>
 
 
+## Características clave de WebSocket
+
+1️⃣ Conexión persistente:
+
+* ¿Qué significa? Una vez que se establece una conexión WebSocket entre el cliente y el servidor, esta se mantiene abierta durante todo el tiempo que sea necesario. No es como HTTP, que abre y cierra una conexión para cada solicitud. Esto mejora la eficiencia, ya que no es necesario realizar múltiples "handshakes" (intercambios de información para abrir y cerrar conexiones) constantemente.
+
+* Beneficio: Permite que el servidor y el cliente se comuniquen continuamente sin la necesidad de establecer nuevas conexiones cada vez que haya algo que transmitir.
+
+
+2️⃣ Comunicación bidireccional:
+
+* ¿Qué significa? Ambos lados de la conexión (el cliente y el servidor) pueden enviar y recibir datos en cualquier momento. Mientras que en HTTP el cliente generalmente hace solicitudes y espera respuestas del servidor, en WebSocket, tanto el servidor como el cliente pueden enviar mensajes sin que uno tenga que esperar al otro.
+
+* Beneficio: Esto es especialmente útil para aplicaciones que requieren una comunicación constante y sin interrupciones, como en chats o juegos en línea.
+
+
+3️⃣ Baja latencia:
+
+* ¿Qué significa? Dado que WebSocket mantiene una conexión abierta de manera persistente, los mensajes se pueden enviar y recibir sin la sobrecarga de establecer nuevas conexiones o esperar por respuestas del servidor. Esto reduce la latencia (el tiempo de espera entre enviar un mensaje y recibir una respuesta).
+
+* Beneficio: Es ideal para aplicaciones en tiempo real donde los usuarios necesitan respuestas instantáneas, como en aplicaciones de mensajería o en plataformas de trading financiero.
+
+
+4️⃣ Protocolo basado en TCP:
+
+* ¿Qué significa? WebSocket se construye sobre el protocolo de transmisión TCP (Transmission Control Protocol), que es un protocolo confiable. Esto significa que los datos se transmiten de manera ordenada y garantizada. Si algún paquete de datos se pierde, TCP se encarga de reintentarlo hasta que se reciba correctamente.
+
+* Beneficio: Da confiabilidad a las comunicaciones, asegurando que los mensajes lleguen de manera correcta y en el orden adecuado.
+
+<br>
+
+## Casos de uso comunes
+
+1️⃣ Aplicaciones en tiempo real:
+
+* Ejemplos: Chats en vivo, mensajería instantánea, aplicaciones colaborativas.
+
+* ¿Por qué WebSocket? En estas aplicaciones, los usuarios esperan que los mensajes se reciban y se envíen de inmediato. Si se tuviera que abrir y cerrar una nueva conexión para cada mensaje, esto sería muy ineficiente. Con WebSocket, la conexión está siempre activa, permitiendo la transmisión instantánea de mensajes.
+
+
+2️⃣ Juegos en línea:
+
+* Ejemplos: Juegos multijugador, plataformas de juegos en tiempo real.
+
+* ¿Por qué WebSocket? Los juegos multijugador en línea requieren que el servidor y los jugadores se comuniquen constantemente para actualizar el estado del juego en tiempo real. Con WebSocket, los eventos del juego (como el movimiento de los personajes, la puntuación, etc.) pueden ser enviados y recibidos de manera instantánea y continua sin la latencia de las solicitudes HTTP tradicionales.
+
+
+3️⃣ Notificaciones en tiempo real:
+
+* Ejemplos: Notificaciones de nuevos mensajes, alertas en aplicaciones, actualizaciones de noticias.
+
+* ¿Por qué WebSocket? Las notificaciones que se actualizan constantemente, como los avisos en una red social o las alertas de sistemas, requieren un intercambio de datos en tiempo real. WebSocket permite que el servidor "emita" las notificaciones directamente a los clientes conectados, sin que el cliente tenga que hacer una solicitud constante al servidor.
+
+
+4️⃣ Plataformas de trading en línea:
+
+* Ejemplos: Mercados de acciones, criptomonedas.
+
+* ¿Por qué WebSocket? En plataformas de trading, los precios de las acciones o las criptomonedas cambian rápidamente. Los traders necesitan información actualizada al instante para tomar decisiones informadas. WebSocket permite recibir actualizaciones de precios en tiempo real sin retrasos, lo que es crucial para una toma de decisiones ágil.
+
+
+5️⃣ Aplicaciones de colaboración en tiempo real:
+
+* Ejemplos: Google Docs, aplicaciones de edición compartida.
+
+* ¿Por qué WebSocket? Cuando varios usuarios están colaborando en un mismo documento, los cambios deben ser reflejados en tiempo real para todos los participantes. WebSocket garantiza que los cambios de un usuario se envíen y reciban instantáneamente, manteniendo todos los participantes sincronizados.
+
+
+
+</details>
+<br>
 
 
 
