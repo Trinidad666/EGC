@@ -1121,18 +1121,17 @@ Para hacer la conexión al puerto 80
   
 # Mongo DB
 
+## Qué es el Mongo DB
+
 MongoDB es una base de datos NoSQL orientada a documentos, diseñada para manejar grandes volúmenes de datos de manera flexible y escalable. A diferencia de las bases de datos relacionales tradicionales (como MySQL o PostgreSQL), MongoDB no usa tablas ni filas, sino que almacena los datos en documentos JSON (BSON, específicamente).
 
 ![image](https://github.com/user-attachments/assets/7576c635-9443-4c87-a9fd-b5f92e74c768)
 
 
-<br>
-
-## Qué es el Mongo DB
 
 <br>
 
-### 🔹 Principales Características de MongoDB
+## 🔹 Principales Características de MongoDB
     
 1️⃣ **Base de datos NoSQL**
 
@@ -1170,7 +1169,7 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 <br>
 
 
-### 🔹 Ejemplo de cómo funciona MongoDB
+## 🔹 Ejemplo de cómo funciona MongoDB
 
 📌 Estructura de un documento en MongoDB (similar a un JSON):
 
@@ -1189,14 +1188,14 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 <br>
 <br>
 
-### 🔹 Comparación con una Base de Datos Relacional (SQL)
+## 🔹 Comparación con una Base de Datos Relacional (SQL)
 
 ![image](https://github.com/user-attachments/assets/58e22335-33ae-4e32-9479-8e75327e0e6f)
 
 <br>
 <br>
 
-### 🔹 ¿Cuándo usar MongoDB?
+## 🔹 ¿Cuándo usar MongoDB?
 
 ✅ Cuando necesitas manejar grandes volúmenes de datos no estructurados.
 
@@ -1210,7 +1209,7 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 <br>
 <br>
 
-### 🔹 ¿Cuándo NO usar MongoDB?
+## 🔹 ¿Cuándo NO usar MongoDB?
 
 ❌ Si necesitas relaciones complejas entre datos (ej. ERP, banca).
 
