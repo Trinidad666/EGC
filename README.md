@@ -1111,15 +1111,55 @@ Para hacer la conexión al puerto 80
 
 
 
-
-
-
-
 </details>
 
 
 
+<details>
+  <summary>💾🍃 Base de Datos</summary>
+# Mongo DB
+MongoDB es una base de datos NoSQL orientada a documentos, diseñada para manejar grandes volúmenes de datos de manera flexible y escalable. A diferencia de las bases de datos relacionales tradicionales (como MySQL o PostgreSQL), MongoDB no usa tablas ni filas, sino que almacena los datos en documentos JSON (BSON, específicamente).
 
+
+## 🔹 Principales Características de MongoDB
+
+1. Base de datos NoSQL
+
+* No utiliza estructuras relacionales (tablas y filas).
+
+* En su lugar, almacena datos en documentos JSON dentro de colecciones.
+
+2. Flexible y escalable
+
+* No necesita una estructura fija de datos (esquema flexible).
+
+* Puede escalar horizontalmente (añadiendo más servidores) con Sharding.
+
+
+3. Alto rendimiento
+
+* Soporta grandes volúmenes de datos con lecturas y escrituras rápidas.
+
+
+4. Soporte para consultas avanzadas
+
+* Puedes hacer consultas complejas con filtros, agregaciones y búsquedas avanzadas.
+
+
+5. Integración con múltiples lenguajes
+
+* Compatible con Python, JavaScript (Node.js), Java, PHP, etc.
+
+
+
+
+
+<br>
+## Qué es el Mongo DB
+
+
+  
+</details>
 
 
 
