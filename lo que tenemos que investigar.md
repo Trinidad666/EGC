@@ -111,5 +111,18 @@ Imposible: Con Cheat Engine, ya que no está relacionado con mensajería ni rede
 https://www.google.com/search?q=datadog&client=opera-gx&hs=qtN&sca_esv=fb327f6f2168a83f&udm=2&biw=1876&bih=926&sxsrf=AHTn8zpbHgRch-fc8gsTiLOlk1rsxDIPcQ%3A1741615923004&ei=MvPOZ_f_PL-ekdUPjarpkQI&ved=0ahUKEwj34LPz2P-LAxU_T6QEHQ1VOiIQ4dUDCBA&uact=5&oq=datadog&gs_lp=EgNpbWciB2RhdGFkb2cyCBAAGIAEGLEDMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESK0VUJcKWK4TcAF4AJABAJgBVKAB7wGqAQEzuAEDyAEA-AEBmAIEoAL8AcICBhAAGAcYHsICChAAGIAEGEMYigXCAgQQABgewgIKEAAYgAQYsQMYCpgDAIgGAZIHATSgB9kL&sclient=img
 
 
+<br>
+<br>
+
+
+
+# WebSocket
+
+* Tema Chat: https://es.javascript.info/websocket
+* https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications
+* 
+
+
+
 
 
