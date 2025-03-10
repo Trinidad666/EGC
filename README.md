@@ -1199,8 +1199,11 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 ### 🔹 ¿Cuándo usar MongoDB?
 
 ✅ Cuando necesitas manejar grandes volúmenes de datos no estructurados.
+
 ✅ Para aplicaciones web y móviles con datos dinámicos y flexibles.
+
 ✅ Si buscas escalabilidad horizontal para manejar alto tráfico.
+
 ✅ Para Big Data, IoT y aplicaciones en tiempo real.
 
 
@@ -1208,8 +1211,11 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 <br>
 
 ### 🔹 ¿Cuándo NO usar MongoDB?
+
 ❌ Si necesitas relaciones complejas entre datos (ej. ERP, banca).
+
 ❌ Cuando requieres transacciones ACID fuertes (ej. sistemas financieros).
+
 ❌ Si los datos son altamente estructurados y no cambian mucho.
 
 
