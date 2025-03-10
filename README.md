@@ -1118,7 +1118,9 @@ Para hacer la conexión al puerto 80
 
 <details>
   <summary>💾🍃 Base de Datos</summary>
+  
 # Mongo DB
+
 MongoDB es una base de datos NoSQL orientada a documentos, diseñada para manejar grandes volúmenes de datos de manera flexible y escalable. A diferencia de las bases de datos relacionales tradicionales (como MySQL o PostgreSQL), MongoDB no usa tablas ni filas, sino que almacena los datos en documentos JSON (BSON, específicamente).
 
 <br>
