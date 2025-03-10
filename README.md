@@ -1133,8 +1133,8 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 <br>
 
 ### 🔹 Principales Características de MongoDB
-
-1. Base de datos NoSQL
+    
+1️⃣ **Base de datos NoSQL**
 
   * No utiliza estructuras relacionales (tablas y filas).
   
@@ -1142,7 +1142,7 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 
 <br>
 
-2. Flexible y escalable
+2️⃣ **Flexible y escalable**
 
   * No necesita una estructura fija de datos (esquema flexible).
   
@@ -1150,19 +1150,19 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 
 <br>
 
-3. Alto rendimiento
+3️⃣ **Alto rendimiento**
 
 * Soporta grandes volúmenes de datos con lecturas y escrituras rápidas.
 
 <br>
 
-4. Soporte para consultas avanzadas
+4️⃣ **Soporte para consultas avanzadas**
 
 * Puedes hacer consultas complejas con filtros, agregaciones y búsquedas avanzadas.
 
 <br>
 
-5. Integración con múltiples lenguajes
+5️⃣ **Integración con múltiples lenguajes**
 
 * Compatible con Python, JavaScript (Node.js), Java, PHP, etc.
 
