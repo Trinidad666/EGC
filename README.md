@@ -1113,6 +1113,7 @@ Para hacer la conexión al puerto 80
 
 </details>
 
+<br>
 
 
 <details>
@@ -1120,8 +1121,13 @@ Para hacer la conexión al puerto 80
 # Mongo DB
 MongoDB es una base de datos NoSQL orientada a documentos, diseñada para manejar grandes volúmenes de datos de manera flexible y escalable. A diferencia de las bases de datos relacionales tradicionales (como MySQL o PostgreSQL), MongoDB no usa tablas ni filas, sino que almacena los datos en documentos JSON (BSON, específicamente).
 
+<br>
 
-## 🔹 Principales Características de MongoDB
+## Qué es el Mongo DB
+
+<br>
+
+### 🔹 Principales Características de MongoDB
 
 1. Base de datos NoSQL
 
@@ -1129,33 +1135,77 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
   
   * En su lugar, almacena datos en documentos JSON dentro de colecciones.
 
+<br>
+
 2. Flexible y escalable
 
   * No necesita una estructura fija de datos (esquema flexible).
   
   * Puede escalar horizontalmente (añadiendo más servidores) con Sharding.
 
+<br>
 
 3. Alto rendimiento
 
 * Soporta grandes volúmenes de datos con lecturas y escrituras rápidas.
 
+<br>
 
 4. Soporte para consultas avanzadas
 
 * Puedes hacer consultas complejas con filtros, agregaciones y búsquedas avanzadas.
 
+<br>
 
 5. Integración con múltiples lenguajes
 
 * Compatible con Python, JavaScript (Node.js), Java, PHP, etc.
 
+<br>
+<br>
 
 
+### 🔹 Ejemplo de cómo funciona MongoDB
+
+📌 Estructura de un documento en MongoDB (similar a un JSON):
+
+```
+{
+  "_id": ObjectId("60d5f9f4f3a2a2b6c8e5a123"),
+  "nombre": "Juan Pérez",
+  "edad": 30,
+  "ciudad": "Madrid",
+  "hobbies": ["fútbol", "cine", "lectura"]
+}
+```
+* Se almacena dentro de una colección (como una tabla en SQL).
+* Cada documento puede tener una estructura diferente dentro de la misma colección.
+
+<br>
+<br>
+
+### 🔹 Comparación con una Base de Datos Relacional (SQL)
+
+![image](https://github.com/user-attachments/assets/58e22335-33ae-4e32-9479-8e75327e0e6f)
+
+<br>
+<br>
+
+### 🔹 ¿Cuándo usar MongoDB?
+
+✅ Cuando necesitas manejar grandes volúmenes de datos no estructurados.
+✅ Para aplicaciones web y móviles con datos dinámicos y flexibles.
+✅ Si buscas escalabilidad horizontal para manejar alto tráfico.
+✅ Para Big Data, IoT y aplicaciones en tiempo real.
 
 
 <br>
-## Qué es el Mongo DB
+<br>
+
+### 🔹 ¿Cuándo NO usar MongoDB?
+❌ Si necesitas relaciones complejas entre datos (ej. ERP, banca).
+❌ Cuando requieres transacciones ACID fuertes (ej. sistemas financieros).
+❌ Si los datos son altamente estructurados y no cambian mucho.
 
 
   
