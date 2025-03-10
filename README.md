@@ -1125,15 +1125,15 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 
 1. Base de datos NoSQL
 
-* No utiliza estructuras relacionales (tablas y filas).
-
-* En su lugar, almacena datos en documentos JSON dentro de colecciones.
+  * No utiliza estructuras relacionales (tablas y filas).
+  
+  * En su lugar, almacena datos en documentos JSON dentro de colecciones.
 
 2. Flexible y escalable
 
-* No necesita una estructura fija de datos (esquema flexible).
-
-* Puede escalar horizontalmente (añadiendo más servidores) con Sharding.
+  * No necesita una estructura fija de datos (esquema flexible).
+  
+  * Puede escalar horizontalmente (añadiendo más servidores) con Sharding.
 
 
 3. Alto rendimiento
