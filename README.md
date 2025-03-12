@@ -149,7 +149,7 @@ También tenemos dos tablas de bloqueos, unas es para **Friends** y otra la usar
 Como podemos ver en nuestro diagrama, la tabla **users** se conecta a la tabla channels mediante las tablas de relación **file** y **messages**. Además, la tabla users tiene, en una conexión aparte, la tabla **friends** y la de **private_chat**. También contamos con dos tablas de bloqueos: una es **block_friends**, que se utiliza para bloquear a amigos, y la otra es **block_channels**, que se usa para bloquear canales.
 
 
-![image](https://github.com/user-attachments/assets/17bff997-33a5-45a5-9a46-001df758e252)
+![image](https://github.com/user-attachments/assets/3c5e8c62-6a0e-470c-ba1f-e95a000f59e4)
 
 
 
