@@ -581,13 +581,13 @@ MV Docker:
 <br>
 
 <details>
-<summary>💠 Tipos de Seguridad</summary>
+<summary>+----------💠 Tipos de Seguridad</summary>
 
-🔥 Protección contra ataques (DDoS, Hydra, etc.)
+# 🔥 Protección contra ataques (DDoS, Hydra, etc.)
 
 <br>
 
-1️⃣ En el Router/Ubuntu (Entrada de la red)
+## 1️⃣ En el Router/Ubuntu (Entrada de la red)
 
 📌 Motivo: Es el primer punto de entrada y debe filtrar tráfico malicioso antes de que llegue a los servidores internos.
 
@@ -603,7 +603,7 @@ MV Docker:
 
 <br>
 
-2️⃣ Servidor Web
+## 2️⃣ Servidor Web
 
 📌 Motivo: Objetivo principal de ataques como DDoS, SQL Injection y explotación de vulnerabilidades.
 
@@ -617,7 +617,7 @@ MV Docker:
 
 <br>
 
-3️⃣ Servidor Base de Datos
+## 3️⃣ Servidor Base de Datos
 
 📌 Motivo: Contiene información sensible y puede sufrir SQL Injection o ataques de fuerza bruta.
 
@@ -631,7 +631,7 @@ MV Docker:
 
 <br>
 
-4️⃣ Docker
+## 4️⃣ Docker
 
 📌 Motivo: Puede contener aplicaciones con vulnerabilidades explotables.
 
@@ -645,7 +645,7 @@ MV Docker:
 
 <br>
 
-5️⃣ Servidor de Correo
+## 5️⃣ Servidor de Correo
 
 📌 Motivo: Sujeto a ataques de phishing y fuerza bruta (SMTP, IMAP, POP3).
 
@@ -659,7 +659,7 @@ MV Docker:
 
 <br>
 
-6️⃣ Servidor DNS
+## 6️⃣ Servidor DNS
 
 📌 Motivo: Puede ser objetivo de ataques de envenenamiento de caché o DDoS.
 
