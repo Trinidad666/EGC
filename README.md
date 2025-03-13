@@ -581,6 +581,103 @@ MV Docker:
 <br>
 
 <details>
+<summary>🛡 Tipos de Seguridad</summary>
+
+🔥 Protección contra ataques (DDoS, Hydra, etc.)
+
+<br>
+
+1️⃣ En el Router/Ubuntu (Entrada de la red)
+
+📌 Motivo: Es el primer punto de entrada y debe filtrar tráfico malicioso antes de que llegue a los servidores internos.
+
+✅ Medidas:
+
+•	Firewall (iptables, UFW): Restringir accesos por IP y puertos.
+
+•	Sistema de Prevención de Intrusos (IPS) como Fail2Ban o Suricata: Detectar y bloquear intentos de fuerza bruta (Hydra).
+
+•	Protección contra DDoS (Cloudflare, iptables con rate limiting, servicios de mitigación DDoS como AWS Shield o Cloudflare).
+
+•	VPN (WireGuard, OpenVPN): Para acceso seguro de administradores.
+
+<br>
+
+2️⃣ Servidor Web
+
+📌 Motivo: Objetivo principal de ataques como DDoS, SQL Injection y explotación de vulnerabilidades.
+
+✅ Medidas:
+
+•	WAF (Web Application Firewall) como ModSecurity: Bloqueo de ataques a la aplicación web.
+
+•	Limitación de conexiones simultáneas con herramientas como fail2ban.
+
+•	TLS/SSL para cifrar la comunicación HTTPS.
+
+<br>
+
+3️⃣ Servidor Base de Datos
+
+📌 Motivo: Contiene información sensible y puede sufrir SQL Injection o ataques de fuerza bruta.
+
+✅ Medidas:
+
+•	Permitir conexiones solo desde el servidor web (bloquear accesos externos).
+
+•	Cifrar datos sensibles en la base de datos.
+
+•	Autenticación fuerte y rotación de contraseñas.
+
+<br>
+
+4️⃣ Docker
+
+📌 Motivo: Puede contener aplicaciones con vulnerabilidades explotables.
+
+✅ Medidas:
+
+•	Restringir acceso a contenedores con redes privadas.
+
+•	Escanear imágenes con herramientas como Trivy.
+
+•	Configurar permisos mínimos en los contenedores.
+
+<br>
+
+5️⃣ Servidor de Correo
+
+📌 Motivo: Sujeto a ataques de phishing y fuerza bruta (SMTP, IMAP, POP3).
+
+✅ Medidas:
+
+•	SPF, DKIM y DMARC para evitar suplantación de identidad.
+
+•	Rate limiting para prevenir ataques de fuerza bruta.
+
+•	Filtrado de spam con herramientas como SpamAssassin.
+
+<br>
+
+6️⃣ Servidor DNS
+
+📌 Motivo: Puede ser objetivo de ataques de envenenamiento de caché o DDoS.
+
+✅ Medidas:
+
+•	DNSSEC para validar respuestas DNS.
+
+•	Rate limiting en consultas para mit
+
+
+</details>
+
+
+
+
+<br>
+
+<details>
 <summary>+----------📄🛡️ Backup (Copias de Segiridad)</summary>
 
 **https://www.incibe.es/sites/default/files/contenidos/guias/guia-copias-de-seguridad.pdf**
