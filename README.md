@@ -1526,8 +1526,38 @@ Algunas de las funciones más destacadas de NGINX incluyen:
 
   Es muy común encontrarlo en la infraestructura de empresas que gestionan aplicaciones web de gran escala.
 
-</details>
+<br>
+<br>
+<br>
 
+# Los pasos para crear el Servidor Web con NGINX
+
+## Paso 1: Actualizar los paquetes del sistema
+Antes de instalar NGINX, es recomendable actualizar la lista de paquetes disponibles y los paquetes del sistema para asegurarse de que estamos trabajando con versiones recientes.
+```
+sudo apt update
+sudo apt upgrade -y
+
+```
+
+## Paso 2: Instalar NGINX
+
+Una vez actualizado el sistema, se puede instalar NGINX utilizando el gestor de paquetes apt:
+
+```
+sudo apt install nginx -y
+```
+
+## Paso 3: Verificar la instalación de NGINX
+Una vez que la instalación haya finalizado, puedes verificar que NGINX se haya instalado correctamente ejecutando:
+
+```
+nginx -v
+```
+
+
+
+</details>
   
 <br>
 
