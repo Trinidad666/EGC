@@ -1121,6 +1121,90 @@ Configuramos la interfaz de la dirección IP con la opción número 2, ahora te 
 5. Nos preguntara si queremos configurar una dirección IPv6 en la interfaz LAN. Le decimos que no y le volovemos a dar **ENTER**
 6. Luego nos pregunta si queremos un DHCP en el servidor LAN, le decimos que si. Añadimos el inicio del rango de IP del cliente(192.168.56.150) y luego el final del rengo(192.168.56.160).
 
+
+
+
+
+## Configuración de la interfaz WAN
+La interfaz WAN se usa para conectarse a Internet. Normalmente, se configura con DHCP si el proveedor de servicios de Internet (ISP) asigna direcciones dinámicas, pero también puede ser estática.
+
+1. Desde el menú principal, selecciona la opción
+   
+```
+2) Set interface(s) IP address.
+```
+
+3. Selecciona la interfaz WAN, en este caso:
+
+```
+1 - WAN (em0 - dhcp)
+```
+
+3. Selecciona el tipo de configuración IP:
+
+* DHCP: Si el ISP asigna la IP automáticamente (opción recomendada para la mayoría).
+
+* Estática: Si tienes una IP fija proporcionada por tu ISP.
+
+4. Si es IP estática, introduce:
+
+* Dirección IP (por ejemplo, **```192.168.1.2```**).
+
+* Máscara de subred (por ejemplo, **```255.255.255.0```**).
+
+* Puerta de enlace (IP del router del ISP, por ejemplo, ```192.168.1.1```).
+
+5.¿Configurar IPv6?
+
+* Si tu ISP lo usa, puedes configurarlo o dejarlo en automático.
+
+6. ¿Activar servidor DHCP en esta interfaz?
+
+* Para WAN, generalmente es No.
+
+7. Confirmar y aplicar cambios.
+
+<br>
+<br>
+
+## Configuración de la interfaz LAN
+La interfaz LAN se usa para la red interna y suele tener una dirección IP estática.
+
+1. Desde el menú principal, selecciona ```2) Set interface(s) IP address```.
+
+2. Selecciona la interfaz LAN, en este caso:
+
+```
+2 - LAN (em1 - static)
+```
+
+3. Configura la IP de LAN, por ejemplo:
+
+* Dirección IP: ```192.168.1.1``` (IP del router dentro de la red local).
+
+* Máscara de subred: ```255.255.255.0```.
+
+4. onfigurar IPv6:
+
+Puedes desactivarlo si no lo necesitas o usarlo si tu red lo soporta.
+
+5. ¿Activar servidor DHCP en LAN?
+
+* Sí (para que los dispositivos en la red obtengan IP automáticamente).
+
+* Especifica un rango de IPs, por ejemplo:
+
+** Inicio: ```192.168.1.100```
+
+** Fin: ```192.168.1.200```
+
+6. Confirmar y aplicar cambios.
+
+
+
+
+
+
 ![image](https://github.com/user-attachments/assets/b3f88415-07a5-4233-b5e2-9fdbbb605306)
 
 ![image](https://github.com/user-attachments/assets/df295417-9c40-47aa-a465-9330569609dd)
