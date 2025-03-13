@@ -1115,6 +1115,43 @@ Para hacer la conexión al puerto 80
 
 
 </details>
+
+<br>
+
+<details>
+<summary>🔐💻Cifrado de punto a punto</summary>
+
+# Qué es el Cifrado punto a punto
+
+El cifrado punto a punto (también conocido como cifrado end-to-end, o E2EE, por sus siglas en inglés) es un método de seguridad de comunicación que asegura que solo el emisor y el receptor de la información puedan leer los mensajes que se envían entre ellos.
+<br>
+
+En este tipo de cifrado:
+
+1️⃣ El emisor cifra el mensaje con una clave antes de enviarlo.
+
+2️⃣ El mensaje cifrado se transmite a través de internet o cualquier otra red, pero incluso si alguien intercepta el mensaje, no podrá entenderlo, ya que no tiene la clave para descifrarlo.
+
+3️⃣ El receptor usa su propia clave para descifrar el mensaje y leerlo.
+
+Esto garantiza que, incluso si los servidores de la plataforma de comunicación son hackeados o las comunicaciones son interceptadas en el camino, los mensajes seguirán siendo privados y solo podrán ser leídos por las personas a quienes están destinados.
+
+Ejemplos de aplicaciones que usan cifrado punto a punto:
+
+<br>
+
+* WhatsApp
+* Signal
+* Telegram (en chats secretos)
+* iMessage
+
+Este tipo de cifrado es muy popular porque ofrece un alto nivel de privacidad y seguridad, ya que ni siquiera los proveedores del servicio (como las plataformas de mensajería) tienen acceso a los contenidos de los mensajes.
+
+
+
+</details>
+
+
 </details>
 
 <br>
