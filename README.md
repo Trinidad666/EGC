@@ -1474,11 +1474,32 @@ WebSocket es un protocolo de comunicación que proporciona un canal de comunicac
 <details>
   <summary>🖥️🌐💻 Servidor Web</summary>
 
-# Qué es Un servidor de Correo
+# Qué es Un servidor de Web
 
 Un servidor web es un software o sistema que se encarga de recibir, procesar y responder a las solicitudes que los navegadores web (o cualquier cliente HTTP) envían para acceder a los recursos alojados en un sitio web. Los recursos más comunes que maneja un servidor web son las páginas web, que generalmente están escritas en HTML, pero también puede servir otros tipos de contenido como imágenes, videos, archivos CSS, JavaScript y más.
 
 Cuando un usuario ingresa una dirección web (URL) en su navegador, el navegador envía una solicitud HTTP al servidor web correspondiente. El servidor web luego procesa esa solicitud, recupera el archivo solicitado (por ejemplo, una página HTML) y lo envía de vuelta al navegador para que se muestre al usuario.
+
+![image](https://github.com/user-attachments/assets/1e220d5f-dd4c-4ba5-969a-c6fc51c6eb69)
+
+<br>
+
+Los pasos básicos de funcionamiento de un servidor web son:
+
+* Recepción de la solicitud: El navegador realiza una solicitud HTTP al servidor web, generalmente solicitando un archivo o recurso específico.
+
+* Procesamiento de la solicitud: El servidor verifica la solicitud y, si es válida, busca el recurso solicitado (por ejemplo, una página HTML).
+
+* Envío de la respuesta: Una vez que el recurso ha sido encontrado, el servidor web envía el archivo al navegador del usuario, que lo muestra en la pantalla.
+
+Algunos ejemplos populares de servidores web son:
+
+* Apache HTTP Server: Muy popular y ampliamente utilizado en entornos Linux.
+
+* Nginx: Conocido por su alto rendimiento y eficiencia.
+
+* Microsoft IIS: Utilizado principalmente en entornos Windows.
+
 
 
 </details>
