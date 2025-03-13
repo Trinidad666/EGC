@@ -1222,8 +1222,21 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 ❌ Si los datos son altamente estructurados y no cambian mucho.
 
 
+<br>
+<br>
+
+
+## ¿Qué es lo que hemos hecho?
+
+
+
+
+
   
 </details>
+
+
+
 
 <br>
 
