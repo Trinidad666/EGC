@@ -569,7 +569,8 @@ MV Docker:
 </details>
 <br>
 
-
+<details>
+<summary>🛡️Seguridad</summary>
 
 <details>
 <summary>📄🛡️ Backup (Copias de Segiridad)</summary>
@@ -1111,6 +1112,7 @@ Para hacer la conexión al puerto 80
 
 
 
+</details>
 </details>
 
 <br>
