@@ -527,10 +527,13 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 <br>
 
 
+<details>
+<summary>📦☁️Maquinas Virtuales</summary>
 
+<br>
 
 <details>
-<summary>🐧 Sistemas Operativos</summary>
+<summary>+----------🐧 Sistemas Operativos</summary>
 
 Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuales.
 
@@ -550,7 +553,7 @@ Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuale
 
 
 <details>
-<summary>🔲 Hardware</summary>
+<summary>+----------🔲 Hardware</summary>
 
 Todas las VM tienen la misma capacidad de memoria RAM, CPU y disco duro, menos la VM Docker.
 
@@ -567,6 +570,9 @@ MV Docker:
 
   
 </details>
+
+<details>
+  
 <br>
 
 <details>
