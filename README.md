@@ -575,7 +575,7 @@ MV Docker:
 <br>
 
 <details>
-<summary>📄🛡️ Backup (Copias de Segiridad)</summary>
+<summary>+----------📄🛡️ Backup (Copias de Segiridad)</summary>
 
 **https://www.incibe.es/sites/default/files/contenidos/guias/guia-copias-de-seguridad.pdf**
   
@@ -994,7 +994,7 @@ sudo chmod -R u+w /home/hugo/buckup
 
 
 <details>
-<summary>🧱🔥 PFSense</summary>
+<summary>+----------🧱🔥 PFSense</summary>
 
 # ¿Qué es PFSense?
 Es una distribución de **FreeBSD** adaptada como **firewall** y **router**. Es de código abierto y se puede instalar en dispositivos físicos y virtuales.
@@ -1119,7 +1119,7 @@ Para hacer la conexión al puerto 80
 <br>
 
 <details>
-<summary>🔐💻Cifrado de punto a punto</summary>
+<summary>+----------🔐💻Cifrado de punto a punto</summary>
 
 # Qué es el Cifrado punto a punto
 
