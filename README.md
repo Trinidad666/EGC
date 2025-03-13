@@ -1474,7 +1474,7 @@ WebSocket es un protocolo de comunicación que proporciona un canal de comunicac
 <details>
   <summary>🖥️🌐💻 Servidor Web</summary>
 
-# Qué es Un servidor de Web
+# Qué es un Servidor de Web
 
 Un servidor web es un software o sistema que se encarga de recibir, procesar y responder a las solicitudes que los navegadores web (o cualquier cliente HTTP) envían para acceder a los recursos alojados en un sitio web. Los recursos más comunes que maneja un servidor web son las páginas web, que generalmente están escritas en HTML, pero también puede servir otros tipos de contenido como imágenes, videos, archivos CSS, JavaScript y más.
 
@@ -1500,7 +1500,31 @@ Algunos ejemplos populares de servidores web son:
 
 * Microsoft IIS: Utilizado principalmente en entornos Windows.
 
+<br>
+<br>
+<br>
 
+# Qué es un NGINX
+
+NGINX es un servidor web de alto rendimiento, servidor proxy inverso y balanceador de carga muy utilizado en la infraestructura de Internet. Fue creado originalmente para ser un servidor web, pero con el tiempo ha evolucionado para ofrecer múltiples funcionalidades adicionales. Su principal ventaja es su capacidad para manejar un gran volumen de conexiones concurrentes de manera eficiente y con un bajo uso de recursos.
+
+![Comandos-de-Nginx-que-usted-debe-saber-removebg-preview](https://github.com/user-attachments/assets/72dd8064-c11a-4840-92f3-c7218227b21c)
+
+<br>
+
+Algunas de las funciones más destacadas de NGINX incluyen:
+
+* Servidor web: Sirve contenido estático (como archivos HTML, imágenes, videos) a los usuarios.
+
+* Proxy inverso: Redirige las solicitudes de los usuarios a otros servidores (por ejemplo, servidores de aplicaciones), mejorando la seguridad y la carga de trabajo distribuida.
+
+* Balanceador de carga: Distribuye el tráfico de red entre varios servidores para asegurar que ninguno de ellos se sobrecargue, mejorando la disponibilidad y la fiabilidad del sistema.
+
+* Cacheo: Guarda en memoria las respuestas de servidores backend para reducir la carga y acelerar las respuestas a los usuarios.
+
+  NGINX es conocido por su alta eficiencia y su capacidad para manejar miles de conexiones simultáneas con un uso mínimo de recursos, lo que lo convierte en una opción popular para aplicaciones web de alto tráfico.
+
+  Es muy común encontrarlo en la infraestructura de empresas que gestionan aplicaciones web de gran escala.
 
 </details>
 
