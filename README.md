@@ -1186,17 +1186,17 @@ La interfaz LAN se usa para la red interna y suele tener una dirección IP está
 
 4. onfigurar IPv6:
 
-Puedes desactivarlo si no lo necesitas o usarlo si tu red lo soporta.
+   Puedes desactivarlo si no lo necesitas o usarlo si tu red lo soporta.
 
-5. ¿Activar servidor DHCP en LAN?
+6. ¿Activar servidor DHCP en LAN?
 
 * Sí (para que los dispositivos en la red obtengan IP automáticamente).
 
 * Especifica un rango de IPs, por ejemplo:
 
-* * Inicio: ```192.168.1.100```
+  * Inicio: ```192.168.1.100```
 
-* * Fin: ```192.168.1.200```
+  * Fin: ```192.168.1.200```
 
 6. Confirmar y aplicar cambios.
 
