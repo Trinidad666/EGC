@@ -581,7 +581,7 @@ MV Docker:
 <br>
 
 <details>
-<summary>🛡 Tipos de Seguridad</summary>
+<summary>💠 Tipos de Seguridad</summary>
 
 🔥 Protección contra ataques (DDoS, Hydra, etc.)
 
