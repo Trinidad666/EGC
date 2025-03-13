@@ -571,7 +571,7 @@ MV Docker:
   
 </details>
 
-<details>
+</details>
   
 <br>
 
