@@ -1469,10 +1469,11 @@ WebSocket es un protocolo de comunicación que proporciona un canal de comunicac
 
 
 </details>
+
 <br>
 
 <details>
-  <summary>🖥️🌐💻 Servidor Web</summary>
+  <summary>🖥🌐💻 Servidor Web</summary>
 
 # Qué es un Servidor de Web
 
@@ -1558,7 +1559,19 @@ nginx -v
 
 
 </details>
-  
+
+<br>
+
+<details>
+  <summary>🖥🌐🔄 Servidor DNS</summary>
+
+
+
+
+
+</details>
+
+
 <br>
 
 
