@@ -593,13 +593,13 @@ MV Docker:
 
 ✅ Medidas:
 
-•	Firewall (iptables, UFW): Restringir accesos por IP y puertos.
+* Firewall (iptables, UFW): Restringir accesos por IP y puertos.
 
-•	Sistema de Prevención de Intrusos (IPS) como Fail2Ban o Suricata: Detectar y bloquear intentos de fuerza bruta (Hydra).
+* Sistema de Prevención de Intrusos (IPS) como Fail2Ban o Suricata: Detectar y bloquear intentos de fuerza bruta (Hydra).
 
-•	Protección contra DDoS (Cloudflare, iptables con rate limiting, servicios de mitigación DDoS como AWS Shield o Cloudflare).
+* Protección contra DDoS (Cloudflare, iptables con rate limiting, servicios de mitigación DDoS como AWS Shield o Cloudflare).
 
-•	VPN (WireGuard, OpenVPN): Para acceso seguro de administradores.
+* VPN (WireGuard, OpenVPN): Para acceso seguro de administradores.
 
 <br>
 
@@ -609,11 +609,11 @@ MV Docker:
 
 ✅ Medidas:
 
-•	WAF (Web Application Firewall) como ModSecurity: Bloqueo de ataques a la aplicación web.
+* WAF (Web Application Firewall) como ModSecurity: Bloqueo de ataques a la aplicación web.
 
-•	Limitación de conexiones simultáneas con herramientas como fail2ban.
+* Limitación de conexiones simultáneas con herramientas como fail2ban.
 
-•	TLS/SSL para cifrar la comunicación HTTPS.
+* TLS/SSL para cifrar la comunicación HTTPS.
 
 <br>
 
@@ -623,11 +623,11 @@ MV Docker:
 
 ✅ Medidas:
 
-•	Permitir conexiones solo desde el servidor web (bloquear accesos externos).
+* Permitir conexiones solo desde el servidor web (bloquear accesos externos).
 
-•	Cifrar datos sensibles en la base de datos.
+* Cifrar datos sensibles en la base de datos.
 
-•	Autenticación fuerte y rotación de contraseñas.
+* Autenticación fuerte y rotación de contraseñas.
 
 <br>
 
@@ -637,11 +637,11 @@ MV Docker:
 
 ✅ Medidas:
 
-•	Restringir acceso a contenedores con redes privadas.
+* Restringir acceso a contenedores con redes privadas.
 
-•	Escanear imágenes con herramientas como Trivy.
+* Escanear imágenes con herramientas como Trivy.
 
-•	Configurar permisos mínimos en los contenedores.
+* Configurar permisos mínimos en los contenedores.
 
 <br>
 
@@ -651,11 +651,11 @@ MV Docker:
 
 ✅ Medidas:
 
-•	SPF, DKIM y DMARC para evitar suplantación de identidad.
+* SPF, DKIM y DMARC para evitar suplantación de identidad.
 
-•	Rate limiting para prevenir ataques de fuerza bruta.
+* Rate limiting para prevenir ataques de fuerza bruta.
 
-•	Filtrado de spam con herramientas como SpamAssassin.
+* Filtrado de spam con herramientas como SpamAssassin.
 
 <br>
 
@@ -665,9 +665,9 @@ MV Docker:
 
 ✅ Medidas:
 
-•	DNSSEC para validar respuestas DNS.
+* DNSSEC para validar respuestas DNS.
 
-•	Rate limiting en consultas para mit
+* Rate limiting en consultas para mit
 
 
 </details>
