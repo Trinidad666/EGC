@@ -1202,22 +1202,12 @@ La interfaz LAN se usa para la red interna y suele tener una dirección IP está
 
 
 
-
-
-
 ![image](https://github.com/user-attachments/assets/b3f88415-07a5-4233-b5e2-9fdbbb605306)
 
-![image](https://github.com/user-attachments/assets/df295417-9c40-47aa-a465-9330569609dd)
-
-![image](https://github.com/user-attachments/assets/e3433c28-498b-47eb-956d-67fb1fb8fac2)
-
-![image](https://github.com/user-attachments/assets/d00947c1-dde4-4a21-8d39-b188f56e8df8)
-
-![image](https://github.com/user-attachments/assets/913f7171-a157-44e6-98e0-e3ae3a6a8153)
-
-![image](https://github.com/user-attachments/assets/d81566b7-04c4-4a6f-811d-b8b262ed1024)
-
-![image](https://github.com/user-attachments/assets/408df297-2057-43ba-bf43-9fdb266014b5)
+<br>
+<br>
+<br>
+<br>
 
 ![image](https://github.com/user-attachments/assets/52450081-dc1d-4086-9f1c-1d48ce3d9e75)
 
