@@ -1471,6 +1471,21 @@ WebSocket es un protocolo de comunicación que proporciona un canal de comunicac
 </details>
 <br>
 
+<details>
+  <summary>🖥️🌐💻 Servidor Web</summary>
+
+# Qué es Un servidor de Correo
+
+Un servidor web es un software que recibe, procesa y responde a las solicitudes que los navegadores web envían para acceder a los recursos de un sitio. Estos recursos suelen ser páginas HTML, pero también pueden ser imágenes, videos, archivos CSS, entre otros.
+
+Cuando un usuario ingresa una URL, el navegador envía una solicitud HTTP al servidor, que recupera el archivo solicitado y lo envía de vuelta al navegador para mostrarlo al usuario.
+
+
+</details>
+
+  
+<br>
+
 
 
 
