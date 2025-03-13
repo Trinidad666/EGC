@@ -1473,7 +1473,7 @@ WebSocket es un protocolo de comunicación que proporciona un canal de comunicac
 <br>
 
 <details>
-  <summary>🖥🌐💻 Servidor Web</summary>
+  <summary>🖥️🌐💻 Servidor Web</summary>
 
 # Qué es un Servidor de Web
 
@@ -1563,9 +1563,17 @@ nginx -v
 <br>
 
 <details>
-  <summary>🖥🌐🔄 Servidor DNS</summary>
+  <summary>🖥️🌐🔄 Servidor DNS</summary>
 
+Un servidor DNS (Domain Name System) es un sistema que traduce los nombres de dominio (como www.ejemplo.com) en direcciones IP (como 192.168.1.1) que las computadoras usan para identificarse y comunicarse en una red, como Internet.
 
+![image](https://github.com/user-attachments/assets/f216feb9-9c30-4a78-bf23-e86f54922e99)
+
+<br>
+
+Cuando escribes una dirección web en tu navegador, el servidor DNS se encarga de buscar la dirección IP correspondiente a ese nombre de dominio para que puedas acceder al sitio web. Esto es necesario porque las computadoras y otros dispositivos en una red se identifican mediante direcciones IP, pero para los usuarios es mucho más fácil recordar nombres de dominio que números de IP.
+
+En resumen, el servidor DNS actúa como una especie de "agenda telefónica" de Internet, ayudando a resolver los nombres de dominio en las direcciones numéricas necesarias para acceder a los recursos en línea.
 
 
 
