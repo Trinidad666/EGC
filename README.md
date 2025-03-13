@@ -1194,9 +1194,9 @@ Puedes desactivarlo si no lo necesitas o usarlo si tu red lo soporta.
 
 * Especifica un rango de IPs, por ejemplo:
 
-** Inicio: ```192.168.1.100```
+* * Inicio: ```192.168.1.100```
 
-** Fin: ```192.168.1.200```
+* * Fin: ```192.168.1.200```
 
 6. Confirmar y aplicar cambios.
 
