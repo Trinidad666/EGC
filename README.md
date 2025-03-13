@@ -533,7 +533,7 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 <br>
 
 <details>
-<summary>* 🐧 Sistemas Operativos</summary>
+<summary>+----------🐧 Sistemas Operativos</summary>
 
 Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuales.
 
