@@ -1142,25 +1142,25 @@ La interfaz WAN se usa para conectarse a Internet. Normalmente, se configura con
 
 3. Selecciona el tipo de configuración IP:
 
-* DHCP: Si el ISP asigna la IP automáticamente (opción recomendada para la mayoría).
+  * DHCP: Si el ISP asigna la IP automáticamente (opción recomendada para la mayoría).
 
-* Estática: Si tienes una IP fija proporcionada por tu ISP.
+  * Estática: Si tienes una IP fija proporcionada por tu ISP.
 
 4. Si es IP estática, introduce:
 
-* Dirección IP (por ejemplo, **```192.168.1.2```**).
+  * Dirección IP (por ejemplo, **```192.168.1.2```**).
 
-* Máscara de subred (por ejemplo, **```255.255.255.0```**).
+  * Máscara de subred (por ejemplo, **```255.255.255.0```**).
 
-* Puerta de enlace (IP del router del ISP, por ejemplo, ```192.168.1.1```).
+  * Puerta de enlace (IP del router del ISP, por ejemplo, ```192.168.1.1```).
 
 5.¿Configurar IPv6?
 
-* Si tu ISP lo usa, puedes configurarlo o dejarlo en automático.
+  * Si tu ISP lo usa, puedes configurarlo o dejarlo en automático.
 
 6. ¿Activar servidor DHCP en esta interfaz?
 
-* Para WAN, generalmente es No.
+  * Para WAN, generalmente es No.
 
 7. Confirmar y aplicar cambios.
 
