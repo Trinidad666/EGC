@@ -1209,85 +1209,122 @@ La interfaz LAN se usa para la red interna y suele tener una dirección IP está
 <br>
 <br>
 
+Para poder entrar a **pfSense** en modo gráfico, tenemos que poner la dirección IP en el navegador de una máquina que esté conectada a la red LAN y que tenga el modo gráfico habilitado.
+
 ![image](https://github.com/user-attachments/assets/52450081-dc1d-4086-9f1c-1d48ce3d9e75)
 
-![image](https://github.com/user-attachments/assets/aad3082e-2877-444e-b8f4-1707946087b2)
 
-![image](https://github.com/user-attachments/assets/cd4efad8-2cf6-40f8-95fe-4a8cdeed60ca)
 
-![image](https://github.com/user-attachments/assets/828428f7-90e9-429d-9e54-f01897a6cb81)
-
+Tendremos que activar el Kea DHCP que lo que hace es asignar direcciones IP dinámicamente, mejora rendimiento, permite configuraciones sin reinicio, soporta bases de datos externas y facilita administración remota mediante API. 
 ![image](https://github.com/user-attachments/assets/848e501c-bf3b-4d85-b0d3-725bb8bdb75e)
 
-activar
+<br>
+<br>
 
-![image](https://github.com/user-attachments/assets/cdafd95b-f152-4b04-b846-88fcdfdc8e3e)
+# Cómo activar OpenVPN
 
-clicar SAVE abajo del todo
+## 1️⃣ Instalar OpenVPN (si no está instalado)
 
-iniciar un PC cliente que tenga entorno gráfico
+OpenVPN viene integrado en pfSense, pero si falta, instálalo desde:
+
+🔹 System > Package Manager > Available Packages > Busca ```OpenVPN``` > Install
+
+## 2️⃣ Configurar el Servidor OpenVPN en pfSense
+
+1. Accede a la interfaz web de pfSense en ```https://192.168.1.1```
+
+2.Ve a VPN > OpenVPN > Wizards
+
+3. Selecciona el método de autenticación:
+
+  * Local User Access (usuarios internos) o
+
+  * LDAP/RADIUS (si usas autenticación externa)
+
+4. Crear o usar una CA (Certificate Authority)
+
+  * Si no tienes una CA, el asistente la generará.
+
+  * Crea un certificado de servidor.
+
+5. Configurar el servidor VPN:
+
+  * Interfaz: ```WAN```
+
+  * Protocolo: ```UDP``` o ```TCP``` (recomendado UDP)
+
+  * Puerto: ```1194``` (puedes cambiarlo)
+
+  * Tunnel Network: ```10.8.0.0/24``` (rango IP de la VPN)
+
+  * Local Network: ```192.168.1.0/24``` (red interna)
+
+  * Activar ```Redirect Gateway``` si quieres que todo el tráfico pase por la VPN
+
+6. Configurar cifrado y seguridad:
+
+  * Cipher: AES-256-CBC o AES-256-GCM
+
+  * Auth Digest Algorithm: SHA256
+
+  * TLS Authentication: Activar
+
+7. Guardar y aplicar los cambios.
+
+## 3️⃣ Crear reglas de Firewall para OpenVPN
+
+1. Ve a Firewall > Rules > OpenVPN
+
+2. Añade una regla:
+
+  * Acción: ```Pass```
+
+  * Protocolo: ```Any```
+
+  * Fuente: ```OpenVPN```
+
+  * Destino: ```Any```
+
+  * Guardar y aplicar.
+
+También, en Firewall > NAT, agrega una regla para permitir tráfico desde la VPN.
 
 
-el error es el DNS de Google
 
-![image](https://github.com/user-attachments/assets/4b579030-0322-4e90-988f-63643651936d)
+## 4️⃣ Crear Usuarios y Certificados
 
-![image](https://github.com/user-attachments/assets/769c5ddc-6754-4d68-bb94-2dff2337e8df)
+1.Ve a System > User Manager
 
-![image](https://github.com/user-attachments/assets/b037064c-cd8b-4fc9-9f38-9276e8442495)
+2. Añade un usuario, activa "Certificate" y genera uno nuevo.
 
-![image](https://github.com/user-attachments/assets/e61fed43-1030-49e6-adb5-faf1e5da56fe)
+## 5️⃣ Exportar el perfil OpenVPN para clientes
 
-red interna
+1. Instala el paquete OpenVPN Client Export desde System > Package Manager.
 
-![image](https://github.com/user-attachments/assets/f827a5a1-8c2e-48c8-8900-b14c9006faa4)
+2.Ve a VPN > OpenVPN > Client Export.
 
-![image](https://github.com/user-attachments/assets/06fa2786-9d66-4e02-943e-6dcd906ba9cf)
+3. Descarga el archivo ```.ovpn``` para conectarte desde Windows, macOS, Linux o móviles.
 
-![image](https://github.com/user-attachments/assets/1bad2db8-c9d5-420f-a1ab-e19d635bb3f7)
+## 6️⃣ Conectar un Cliente OpenVPN
 
-![image](https://github.com/user-attachments/assets/429f4872-3a0b-46ab-9c02-c378c2c3a49a)
+* Instala OpenVPN Client en tu PC o móvil.
 
-![image](https://github.com/user-attachments/assets/183ad464-0b3d-4d78-b32f-6adb46586843)
-
-![image](https://github.com/user-attachments/assets/4b9a5f4c-812f-4a59-964e-155d3e5d4eff)
+* Importa el archivo ```.ovpn``` y conéctate.
 
 
-Para hacer la conexión al puerto 80
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
 
-![image](https://github.com/user-attachments/assets/501b83c5-28a6-4bd2-b416-559490cf3196)
 
-![image](https://github.com/user-attachments/assets/3909750d-c816-4106-80ab-70ba7b1d95f0)
 
-![image](https://github.com/user-attachments/assets/1997113b-4d96-4456-9024-c7ce89811fa5)
-
-![image](https://github.com/user-attachments/assets/731b1ab7-a05b-49db-babe-24c245c4d4ba)
-
-![image](https://github.com/user-attachments/assets/e2acbbec-4d4e-4bcc-8029-350015137858)
-
-![image](https://github.com/user-attachments/assets/a296be26-4d14-45c0-8084-52d23ff2a4fa)
-
-![image](https://github.com/user-attachments/assets/c53723c6-47fd-476f-b5af-43a5f99fbb8d)
-
-![image](https://github.com/user-attachments/assets/28f60337-8cb9-4668-96f0-cb021697e051)
-
-![image](https://github.com/user-attachments/assets/086e01cc-6500-45a5-a237-351f93460c6e)
-
-![image](https://github.com/user-attachments/assets/9fe8a5a3-7416-4acc-97ec-58f57bfb4033)
-
-![image](https://github.com/user-attachments/assets/fe1624d2-da5a-496b-ac15-b1a09cc884aa)
-
-![image](https://github.com/user-attachments/assets/6b79bed4-5d78-49e4-b151-148926311ede)
-
-![image](https://github.com/user-attachments/assets/d4df78a3-3b2b-4608-99fa-b8dd318d41a3)
-
-![image](https://github.com/user-attachments/assets/bd9c3dd3-f795-4668-94e6-682d09acc4cd)
-
-![image](https://github.com/user-attachments/assets/23546bad-b409-4f17-b89f-4ff5518f10da)
-
-![image](https://github.com/user-attachments/assets/d9606639-b2d5-47a3-8d79-e1976a34120c)
-
-![image](https://github.com/user-attachments/assets/601d6c66-2bbb-4b44-9229-7e6608b8aaa4)
 
 
 
