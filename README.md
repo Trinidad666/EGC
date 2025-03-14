@@ -1233,7 +1233,7 @@ OpenVPN viene integrado en pfSense, pero si falta, instálalo desde:
 
 1. Accede a la interfaz web de pfSense en ```https://192.168.1.1```
 
-2.Ve a VPN > OpenVPN > Wizards
+2. Ve a VPN > OpenVPN > Wizards
 
 3. Selecciona el método de autenticación:
 
