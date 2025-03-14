@@ -1223,7 +1223,7 @@ Tendremos que activar el Kea DHCP que lo que hace es asignar direcciones IP din�
 
 # Cómo activar OpenVPN
 
-![image](https://github.com/user-attachments/assets/83b2c6d1-7eb2-48fb-8c7b-edea82c83014)
+![imagen_2025-03-14_101252810-removebg-preview](https://github.com/user-attachments/assets/e9237aa2-1a9e-4c13-a7f4-1e6642275050)
 
 ## 1️⃣ Instalar OpenVPN (si no está instalado)
 
