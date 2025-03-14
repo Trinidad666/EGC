@@ -1223,6 +1223,8 @@ Tendremos que activar el Kea DHCP que lo que hace es asignar direcciones IP din�
 
 # Cómo activar OpenVPN
 
+![image](https://github.com/user-attachments/assets/83b2c6d1-7eb2-48fb-8c7b-edea82c83014)
+
 ## 1️⃣ Instalar OpenVPN (si no está instalado)
 
 OpenVPN viene integrado en pfSense, pero si falta, instálalo desde:
