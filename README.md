@@ -1235,7 +1235,11 @@ OpenVPN viene integrado en pfSense, pero si falta, instálalo desde:
 
 1. Accede a la interfaz web de pfSense en ```https://192.168.1.1```
 
+<br>
+
 2. Ve a VPN > OpenVPN > Wizards
+
+<br>
 
 3. Selecciona el método de autenticación:
 
@@ -1243,11 +1247,15 @@ OpenVPN viene integrado en pfSense, pero si falta, instálalo desde:
 
   * LDAP/RADIUS (si usas autenticación externa)
 
+<br>
+
 4. Crear o usar una CA (Certificate Authority)
 
   * Si no tienes una CA, el asistente la generará.
 
   * Crea un certificado de servidor.
+
+<br>
 
 5. Configurar el servidor VPN:
 
@@ -1263,6 +1271,8 @@ OpenVPN viene integrado en pfSense, pero si falta, instálalo desde:
 
   * Activar ```Redirect Gateway``` si quieres que todo el tráfico pase por la VPN
 
+<br>
+
 6. Configurar cifrado y seguridad:
 
   * Cipher: AES-256-CBC o AES-256-GCM
@@ -1271,11 +1281,15 @@ OpenVPN viene integrado en pfSense, pero si falta, instálalo desde:
 
   * TLS Authentication: Activar
 
+<br>
+
 7. Guardar y aplicar los cambios.
 
 ## 3️⃣ Crear reglas de Firewall para OpenVPN
 
 1. Ve a Firewall > Rules > OpenVPN
+
+<br>
 
 2. Añade una regla:
 
@@ -1297,13 +1311,19 @@ También, en Firewall > NAT, agrega una regla para permitir tráfico desde la VP
 
 1.Ve a System > User Manager
 
+<br>
+
 2. Añade un usuario, activa "Certificate" y genera uno nuevo.
 
 ## 5️⃣ Exportar el perfil OpenVPN para clientes
 
 1. Instala el paquete OpenVPN Client Export desde System > Package Manager.
 
-2.Ve a VPN > OpenVPN > Client Export.
+<br>
+
+2. Ve a VPN > OpenVPN > Client Export.
+
+<br>
 
 3. Descarga el archivo ```.ovpn``` para conectarte desde Windows, macOS, Linux o móviles.
 
