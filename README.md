@@ -1401,7 +1401,7 @@ Este tipo de cifrado es muy popular porque ofrece un alto nivel de privacidad y 
   
 # Mongo DB
 
-## Qué es el Mongo DB
+## ¿Qué es el Mongo DB?
 
 MongoDB es una base de datos NoSQL orientada a documentos, diseñada para manejar grandes volúmenes de datos de manera flexible y escalable. A diferencia de las bases de datos relacionales tradicionales (como MySQL o PostgreSQL), MongoDB no usa tablas ni filas, sino que almacena los datos en documentos JSON (BSON, específicamente).
 
@@ -1562,7 +1562,7 @@ Aquí almacenamos la información de los usuarios registrados en nuestra web. Pu
 
 <br>
 
-## Qué es WebSocket
+## ¿Qué es WebSocket?
 
 WebSocket es un protocolo de comunicación que proporciona un canal de comunicación bidireccional y persistente entre el cliente (por ejemplo, un navegador web) y un servidor. A diferencia de los métodos tradicionales de comunicación HTTP, donde cada solicitud del cliente al servidor crea una nueva conexión y debe cerrarse después de recibir la respuesta, WebSocket mantiene una conexión abierta, lo que permite que los datos se intercambien de manera continua sin necesidad de abrir nuevas conexiones.
 
@@ -1647,7 +1647,7 @@ WebSocket es un protocolo de comunicación que proporciona un canal de comunicac
 <details>
   <summary>🖥️🌐💻 Servidor Web</summary>
 
-# Qué es un Servidor de Web
+# ¿Qué es un Servidor de Web?
 
 Un servidor web es un software o sistema que se encarga de recibir, procesar y responder a las solicitudes que los navegadores web (o cualquier cliente HTTP) envían para acceder a los recursos alojados en un sitio web. Los recursos más comunes que maneja un servidor web son las páginas web, que generalmente están escritas en HTML, pero también puede servir otros tipos de contenido como imágenes, videos, archivos CSS, JavaScript y más.
 
@@ -1677,7 +1677,7 @@ Algunos ejemplos populares de servidores web son:
 <br>
 <br>
 
-# Qué es un NGINX
+# ¿Qué es un NGINX?
 
 NGINX es un servidor web de alto rendimiento, servidor proxy inverso y balanceador de carga muy utilizado en la infraestructura de Internet. Fue creado originalmente para ser un servidor web, pero con el tiempo ha evolucionado para ofrecer múltiples funcionalidades adicionales. Su principal ventaja es su capacidad para manejar un gran volumen de conexiones concurrentes de manera eficiente y con un bajo uso de recursos.
 
