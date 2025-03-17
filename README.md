@@ -1847,7 +1847,32 @@ En resumen, el servidor DNS actúa como una especie de "agenda telefónica" de I
 
 <br>
 
+<details>
+  <summary>✉️ Servidor Correo</summary>
 
+# Servidor Correo
+
+Un servidor de correo es una computadora o sistema que gestiona y distribuye los correos electrónicos entre los usuarios. Su función principal es recibir, almacenar y enviar mensajes de correo electrónico. Los servidores de correo se encargan de facilitar la comunicación a través del correo electrónico en redes locales o en Internet.
+
+![imagen_2025-03-17_170139970-removebg-preview](https://github.com/user-attachments/assets/a2bbb248-9043-45a1-9ec1-26706097fff0)
+
+<br>
+
+Existen diferentes tipos de servidores de correo, como:
+
+**1. Servidor de correo entrante (IMAP/POP3):**
+   Se encarga de recibir y almacenar los correos en una bandeja de entrada. El usuario puede acceder a sus mensajes a través de un cliente de correo, como Outlook, Thunderbird, o aplicaciones móviles. IMAP (Internet Message Access Protocol) mantiene los mensajes en el servidor, mientras que POP3 (Post Office Protocol) descarga los correos al dispositivo y los elimina del servidor.
+
+
+**2. Servidor de correo saliente (SMTP):**
+   Es el responsable de enviar los correos electrónicos a otros servidores o destinatarios. SMTP (Simple Mail Transfer Protocol) es el protocolo utilizado para enviar los mensajes.
+
+
+
+</details>
+
+
+<br>
 
 
 
