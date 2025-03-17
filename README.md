@@ -1642,6 +1642,9 @@ WebSocket es un protocolo de comunicación que proporciona un canal de comunicac
 <br>
 <br>
 
+<details>
+  <summary>🌱💬 Lo basico</summary>
+
 # Los pasos para hacer un Websocket
 
 Para crear un servidor WebSocket, puedes usar diferentes lenguajes y bibliotecas. Aquí te muestro cómo hacerlo en Node.js utilizando la librería ws, que es una de las más populares.
@@ -1660,7 +1663,6 @@ Asegúrate de tener instalado Node.js en tu sistema. Luego, instala la librería
 mkdir websocket-server
 cd websocket-server
 npm init -y
-
 ```
 
 3. Instalar la librería ws:
@@ -1707,11 +1709,21 @@ node server.js
 ```
 
 
+</details>
+
+
+<br>
+<br>
+<br>
+
+
+<details>
+  <summary>🧠🌐🚀 Avanzado</summary>
+en progreo
 
 
 
-
-
+</details>
 
 
 
