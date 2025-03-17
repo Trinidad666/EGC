@@ -1502,9 +1502,8 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 <br>
 
 
-## Nuestra BBDD
-
-Esta es nuestra base de datos. A continuación, os mostraremos las colecciones que contiene y os explicaremos la función de cada una de ellas.
+## ¿Qué es lo que hemos hecho?
+Esta es nuestra base de datos en MongoDB Atlas. A continuación, os mostraremos las colecciones que contiene y os explicaremos la función de cada una de ellas.
 
 ![image](https://github.com/user-attachments/assets/0be57b9c-2c76-4fc4-8aeb-04e71d1d4d93)
 
@@ -1543,14 +1542,6 @@ Aquí almacenamos la información de los usuarios registrados en nuestra web. Pu
 
 ![image](https://github.com/user-attachments/assets/3ab81af1-90b3-46a8-9389-d80e080309ae)
 
-
-
-
-<br>
-<br>
-
-
-## ¿Qué es lo que hemos hecho?
 
 
 
