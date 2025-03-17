@@ -1498,11 +1498,13 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 ❌ Si los datos son altamente estructurados y no cambian mucho.
 
 
+<br>
+<br>
 
 
 ## Nuestra BBDD
 
-Aquí es donde se encuentra nuestra bbdd. Ahora os mostraremos las colecciones de nuestra bbdd y os explicaremos que es lo que hace cada uno.
+Esta es nuestra base de datos. A continuación, os mostraremos las colecciones que contiene y os explicaremos la función de cada una de ellas.
 
 ![image](https://github.com/user-attachments/assets/0be57b9c-2c76-4fc4-8aeb-04e71d1d4d93)
 
