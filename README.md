@@ -1861,10 +1861,12 @@ Un servidor de correo es una computadora o sistema que gestiona y distribuye los
 Existen diferentes tipos de servidores de correo, como:
 
 **1. Servidor de correo entrante (IMAP/POP3):**
+
    Se encarga de recibir y almacenar los correos en una bandeja de entrada. El usuario puede acceder a sus mensajes a través de un cliente de correo, como Outlook, Thunderbird, o aplicaciones móviles. IMAP (Internet Message Access Protocol) mantiene los mensajes en el servidor, mientras que POP3 (Post Office Protocol) descarga los correos al dispositivo y los elimina del servidor.
 
 
 **2. Servidor de correo saliente (SMTP):**
+
    Es el responsable de enviar los correos electrónicos a otros servidores o destinatarios. SMTP (Simple Mail Transfer Protocol) es el protocolo utilizado para enviar los mensajes.
 
 
