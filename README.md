@@ -1498,6 +1498,52 @@ MongoDB es una base de datos NoSQL orientada a documentos, diseñada para maneja
 ❌ Si los datos son altamente estructurados y no cambian mucho.
 
 
+
+
+## Nuestra BBDD
+
+Aquí es donde se encuentra nuestra bbdd. Ahora os mostraremos las colecciones de nuestra bbdd y os explicaremos que es lo que hace cada uno.
+
+![image](https://github.com/user-attachments/assets/0be57b9c-2c76-4fc4-8aeb-04e71d1d4d93)
+
+
+### Channels
+En esta sección, almacenamos los canales disponibles en nuestra página web. Aquí podrás ver el nombre del canal, la fecha de creación, si es público o privado, su estado (activo o inactivo), quién lo creó y los miembros que forman parte de él.
+
+![image](https://github.com/user-attachments/assets/2151207c-312c-47e4-8aaa-de496b998349)
+
+
+### Files
+Aquí almacenamos los archivos enviados entre usuarios. Podrás ver en qué canal se envió el archivo, la hora de envío y el tipo de archivo.
+
+![image](https://github.com/user-attachments/assets/e2ef22cb-ca6b-412e-9a94-f1afa139f570)
+
+
+
+### Messages
+En esta sección se almacenan los mensajes enviados entre usuarios y en los canales. También se muestra la fecha en que se envió cada mensaje.
+
+![image](https://github.com/user-attachments/assets/d6c36f84-5adf-4e20-9633-220c589c6e20)
+
+
+
+### Private-Chats
+En esta sección se encuentran los chats privados creados por los usuarios. Podrás ver los miembros de cada chat y los mensajes enviados en ellos.
+
+![image](https://github.com/user-attachments/assets/4c1f7e9d-d832-43ed-bf88-e336d4bbcd4e)
+
+
+
+### Users
+Aquí almacenamos la información de los usuarios registrados en nuestra web. Puedes ver el nombre de usuario, correo electrónico, contraseña, estado, fecha de creación de la cuenta, última conexión, amigos y los usuarios que ha bloqueado.
+
+![image](https://github.com/user-attachments/assets/1700c6c9-b171-4909-bfc9-7e5d47ac572e)
+
+![image](https://github.com/user-attachments/assets/3ab81af1-90b3-46a8-9389-d80e080309ae)
+
+
+
+
 <br>
 <br>
 
