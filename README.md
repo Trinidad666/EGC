@@ -1638,6 +1638,87 @@ WebSocket es un protocolo de comunicación que proporciona un canal de comunicac
 
 * ¿Por qué WebSocket? Cuando varios usuarios están colaborando en un mismo documento, los cambios deben ser reflejados en tiempo real para todos los participantes. WebSocket garantiza que los cambios de un usuario se envíen y reciban instantáneamente, manteniendo todos los participantes sincronizados.
 
+<br>
+<br>
+<br>
+
+# Los pasos para hacer un Websocket
+
+Para crear un servidor WebSocket, puedes usar diferentes lenguajes y bibliotecas. Aquí te muestro cómo hacerlo en Node.js utilizando la librería ws, que es una de las más populares.
+
+<br>
+
+## Paso 1: Instalar Node.js y la librería ws
+
+Asegúrate de tener instalado Node.js en tu sistema. Luego, instala la librería ws para crear el servidor WebSocket.
+
+1. Instalar Node.js: Si no lo tienes, puedes descargarlo desde https://nodejs.org/.
+
+2. Crear un proyecto nuevo:
+
+```
+mkdir websocket-server
+cd websocket-server
+npm init -y
+
+```
+
+3. Instalar la librería ws:
+
+```
+npm install ws
+
+```
+
+<br>
+
+## Paso 2: Crear el servidor WebSocket
+
+Crea un archivo llamado ```server.js``` en tu proyecto:
+
+```
+const WebSocket = require('ws');
+const server = new WebSocket.Server({ port: 8080 }); // El servidor escucha en el puerto 8080
+
+server.on('connection', (ws) => {
+    console.log('Cliente conectado');
+    
+    // Escuchar los mensajes del cliente
+    ws.on('message', (message) => {
+        console.log('Mensaje recibido: ' + message);
+    });
+
+    // Enviar un mensaje al cliente
+    ws.send('¡Hola desde el servidor WebSocket!');
+});
+
+console.log('Servidor WebSocket corriendo en ws://localhost:8080');
+```
+
+<br>
+
+## Paso 3: Iniciar el servidor WebSocket
+
+Abre tu terminal y ejecuta el servidor:
+
+
+```
+node server.js
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </details>
