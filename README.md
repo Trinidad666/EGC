@@ -1649,9 +1649,9 @@ Para crear un **WebSocket** en un servidor Ubuntu Linux, generalmente se utiliza
 
 ## Requisitos Previos
 
-1. Tener un servidor Ubuntu Linux funcionando.
+### 1. Tener un servidor Ubuntu Linux funcionando.
 
-2. Tener Node.js instalado. Si no lo tienes, puedes instalarlo ejecutando los siguientes comandos:
+### 2. Tener Node.js instalado. Si no lo tienes, puedes instalarlo ejecutando los siguientes comandos:
 
 ```
 sudo apt update
@@ -1671,14 +1671,14 @@ npm -v
 
 ## Pasos para Crear un WebSocket con Node.js
 
-1. Crea un directorio para tu proyecto.
+### 1. Crea un directorio para tu proyecto.
 
 ```
 mkdir websocket-server
 cd websocket-server
 ```
 
-2. Inicializa un nuevo proyecto Node.js.
+### 2. Inicializa un nuevo proyecto Node.js.
 
 ```
 npm init -y
@@ -1687,7 +1687,7 @@ npm init -y
 Este comando generará un archivo ```package.json``` con la configuración básica de tu proyecto.
 
 
-3. Instala el paquete ```ws```.
+### 3. Instala el paquete ```ws```.
 
 ```ws``` es una librería simple y eficiente para trabajar con WebSockets en Node.js.
 
@@ -1695,7 +1695,7 @@ Este comando generará un archivo ```package.json``` con la configuración bási
 npm install ws
 ```
 
-4. Crea un archivo de servidor WebSocket (por ejemplo, ```server.js```).
+### 4. Crea un archivo de servidor WebSocket (por ejemplo, ```server.js```).
 
 Crea el archivo ```server.js``` dentro de tu directorio de proyecto.
 
@@ -1703,107 +1703,58 @@ Crea el archivo ```server.js``` dentro de tu directorio de proyecto.
 touch server.js
 ```
 
-5. Escribe el código para tu servidor WebSocket en server.js.
+### 5. Escribe el código para tu servidor WebSocket en server.js.
 
 Abre server.js con tu editor de texto preferido (por ejemplo, nano, vim, o tu editor favorito). Escribe el siguiente código:
 
 ```
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cliente WebSocket</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    #messages {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 20px;
-      height: 200px;
-      overflow-y: auto;
-    }
-    #inputMessage {
-      width: 80%;
-      padding: 10px;
-    }
-    #sendMessageButton {
-      padding: 10px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Cliente WebSocket</h1>
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({ port: 8080 });
 
-  <div id="messages"></div>
+// Mantener una lista de todos los clientes conectados
+let clients = [];
 
-  <input type="text" id="inputMessage" placeholder="Escribe tu mensaje...">
-  <button id="sendMessageButton">Enviar mensaje</button>
+wss.on('connection', (ws) => {
+  console.log('Nuevo cliente conectado.');
+  
+  // Agregar el cliente a la lista
+  clients.push(ws);
 
-  <script>
-    // Conexión al servidor WebSocket
-    const socket = new WebSocket('ws://localhost:8080');
+  // Enviar un mensaje de bienvenida al cliente
+  ws.send('Bienvenido al servidor WebSocket. Ahora puedes chatear con otros usuarios.');
 
-    // Elementos de la página
-    const messagesDiv = document.getElementById('messages');
-    const inputMessage = document.getElementById('inputMessage');
-    const sendMessageButton = document.getElementById('sendMessageButton');
+  // Escuchar mensajes enviados desde el cliente
+  ws.on('message', (message) => {
+    console.log(`Mensaje recibido: ${message}`);
 
-    // Cuando se abre la conexión
-    socket.onopen = function() {
-      console.log('Conectado al servidor WebSocket');
-    };
-
-    // Cuando se recibe un mensaje del servidor
-    socket.onmessage = function(event) {
-      const message = event.data;
-      console.log('Mensaje recibido del servidor: ' + message);
-
-      // Mostrar el mensaje recibido en el div de mensajes
-      const messageDiv = document.createElement('div');
-      messageDiv.textContent = 'Otro usuario: ' + message;
-      messagesDiv.appendChild(messageDiv);
-      messagesDiv.scrollTop = messagesDiv.scrollHeight;
-    };
-
-    // Cuando se cierra la conexión
-    socket.onclose = function() {
-      console.log('Desconectado del servidor WebSocket');
-    };
-
-    // Enviar mensaje al servidor cuando el usuario hace clic en el botón
-    sendMessageButton.addEventListener('click', function() {
-      const messageToSend = inputMessage.value;
-      if (messageToSend) {
-        // Enviar el mensaje al servidor WebSocket
-        socket.send(messageToSend);
-
-        // Mostrar el mensaje en la página como si fuera del cliente
-        const messageDiv = document.createElement('div');
-        messageDiv.textContent = 'Tú: ' + messageToSend;
-        messagesDiv.appendChild(messageDiv);
-        messagesDiv.scrollTop = messagesDiv.scrollHeight;
-
-        // Limpiar el campo de entrada
-        inputMessage.value = '';
+    // Enviar el mensaje a todos los demás clientes
+    clients.forEach((client) => {
+      if (client !== ws) {
+        client.send(message);
       }
     });
+  });
 
-    // Opcional: Enviar el mensaje cuando presionas Enter
-    inputMessage.addEventListener('keypress', function(event) {
-      if (event.key === 'Enter') {
-        sendMessageButton.click();
-      }
-    });
-  </script>
-</body>
-</html>
+  // Manejar cierre de conexión
+  ws.on('close', () => {
+    console.log('Cliente desconectado');
 
+    // Eliminar el cliente de la lista
+    clients = clients.filter(client => client !== ws);
+  });
+});
+
+console.log('Servidor WebSocket escuchando en ws://localhost:8080');
 ```
 
-6. Ejecuta el servidor WebSocket.
+#### Explicación:
+
+* Lista de clientes: Creamos un array ```clients``` que almacenará todas las conexiones activas.
+* Conexión y desconexión de clientes: Cuando un cliente se conecta, se agrega a esta lista. Cuando se desconecta, se elimina de la lista.
+* Envío de mensajes: Cuando un cliente envía un mensaje, el servidor lo reenvía a todos los demás clientes en la lista (excepto al propio cliente que lo envió).
+
+
+### 6. Ejecuta el servidor WebSocket.
 
 Una vez que hayas escrito el código, guarda el archivo y ejecuta el servidor:
 
@@ -1814,7 +1765,7 @@ node server.js
 El servidor ahora debería estar corriendo en ```ws://localhost:8080```.
 
 
-7. Verifica que el servidor WebSocket está funcionando.
+### 7. Verifica que el servidor WebSocket está funcionando.
 
 Abre un navegador web o usa una herramienta como Postman o un cliente WebSocket en JavaScript para conectarte al servidor. Si usas JavaScript en el navegador, puedes crear un cliente WebSocket simple de la siguiente manera:
 
@@ -1931,6 +1882,21 @@ En un archivo ```client.html```:
 
 ```
 
+#### Explicación:
+
+##### Detección de tipo Blob:
+
+* Al recibir un mensaje del servidor en el cliente, primero se verifica si el mensaje es de tipo Blob. Esto se hace con if (message instanceof Blob).
+
+* Si el mensaje es un Blob, usamos el método .text() para convertirlo a texto antes de mostrarlo. El .text() devuelve una promesa que resuelve en el contenido del Blob como una cadena de texto.
+
+* Si el mensaje no es un Blob, se considera que ya es texto y se muestra directamente.
+
+##### Manejo de mensajes:
+
+* Cuando el mensaje recibido es texto, se muestra como antes: en el div con id messages.
+
+* Si el mensaje es un Blob, primero lo convertimos a texto y luego lo mostramos en el div.
 
 
 
