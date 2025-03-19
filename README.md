@@ -532,6 +532,64 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 
 <br>
 
+
+<details>
+<summary>+----------🌐🔄🖥️ DNS</summary>
+
+  
+</details>
+<br>
+
+
+<details>
+<summary>+----------🌐🖥️ WEB/NGINX</summary>
+
+  
+</details>
+<br>
+
+
+<details>
+<summary>+----------🍃🗃️ MongoDB</summary>
+
+  
+</details>
+<br>
+
+
+<details>
+<summary>+----------👤 Cliente</summary>
+
+  
+</details>
+<br>
+
+
+<details>
+<summary>+----------🐳 Docker</summary>
+
+  
+</details>
+<br>
+
+
+<details>
+<summary>+----------📧 Server Email</summary>
+
+  
+</details>
+<br>
+
+
+<details>
+<summary>+----------💾🔒 Backup/Recuperación</summary>
+
+  
+</details>
+<br>
+
+
+
 <details>
 <summary>+----------🐧 Sistemas Operativos</summary>
 
