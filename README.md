@@ -1602,8 +1602,15 @@ Aquí almacenamos la información de los usuarios registrados en nuestra web. Pu
 
 
 
+## Referencias que hemos consegido para crear la BBDD
 
+Nuestro profesor Joaquín
+Tutoríales de Youtube:
 
+* f
+* f
+* f
+* f
 
   
 </details>
