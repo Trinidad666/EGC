@@ -2227,30 +2227,22 @@ Se encarga de recibir y almacenar los correos en una bandeja de entrada. El usua
 Es el responsable de enviar los correos electrónicos a otros servidores o destinatarios. SMTP (Simple Mail Transfer Protocol) es el protocolo utilizado para enviar los mensajes.
 
 
-## Cual es nuestro servidor de c
+## Cual es nuestro servidor de correo
+
+
+
+
+
 
 </details>
 
 </details>
+
 <br>
 
 
 
 <br><br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
