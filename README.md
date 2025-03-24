@@ -2231,15 +2231,12 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 </details>
 
-
+</details>
 <br>
 
 
 
 <br><br><br>
-
-
-
 
 
 
