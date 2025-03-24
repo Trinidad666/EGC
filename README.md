@@ -169,7 +169,8 @@ Como podemos ver en nuestro diagrama, la tabla **users** se conecta a la tabla c
 
 Docker es una plataforma que permite crear, distribuir y ejecutar aplicaciones en contenedores. Un contenedor es un entorno ligero y portátil que incluye todo lo necesario para ejecutar un software, como código, bibliotecas y dependencias, asegurando que funcione igual en cualquier sistema. Docker facilita la gestión y escalabilidad de aplicaciones, optimizando el uso de recursos y mejorando la eficiencia en desarrollo y despliegue. Se basa en imágenes preconfiguradas y permite automatizar procesos, haciéndolo ideal para entornos de desarrollo, pruebas y producción en la nube o servidores locales.
 
-![image](https://github.com/user-attachments/assets/c191ed6f-5e29-40d3-87d6-49e7c332e7da)
+![image](https://github.com/user-attachments/assets/538841f9-274d-48d4-9fd9-04ec71d46ebc)
+
 
 
 
