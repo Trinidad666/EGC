@@ -1123,33 +1123,35 @@ sudo chmod -R u+w /home/hugo/buckup
 <summary>+----------🧱🔥 PFSense</summary>
 
 # ¿Qué es PFSense?
-Es una distribución de **FreeBSD** adaptada como **firewall** y **router**. Es de código abierto y se puede instalar en dispositivos físicos y virtuales.
-Es sostenida comercialmente por **Electric Sheep Fencing LLC**, además de ser de código abierto.
-pfSense proporciona funciones avanzadas de seguridad y networking, y es conocido por ser una solución de firewall de alto rendimiento. Ahora os mostraremos unas características que hemos encontrado.
-
-* **Firewall avanzado:** Nos ofrece reglas de firewall que permite filtrar y controlar el tráfico de red de manera efectiva.
-* **Enrutamiento:** Se puede utilizar como un router que nos proporciona funciones de enrutamiento avanzadas y permitiendo la conectividad entre redes.
-* **VPN:** 
-* **Proxy y filtrado web:** 
-* **Balanceo de carga y redundancia:** 
-* **Seguridad:** 
-* **Interfaz gráfica:** 
+Es una distribución de **FreeBSD** adaptada como **firewall** y **router**. Es de código abierto y se puede instalar en dispositivos físicos y virtuales. Está respaldada comercialmente por **Electric Sheep Fencing LLC**, además de ser de código abierto.
+**PfSense** proporciona funciones avanzadas de seguridad y redes, y es conocida por ser una solución de firewall de alto rendimiento. A continuación, mostramos algunas características clave:
 
 
-Configuramos la interfaz de la dirección IP con la opción número 2, ahora te muestro los pasos que nos apareceran:
-1. Nos preguntara si lo configuramos vía DHCP, hay que decir que no.
-2. Añadimos la nueva dirección IP: 192.168.56.110
-3. Nos preguntaran que mascara de subneteo utilizaremos: 24
-4. Luego le damos al **ENTER**
-5. Nos preguntara si queremos configurar una dirección IPv6 en la interfaz LAN. Le decimos que no y le volovemos a dar **ENTER**
-6. Luego nos pregunta si queremos un DHCP en el servidor LAN, le decimos que si. Añadimos el inicio del rango de IP del cliente(192.168.56.150) y luego el final del rengo(192.168.56.160).
+
+* **Firewall avanzado:** Permite configurar reglas de firewall para filtrar y controlar el tráfico de red de manera efectiva.
+* **Enrutamiento:** Funciona como un router que proporciona funciones de enrutamiento avanzadas y permite la conectividad entre redes.
+* **VPN:** Proporciona soporte para VPNs, permitiendo conexiones seguras a través de redes públicas.
+* **Proxy y filtrado web:** Ofrece funciones de proxy y filtrado web para controlar el acceso a Internet y mejorar la seguridad.
+* **Balanceo de carga y redundancia:** Permite distribuir el tráfico entre varios servidores y garantizar la disponibilidad en caso de fallos.
+* **Seguridad:** Incluye herramientas y configuraciones avanzadas para asegurar las redes y proteger contra ataques.
+* **Interfaz gráfica:** Cuenta con una interfaz web fácil de usar para gestionar y configurar el sistema de forma eficiente.
 
 
+## Configuración de la interfaz LAN
+
+Para configurar la dirección IP de la interfaz LAN, seleccionamos la opción número 2. A continuación, los pasos que nos aparecerán:
+
+1. Nos preguntará si queremos configurarlo vía DHCP, debemos responder no.
+2. Añadimos la nueva dirección IP: **192.168.56.110**.
+3. Nos preguntará qué máscara de subred utilizaremos: 24.
+4. Luego presionamos **ENTER**
+5. Nos preguntará si queremos configurar una dirección IPv6 en la interfaz LAN. Respondemos no y presionamos **ENTER**.
+6. Luego nos preguntará si queremos habilitar un servidor DHCP en la LAN. Respondemos sí. Añadimos el inicio del rango de IP para los clientes (**192.168.56.150**) y el final del rango (**192.168.56.160**).
 
 
 
 ## Configuración de la interfaz WAN
-La interfaz WAN se usa para conectarse a Internet. Normalmente, se configura con DHCP si el proveedor de servicios de Internet (ISP) asigna direcciones dinámicas, pero también puede ser estática.
+La interfaz WAN se utiliza para conectarse a Internet. Normalmente, se configura con DHCP si el proveedor de servicios de Internet (ISP) asigna direcciones dinámicas, aunque también se puede configurar con una IP estática.
 
 1. Desde el menú principal, selecciona la opción
    
@@ -1165,7 +1167,7 @@ La interfaz WAN se usa para conectarse a Internet. Normalmente, se configura con
 
 3. Selecciona el tipo de configuración IP:
 
-  * DHCP: Si el ISP asigna la IP automáticamente (opción recomendada para la mayoría).
+  * DHCP: Si el ISP asigna la IP automáticamente (opción recomendada para la mayoría de los casos).
 
   * Estática: Si tienes una IP fija proporcionada por tu ISP.
 
@@ -1179,11 +1181,11 @@ La interfaz WAN se usa para conectarse a Internet. Normalmente, se configura con
 
 5.¿Configurar IPv6?
 
-  * Si tu ISP lo usa, puedes configurarlo o dejarlo en automático.
+  * Si tu ISP lo soporta, puedes configurarlo o dejarlo en automático.
 
 6. ¿Activar servidor DHCP en esta interfaz?
 
-  * Para WAN, generalmente es No.
+  * Para la interfaz WAN, generalmente seleccionamos No.
 
 7. Confirmar y aplicar cambios.
 
@@ -1207,7 +1209,7 @@ La interfaz LAN se usa para la red interna y suele tener una dirección IP está
 
 * Máscara de subred: ```255.255.255.0```.
 
-4. onfigurar IPv6:
+4. Configurar IPv6:
 
    Puedes desactivarlo si no lo necesitas o usarlo si tu red lo soporta.
 
@@ -1232,21 +1234,48 @@ La interfaz LAN se usa para la red interna y suele tener una dirección IP está
 <br>
 <br>
 
-Para poder entrar a **pfSense** en modo gráfico, tenemos que poner la dirección IP en el navegador de una máquina que esté conectada a la red LAN y que tenga el modo gráfico habilitado.
+Para poder acceder a **pfSense** en modo gráfico, debes ingresar la dirección IP en el navegador de una máquina conectada a la red LAN, siempre que esta tenga habilitado el acceso al modo gráfico.
 
 ![image](https://github.com/user-attachments/assets/52450081-dc1d-4086-9f1c-1d48ce3d9e75)
 
 
+Tendremos que activar **Kea DHCP**, que se encarga de asignar direcciones IP dinámicamente. Mejora el rendimiento, permite configuraciones sin necesidad de reiniciar, soporta bases de datos externas y facilita la administración remota mediante API.
 
-Tendremos que activar el Kea DHCP que lo que hace es asignar direcciones IP dinámicamente, mejora rendimiento, permite configuraciones sin reinicio, soporta bases de datos externas y facilita administración remota mediante API. 
 ![image](https://github.com/user-attachments/assets/848e501c-bf3b-4d85-b0d3-725bb8bdb75e)
 
 <br>
 <br>
 
-# Cómo activar OpenVPN
+# ¿Qué es OpenVPN?
+
+**OpenVPN** es una solución de software libre para crear redes privadas virtuales (VPN). Permite establecer una conexión segura y cifrada entre dispositivos a través de una red no segura, como **Internet**. Es utilizado para proteger la privacidad en línea, asegurar la comunicación entre dispositivos remotos y permitir el acceso a redes internas de forma segura.
 
 ![imagen_2025-03-14_101252810-removebg-preview](https://github.com/user-attachments/assets/e9237aa2-1a9e-4c13-a7f4-1e6642275050)
+
+## ✅ Ventajas
+* **Seguridad robusta:** Utiliza cifrado de alta calidad (**AES, SSL/TLS**) para garantizar que los datos transmitidos estén protegidos contra intercepciones.
+
+* **Flexibilidad:** Puede ser configurado para funcionar en diferentes plataformas (**Windows, Linux, macOS, Android, iOS**) y ser usado tanto en redes locales como remotas.
+
+*  **Código abierto:** **OpenVPN** es gratuito y tiene una comunidad activa que contribuye a su mejora constante.
+
+*  **Acceso remoto seguro:** Ideal para acceder de forma segura a redes privadas desde cualquier lugar del mundo.
+
+*  **Escalabilidad:** Puede manejar desde pequeñas instalaciones hasta grandes redes corporativas.
+
+## ❌ Desventajas
+Desventajas de OpenVPN:
+* **Configuración compleja:** A pesar de ser poderoso, puede resultar complicado de configurar para usuarios sin experiencia, especialmente cuando se necesita ajustar opciones avanzadas.
+
+* **Rendimiento:** En comparación con otras soluciones **VPN**, **OpenVPN** puede ser más lento debido a su nivel de cifrado y autenticación, aunque este impacto es mínimo si se utiliza un hardware adecuado.
+
+* **Dependencia de certificados:** Requiere la gestión de certificados y claves para la autenticación, lo que puede ser un desafío si no se tiene experiencia en su administración.
+
+* **Requiere software adicional:** Necesita instalar un cliente **OpenVPN** en los dispositivos que se conectan a la red privada, lo que puede ser una limitación en algunos entornos.
+
+<br>
+
+# Comó activar OpenVPN
 
 ## 1️⃣ Instalar OpenVPN (si no está instalado)
 
@@ -1272,9 +1301,9 @@ OpenVPN viene integrado en pfSense, pero si falta, instálalo desde:
 
 <br>
 
-4. Crear o usar una CA (Certificate Authority)
+4. Crear o usar una **CA** (Certificate Authority)
 
-  * Si no tienes una CA, el asistente la generará.
+  * Si no tienes una **CA**, el asistente la generará.
 
   * Crea un certificado de servidor.
 
@@ -1382,7 +1411,7 @@ También, en Firewall > NAT, agrega una regla para permitir tráfico desde la VP
 
 # Qué es el Cifrado punto a punto
 
-El cifrado punto a punto (también conocido como cifrado end-to-end, o E2EE, por sus siglas en inglés) es un método de seguridad de comunicación que asegura que solo el emisor y el receptor de la información puedan leer los mensajes que se envían entre ellos.
+El cifrado punto a punto (también conocido como cifrado **end-to-end**, o **E2EE**, por sus siglas en inglés) es un método de seguridad de comunicación que asegura que solo el emisor y el receptor de la información puedan leer los mensajes que se envían entre ellos.
 
 ![image](https://github.com/user-attachments/assets/45ede1e2-9629-4226-bec5-d94b1ac05ed3)
 
@@ -1400,7 +1429,110 @@ Esto garantiza que, incluso si los servidores de la plataforma de comunicación 
 
 <br>
 
-Ejemplos de aplicaciones que usan cifrado punto a punto:
+# end-to-end/WebSocket
+El cifrado punto a punto (end-to-end) en WebSocket se logra utilizando una capa de cifrado sobre la comunicación WebSocket, asegurando que los datos sean cifrados en el cliente y solo descifrados en el servidor, o viceversa. Esto se puede lograr con TLS (Transport Layer Security), que es el estándar de cifrado utilizado en protocolos como HTTPS.
+
+## Pasos para habilitar cifrado punto a punto en WebSocket:
+
+### 1️⃣ Usar WebSocket sobre WSS (WebSocket Secure)
+Al igual que HTTPS para HTTP, WebSocket utiliza WSS para conexiones seguras (cifradas). La wss:// es la versión segura de WebSocket, que utiliza TLS para cifrar la comunicación.
+  * En el servidor WebSocket, debes configurar TLS.
+  * En el cliente, debes usar wss:// en lugar de ws:// para que la conexión sea segura.
+
+### 2️⃣ Configurar un servidor WebSocket con TLS 
+Si estás utilizando un servidor como Node.js con ws o Socket.io, necesitarás un certificado SSL/TLS. Aquí hay un ejemplo básico usando Node.js:
+
+* **Instalación:**
+```
+npm install ws
+npm install https
+```
+
+* **Código del servidor con TLS:**
+```
+const https = require('https');
+const fs = require('fs');
+const WebSocket = require('ws');
+
+// Cargar los certificados SSL/TLS
+const server = https.createServer({
+  cert: fs.readFileSync('path/to/certificate.pem'),
+  key: fs.readFileSync('path/to/private-key.pem')
+});
+
+// Crear el servidor WebSocket
+const wss = new WebSocket.Server({ server });
+
+wss.on('connection', ws => {
+  ws.on('message', message => {
+    console.log('received: %s', message);
+  });
+  ws.send('Hello secure WebSocket!');
+});
+
+server.listen(8080, () => {
+  console.log('Secure WebSocket server is running on wss://localhost:8080');
+});
+```
+
+* **https.createServer()** se usa para crear un servidor HTTPS que también soporta WebSocket seguro.
+* Necesitarás tener un certificado (**certificate.pem**) y una clave privada (**private-key.pem**).
+
+### 3️⃣ Cliente WebSocket con wss://
+En el lado del cliente, simplemente usa wss:// para conectar de manera segura al servidor.
+
+**Código del cliente:**
+
+```
+const socket = new WebSocket('wss://localhost:8080');
+
+socket.onopen = function(event) {
+  console.log('Conectado al servidor seguro WebSocket');
+  socket.send('Hola desde el cliente seguro!');
+};
+
+socket.onmessage = function(event) {
+  console.log('Mensaje recibido: ', event.data);
+};
+```
+
+### 4️⃣ Certificados y claves en producción
+* Para entornos de producción, asegúrate de obtener certificados SSL/TLS válidos de una autoridad de certificación (CA) confiable.
+* Usa herramientas como Let's Encrypt para obtener certificados SSL gratuitos si es necesario.
+
+<br>
+
+### Consideraciones adicionales
+Cifrado de extremo a extremo real: Si deseas realizar un cifrado adicional de los datos antes de enviarlos a través de WebSocket (más allá de TLS), podrías cifrar los mensajes con una clave privada del cliente y solo el destinatario podría descifrarlos. Para esto, puedes usar bibliotecas como CryptoJS o Web Crypto API.
+
+**Ejemplo usando Web Crypto API en el cliente:**
+
+```
+async function encryptData(data, publicKey) {
+  const encoder = new TextEncoder();
+  const dataBuffer = encoder.encode(data);
+
+  // Usar la clave pública para cifrar los datos
+  const encryptedData = await window.crypto.subtle.encrypt(
+    { name: "RSA-OAEP" },
+    publicKey,
+    dataBuffer
+  );
+
+  return encryptedData;
+}
+```
+
+### Resumen
+1. Usa wss:// en lugar de ws:// para asegurarte de que los WebSockets estén cifrados usando TLS.
+
+2. En el servidor, configura un certificado SSL/TLS para habilitar la conexión segura.
+
+3. Si deseas un cifrado real punto a punto, implementa cifrado adicional de los datos (por ejemplo, usando RSA o AES en el lado del cliente y servidor).
+
+<br>
+
+## Ejemplos de aplicaciones que usan cifrado punto a punto:
 
 * WhatsApp
 * Signal
@@ -1413,8 +1545,6 @@ Este tipo de cifrado es muy popular porque ofrece un alto nivel de privacidad y 
 
 </details>
 
-
-</details>
 
 <br>
 
