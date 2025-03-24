@@ -27,62 +27,62 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 
 ## Mockup
 
-### Home:
+### Home
 
 * En la página de inicio tendríamos una imagen de fondo, y en la parte superior de la pestaña se mostraría el logo junto a tres enlaces que dirigirían a páginas donde hablaríamos sobre nosotros, nuestra seguridad y soporte técnico, así como al inicio de sesión. Además, contaríamos con un footer que incluiría los logotipos de nuestras redes sociales.
 
 ![image](https://github.com/user-attachments/assets/7c5c27db-fa5a-4ce7-b655-c1a179c5a935)
 
 
-### Sobre Nosotros:
+### Sobre Nosotros
 
-* En la sección "Sobre nosotros", explicaríamos qué hace nuestra empresa, cuándo fue creada y qué ventajas ofrece en comparación con otros servicios de chat. También incluiríamos imágenes decorativas para mejorar la presentación.
+* En la sección "Sobre nosotros", os explicaremos qué hace nuestra empresa, cuándo fue creada y qué ventajas ofrece en comparación con otros servicios de chat. También incluiríamos imágenes decorativas para mejorar la presentación.
 
 ![image](https://github.com/user-attachments/assets/4367be43-9c0b-4f62-b6b4-724a5508d5c5)
 
 
-### Nuestra Seguridad:
+### Nuestra Seguridad
 
 * En la sección "Nuestra seguridad" explicaremos las medidas de seguridad que ofrecemos, sin entrar en detalles específicos.
 
 ![image](https://github.com/user-attachments/assets/941276f0-4848-47e5-897f-c80d1c07cc01)
 
 
-### Soporte Técnico:
+### Soporte Técnico
 
 * En la sección de soporte técnico, los usuarios podrían ingresar su correo electrónico, describir el problema que tienen y hacer clic en un botón de "Enviar".
 
 ![image](https://github.com/user-attachments/assets/63f4c1c3-9c71-42d7-8b81-6e513d4a79f4)
 
 
-### Chat:
+### Chat
 
 * Este sería nuestro chat, con una lista a la izquierda que muestra nuestros contactos y amigos, y un buscador para encontrar a otros contactos.
 
 ![image](https://github.com/user-attachments/assets/6d88b906-7cba-4fa5-85a2-c13a1306e03a)
 
 
-### Grupos:
+### Grupos
 
 * En el catálogo, el usuario podrá buscar temarios sobre ciberseguridad utilizando el buscador, y se le mostrarán diferentes temarios relacionados con el tema.
 
 ![image](https://github.com/user-attachments/assets/e68bcc31-368f-4f8c-a04e-0e3e9245ff63)
 
 
-### Crear Grupo:
+### Crear Grupo
 
 * En "Crear catálogo", el usuario podrá subir una imagen, añadir un título y un texto, y deberá ingresar su nombre de usuario en un apartado. Al final, tendrá un botón para crear el catálogo.
 
 ![image](https://github.com/user-attachments/assets/12724ed0-f878-4d0b-bd73-a0c204ee2e36)
 
-### Registro:
+### Registro
 
 * Así es como se vería la sección donde se registrarían nuestros usuarios. En el formulario de registro, el usuario deberá ingresar su nombre, primer apellido, un nombre de usuario, su correo electrónico, número de teléfono y una contraseña, la cual deberá confirmar nuevamente.
 
 ![image](https://github.com/user-attachments/assets/587a3bd2-9e8c-4737-8d00-9a2e71e7e9d7)
 
 
-### Inicio Sesión:
+### Inicio Sesión
 
 * Así es como se vería nuestro inicio de sesión. El usuario solo deberá ingresar su correo electrónico y contraseña.
 
@@ -92,11 +92,11 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 
 ## Gamma de colores + Logo
 
-### Nuestra gamma de colores:
+### Nuestra gamma de colores
 
 ![image](https://github.com/user-attachments/assets/c999e1eb-701f-43bd-8a99-e5fd0f23e867)
 
-### Nuestro Logo:
+### Nuestro Logo
 
 ![ECS](https://github.com/user-attachments/assets/6ba6de8e-952c-4265-9db4-ab254b4884f4)![image](https://github.com/user-attachments/assets/03bae469-1db6-44f0-bc5f-c439e731b600)
 
@@ -173,7 +173,7 @@ Docker es una plataforma que permite crear, distribuir y ejecutar aplicaciones e
 
 
 
-# Que ventajas y descentajas da el Docker
+# ¿Qué ventajas y desventajas ofrece Docker?
 
 
 ## Ventajas✅
@@ -449,7 +449,7 @@ Funcionalidades que vamos a implementar:
 
 Seguridad (en función de vuestro proyecto):
 
-- MySQL (crear más de un usuario, securizar la DB, triggers)
+- MongoDB
 - Protección de código fuente
 - toda la parte de monitorización y seguridad que vais a implementar
 </details>
@@ -460,68 +460,32 @@ Seguridad (en función de vuestro proyecto):
 <details>
 <summary>🖥️ Arquitectura del Sistema</summary>
 Estos seran los componentes de tecnología que utilizaremos en el sistema:
-  
-- NGINX:
-  
-  Servidor web y proxy inverso, muy eficiente en gestionar tráfico y carga.
 
-  
-- No MySQL:
+- **NGINX:** Servidor web y proxy inverso que gestiona eficazmente el tráfico y balancea la carga de las aplicaciones.
 
-  Base de datos relacional para almacenar y gestionar datos.
+- **MongoDB:** Base de datos NoSQL que almacena documentos en lugar de tablas, ideal para manejar grandes volúmenes de datos no estructurados.
 
-  
-- PHP / HTML / CSS / JS:
-  - PHP:
+- **PHP:** Lenguaje de programación del lado del servidor, usado para generar contenido dinámico en páginas web.
 
-    Lenguaje de programación del lado del servidor.
+- **HTML:** Lenguaje para estructurar y organizar el contenido de una página web.
 
-    
-  - HTML:
+- **CSS:** Lenguaje para aplicar estilos y diseños visuales a las páginas web.
 
-    Lenguaje para estructurar contenido web.
+- **JS:** Lenguaje para agregar interactividad y funcionalidades en el navegador.
 
-    
-  - CSS:
+- **Bind9:** Servidor DNS que traduce nombres de dominio a direcciones IP.
 
-    Estilos y diseño web.
+- **Docker:** Plataforma que facilita la creación y gestión de contenedores para ejecutar aplicaciones de manera aislada.
 
-    
-  - JS:
-  
-    Lenguaje para interactividad en el navegador.
+- **Jabberd:** Servidor de mensajería instantánea basado en el protocolo XMPP.
 
-    
-    
-- Bind9:
+- **Composer:** Herramienta para gestionar las dependencias y bibliotecas en proyectos PHP.
 
-  Servidor DNS que resuelve nombres de dominio a direcciones IP.
+- **WebSocket:** Protocolo para comunicación bidireccional en tiempo real entre cliente y servidor.
 
-  
-- Docker:
+- **IPTables:** Herramienta en Linux para configurar un firewall y controlar el tráfico de red.
 
-  Plataforma para crear y gestionar contenedores de aplicaciones.
 
-  
-- jabberd:
-
-  Servidor de mensajería instantánea basado en XMPP.
-  
-  
-- Composer:
-
-  Herramienta para gestionar dependencias en PHP.
-  
-  
-- WebSocket:
-
-  Protocolo para comunicación en tiempo real entre cliente y servidor.
-  
-  
-- IPTables:
-
-  Firewall en Linux para controlar el tráfico de red.
-  
 
 </details>
 <br>
