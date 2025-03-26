@@ -1710,6 +1710,272 @@ Tutoríales de Youtube:
 * f
 * f
 
+
+<br>
+
+<details>
+  <summary>🔗🍃 Como conectarte a la BBDD desde la Nube de MongoDB</summary>
+
+Estos pasos son de priva para novatos para que se pueda entender mejor.
+
+<br>
+
+## Configuración del Proyecto:
+
+```
+npm init -y
+npm install express mongoose bcrypt cors
+```
+<br>
+
+
+## Estructura de Archivos:
+
+```
+/proyecto
+  /models
+    User.js
+  server.js
+  /public
+    index.html
+    login.html
+    dashboard.html
+```
+
+
+<br>
+
+## Conexión con MongoDB (server.js):
+
+```
+const express = require('express');
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const cors = require('cors');
+const app = express();
+
+// Conexión a MongoDB Atlas
+mongoose.connect('mongodb+srv://EGC:password1234@cluster0.kbtve.mongodb.net/EGC?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('Conectado a MongoDB Atlas'))
+.catch(err => console.error(err));
+
+app.use(express.json());
+app.use(cors());
+app.use(express.static('public'));
+
+// Modelo User (models/User.js)
+const userSchema = new mongoose.Schema({
+  username: { type: String, unique: true },
+  email: { type: String, unique: true },
+  password_hash: String,
+  status: String,
+  created_at: Date,
+  last_login: Date
+});
+
+const User = mongoose.model('User', userSchema);
+
+// Rutas de autenticación
+app.post('/register', async (req, res) => {
+  try {
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const user = new User({
+      username: req.body.username,
+      email: req.body.email,
+      password_hash: hashedPassword,
+      status: 'offline',
+      created_at: new Date()
+    });
+    await user.save();
+    res.status(201).send('Usuario registrado');
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+app.post('/login', async (req, res) => {
+  try {
+    const user = await User.findOne({ username: req.body.username });
+    if (!user) return res.status(400).send('Usuario no encontrado');
+    
+    const validPass = await bcrypt.compare(req.body.password, user.password_hash);
+    if (!validPass) return res.status(400).send('Contraseña incorrecta');
+    
+    user.last_login = new Date();
+    await user.save();
+    res.send('Login exitoso');
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Servidor en puerto ${PORT}`));
+```
+
+
+<br>
+
+## Frontend (public/index.html - Registro):
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro</title>
+</head>
+<body>
+    <h2>Registro</h2>
+    <form id="registerForm">
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Registrar</button>
+    </form>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: document.getElementById('username').value,
+                    email: document.getElementById('email').value,
+                    password: document.getElementById('password').value
+                })
+            });
+            
+            const result = await response.text();
+            alert(result);
+        });
+    </script>
+</body>
+</html>
+```
+
+
+
+<br>
+
+## Frontend (public/login.html - Login):
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Ingresar</button>
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: document.getElementById('username').value,
+                    password: document.getElementById('password').value
+                })
+            });
+            
+            const result = await response.text();
+            alert(result);
+            if(response.ok) window.location.href = '/dashboard.html';
+        });
+    </script>
+</body>
+</html>
+```
+
+
+
+<br>
+
+## Pasos para Ejecutar (Windows/Linux):
+
+
+<br>
+
+### Configura variables de entorno:
+
+```
+export MONGODB_URI='mongodb+srv://EGC:password1234@cluster0.kbtve.mongodb.net/EGC?retryWrites=true&w=majority'
+```
+
+
+
+<br>
+
+### Inicia el servidor:
+
+```
+node server.js
+```
+
+
+<br>
+
+### Accede desde tu navegador:
+
+```
+http://localhost:3000/index.html
+http://localhost:3000/login.html
+```
+
+
+
+<br>
+
+### Consideraciones de Seguridad:
+
+1. Usa variables de entorno para credenciales (dotenv)
+
+2. Implementa JWT para autenticación
+
+3. Agrega validación de entrada
+
+4. Usa HTTPS en producción
+
+5. Limita intentos de login
+
+
+
+<br>
+
+### Para MongoDB Atlas:
+
+
+1. Verifica la whitelist de IPs en Atlas
+
+2. Mantén actualizados los drivers
+
+3. Usa índices para consultas frecuentes
+
+4. Implementa copias de seguridad regulares
+
+
+
+
+  
+</details>
+
   
 </details>
 
