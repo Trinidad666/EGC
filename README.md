@@ -1542,7 +1542,7 @@ async function encryptData(data, publicKey) {
 Este tipo de cifrado es muy popular porque ofrece un alto nivel de privacidad y seguridad, ya que ni siquiera los proveedores del servicio (como las plataformas de mensajería) tienen acceso a los contenidos de los mensajes.
 
 
-
+</details>
 </details>
 
 
@@ -2236,7 +2236,7 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 </details>
 
-</details>
+
 
 <br>
 
