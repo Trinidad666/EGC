@@ -1720,6 +1720,48 @@ Estos pasos son de priva para novatos para que se pueda entender mejor.
 
 <br>
 
+
+
+## Tener Node.js instalado. Si no lo tienes, puedes instalarlo ejecutando los siguientes comandos:
+
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install nodejs
+sudo apt install npm
+```
+<br>
+
+
+## Upgrade Node.js
+
+* Si tu versión es inferior a 14, necesitarás actualizar al menos a Node.js 14 o superior.
+
+* Para Ubuntu, puedes usar nvm (Node Version Manager) para cambiar versiones fácilmente:
+
+```
+sudo apt install curl
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.bashrc
+nvm install 14  # or higher
+nvm use 14
+```
+<br>
+
+
+## Alternative solution
+
+* Podrías intentar degradar tu controlador MongoDB/paquete mongoose a una versión que no utilice el operador de coalición nulo:
+
+
+```
+npm uninstall mongodb mongoose
+npm install mongoose@5.11.15 mongodb@3.6.4
+```
+<br>
+
+
+
 ## Configuración del Proyecto:
 
 ```
