@@ -2389,7 +2389,355 @@ En un archivo ```client.html```:
 
 <details>
   <summary>+----------🧠🌐🚀 Avanzado</summary>
-en progreo
+Para crear un **WebSocket** en un servidor Ubuntu Linux, generalmente se utiliza una tecnología de servidor como Node.js, Python (con ```websockets``` o ```socket.io```), o incluso directamente en el servidor web (Apache, Nginx) con soporte para WebSocket. Aquí te voy a explicar cómo crear un servidor WebSocket utilizando Node.js y el paquete ```ws```, que es uno de los métodos más sencillos.
+
+## Requisitos Previos
+
+### 1. Tener un servidor Ubuntu Linux funcionando.
+
+### 2. Tener Node.js instalado. Si no lo tienes, puedes instalarlo ejecutando los siguientes comandos:
+
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install nodejs
+sudo apt install npm
+```
+
+Para verificar que se instaló correctamente:
+
+```
+node -v
+npm -v
+```
+
+<br>
+
+## Pasos para Crear un WebSocket con Node.js
+
+### 1. Crea un directorio para tu proyecto.
+
+```
+mkdir websocket-server
+cd websocket-server
+```
+
+### 2. Inicializa un nuevo proyecto Node.js.
+
+```
+npm init -y
+```
+
+Este comando generará un archivo ```package.json``` con la configuración básica de tu proyecto.
+
+
+### 3. Instala el paquete ```ws```.
+
+```ws``` es una librería simple y eficiente para trabajar con WebSockets en Node.js.
+
+```
+npm install ws
+```
+
+### 4. Crea un archivo de servidor WebSocket (por ejemplo, ```server.js```).
+
+Crea el archivo ```server.js``` dentro de tu directorio de proyecto.
+
+```
+touch server.js
+```
+
+### 5. Escribe el código para tu servidor WebSocket en server.js.
+
+Abre server.js con tu editor de texto preferido (por ejemplo, nano, vim, o tu editor favorito). Escribe el siguiente código:
+
+```
+const WebSocket = require('ws');
+
+const wss = new WebSocket.Server({ port: 8080 });
+let users = {};
+
+wss.on("connection", (ws) => {
+    ws.on("message", (message) => {
+        const data = JSON.parse(message);
+
+        switch (data.type) {
+            case "register":
+                users[data.userID] = ws;
+                console.log(📌 Usuario registrado: ${data.userID});
+                break;
+
+            case "message":
+                if (users[data.target]) {
+                    users[data.target].send(JSON.stringify({ type: "message", from: data.from, text: data.text }));
+                }
+                break;
+
+            case "offer":
+            case "answer":
+            case "candidate":
+                if (users[data.target]) {
+                    users[data.target].send(JSON.stringify(data));
+                }
+                break;
+
+            default:
+                console.log("🔴 Tipo de mensaje desconocido:", data);
+        }
+    });
+
+    ws.on("close", () => {
+        Object.keys(users).forEach(userID => {
+            if (users[userID] === ws) {
+                delete users[userID];
+                console.log(❌ Usuario desconectado: ${userID});
+            }
+        });
+    });
+});
+
+console.log("✅ Servidor WebSocket corriendo en ws://localhost:8080");
+```
+
+#### Explicación:
+
+* Lista de clientes: Creamos un array ```clients``` que almacenará todas las conexiones activas.
+* Conexión y desconexión de clientes: Cuando un cliente se conecta, se agrega a esta lista. Cuando se desconecta, se elimina de la lista.
+* Envío de mensajes: Cuando un cliente envía un mensaje, el servidor lo reenvía a todos los demás clientes en la lista (excepto al propio cliente que lo envió).
+
+
+### 6. Ejecuta el servidor WebSocket.
+
+Una vez que hayas escrito el código, guarda el archivo y ejecuta el servidor:
+
+```
+node server.js
+```
+
+El servidor ahora debería estar corriendo en ```ws://localhost:8080```.
+
+
+### 7. Verifica que el servidor WebSocket está funcionando.
+
+Abre un navegador web o usa una herramienta como Postman o un cliente WebSocket en JavaScript para conectarte al servidor. Si usas JavaScript en el navegador, puedes crear un cliente WebSocket simple de la siguiente manera:
+
+En un archivo ```client.html```:
+
+```
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat y Llamadas de Voz</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #messages { border: 1px solid #ccc; height: 200px; overflow-y: auto; padding: 10px; }
+        #inputMessage { width: 80%; padding: 5px; }
+        #sendMessageButton { padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Chat y Llamadas de Voz</h1>
+
+    <label>Tu ID de usuario:</label>
+    <input type="text" id="userID" placeholder="Ingresa tu ID" required>
+    <button id="register">Registrar</button>
+
+    <label>Destinatario:</label>
+    <input type="text" id="targetID" placeholder="ID del usuario a llamar">
+
+    <div id="messages"></div>
+    <input type="text" id="inputMessage" placeholder="Escribe un mensaje...">
+    <button id="sendMessageButton">Enviar</button>
+
+    <button id="startCall">Iniciar Llamada</button>
+    <button id="hangUp">Colgar</button>
+
+    <audio id="remoteAudio" autoplay></audio>
+
+    <script>
+        const socket = new WebSocket("ws://localhost:8080");
+        let localStream;
+        let peerConnection;
+        let userID = null;
+
+        const config = {
+            iceServers: [
+                { urls: "stun:stun.l.google.com:19302" }, // Servidor STUN
+                // Agregar un servidor TURN si es necesario
+                { urls: "turn:turn.example.com", username: "user", credential: "password" }
+            ],
+            iceTransportPolicy: "all",  // Asegura que todos los candidatos ICE sean considerados
+            optional: [
+                { googEchoCancellation: true },  // Echo cancellation
+                { googNoiseSuppression: true },  // Noise suppression
+                { googHighpassFilter: true }     // High-pass filter for better sound quality
+            ]
+        };
+
+        document.getElementById("register").addEventListener("click", () => {
+            userID = document.getElementById("userID").value.trim();
+            if (userID) {
+                socket.send(JSON.stringify({ type: "register", userID }));
+                alert(Registrado con ID: ${userID});
+            }
+        });
+
+        socket.onmessage = async (event) => {
+            const data = JSON.parse(event.data);
+
+            if (data.type === "message") {
+                displayMessage(${data.from}: ${data.text});
+            } else if (data.type === "offer") {
+                alert(📞 Llamada entrante de ${data.from});
+                await createAnswer(data.offer, data.from);
+            } else if (data.type === "answer") {
+                peerConnection.setRemoteDescription(new RTCSessionDescription(data.answer));
+            } else if (data.type === "candidate") {
+                peerConnection.addIceCandidate(new RTCIceCandidate(data.candidate));
+            }
+        };
+
+        document.getElementById("sendMessageButton").addEventListener("click", () => {
+            const messageInput = document.getElementById("inputMessage");
+            const text = messageInput.value.trim();
+            const target = document.getElementById("targetID").value.trim();
+            if (text && target) {
+                socket.send(JSON.stringify({ type: "message", from: userID, target, text }));
+                displayMessage(Tú: ${text});
+                messageInput.value = "";
+            }
+        });
+
+        function displayMessage(message) {
+            const messagesDiv = document.getElementById("messages");
+            const messageDiv = document.createElement("div");
+            messageDiv.textContent = message;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        document.getElementById("startCall").addEventListener("click", async () => {
+            const targetID = document.getElementById("targetID").value.trim();
+            if (!targetID) {
+                alert("Debes ingresar el ID del usuario al que deseas llamar.");
+                return;
+            }
+            await startCall(targetID);
+        });
+
+        document.getElementById("hangUp").addEventListener("click", () => {
+            hangUp();
+        });
+
+        async function startCall(target) {
+            try {
+                localStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+                peerConnection = new RTCPeerConnection(config);
+                localStream.getTracks().forEach(track => {
+                    peerConnection.addTrack(track, localStream);
+                });
+
+                peerConnection.onicecandidate = (event) => {
+                    if (event.candidate) {
+                        socket.send(JSON.stringify({ type: "candidate", candidate: event.candidate, target }));
+                    }
+                };
+
+                peerConnection.ontrack = (event) => {
+                    const remoteAudio = document.getElementById("remoteAudio");
+                    if (remoteAudio.srcObject !== event.streams[0]) {
+                        remoteAudio.srcObject = event.streams[0];
+                    }
+                };
+
+                const offer = await peerConnection.createOffer();
+                await peerConnection.setLocalDescription(offer);
+                socket.send(JSON.stringify({ type: "offer", offer, target, from: userID }));
+            } catch (error) {
+                console.error("Error en startCall:", error);
+            }
+        }
+
+        async function createAnswer(offer, from) {
+            try {
+                peerConnection = new RTCPeerConnection(config);
+                localStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+                localStream.getTracks().forEach(track => {
+                    peerConnection.addTrack(track, localStream);
+                });
+
+                peerConnection.onicecandidate = (event) => {
+                    if (event.candidate) {
+                        socket.send(JSON.stringify({ type: "candidate", candidate: event.candidate, target: from }));
+                    }
+                };
+
+                peerConnection.ontrack = (event) => {
+                    const remoteAudio = document.getElementById("remoteAudio");
+                    if (remoteAudio.srcObject !== event.streams[0]) {
+                        remoteAudio.srcObject = event.streams[0];
+                    }
+                };
+
+                await peerConnection.setRemoteDescription(new RTCSessionDescription(offer));
+                const answer = await peerConnection.createAnswer();
+                await peerConnection.setLocalDescription(answer);
+                socket.send(JSON.stringify({ type: "answer", answer, target: from }));
+            } catch (error) {
+                console.error("Error en createAnswer:", error);
+            }
+        }
+
+        function hangUp() {
+            if (peerConnection) {
+                peerConnection.close();
+                peerConnection = null;
+            }
+        }
+
+        peerConnection.oniceconnectionstatechange = (event) => {
+            if (peerConnection.iceConnectionState === "failed") {
+                alert("La conexión de la llamada ha fallado. Intentando reconectar...");
+                hangUp();
+                startCall(targetID);  // Intentar reconectar automáticamente
+            }
+        };
+
+        peerConnection.onerror = (event) => {
+            console.error("Error en la conexión WebRTC:", event);
+        };
+    </script>
+</body>
+</html>
+
+```
+
+#### Explicación:
+
+##### Detección de tipo Blob:
+
+* Al recibir un mensaje del servidor en el cliente, primero se verifica si el mensaje es de tipo Blob. Esto se hace con if (message instanceof Blob).
+
+* Si el mensaje es un Blob, usamos el método .text() para convertirlo a texto antes de mostrarlo. El .text() devuelve una promesa que resuelve en el contenido del Blob como una cadena de texto.
+
+* Si el mensaje no es un Blob, se considera que ya es texto y se muestra directamente.
+
+##### Manejo de mensajes:
+
+* Cuando el mensaje recibido es texto, se muestra como antes: en el div con id messages.
+
+* Si el mensaje es un Blob, primero lo convertimos a texto y luego lo mostramos en el div.
+
+
+
+
+
+
+
 
 
 
