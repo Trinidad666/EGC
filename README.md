@@ -1550,8 +1550,7 @@ Este tipo de cifrado es muy popular porque ofrece un alto nivel de privacidad y 
 <details>
 <summary>+---------- 💥⚔️Posibles ataques</summary>
 
-1️⃣ ![image](https://github.com/user-attachments/assets/cbcd44cb-cf01-4bc5-8ff4-0322e617897d)
-Ataques de Hydra
+1️⃣ ![image](https://github.com/user-attachments/assets/715fcdc4-5d83-427b-9045-58e5cf9e08fa)Ataques de Hydra
 
 
 
