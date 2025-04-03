@@ -692,6 +692,7 @@ MV Docker:
 
 * Rate limiting en consultas para mit
 
+<br>
 
 </details>
 
@@ -1542,6 +1543,28 @@ async function encryptData(data, publicKey) {
 Este tipo de cifrado es muy popular porque ofrece un alto nivel de privacidad y seguridad, ya que ni siquiera los proveedores del servicio (como las plataformas de mensajería) tienen acceso a los contenidos de los mensajes.
 
 
+</details>
+
+<br>
+
+<details>
+<summary>+---------- 💥⚔️Posibles ataques</summary>
+
+1️⃣ ![image](https://github.com/user-attachments/assets/e0614727-04b2-4698-a45d-fc687772fc68)Ataques de Hydra
+
+
+
+
+<br>
+
+2️⃣
+
+
+
+
+
+
+  
 </details>
 </details>
 
