@@ -478,11 +478,11 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 
 - **Docker:** Plataforma que facilita la creación y gestión de contenedores para ejecutar aplicaciones de manera aislada.
 
-- **Jabberd:** Servidor de mensajería instantánea basado en el protocolo XMPP.
-
 - **Composer:** Herramienta para gestionar las dependencias y bibliotecas en proyectos PHP.
 
 - **WebSocket:** Protocolo para comunicación bidireccional en tiempo real entre cliente y servidor.
+
+- **WebRTC:** Es para hacer llamadas en tiempo real sin necesidad de tener un número de teléfono.
 
 - **IPTables:** Herramienta en Linux para configurar un firewall y controlar el tráfico de red.
 
@@ -1550,20 +1550,92 @@ Este tipo de cifrado es muy popular porque ofrece un alto nivel de privacidad y 
 <details>
 <summary>+---------- 💥⚔️Posibles ataques</summary>
 
-1️⃣![image](https://github.com/user-attachments/assets/6b426a14-1c83-4c62-b4f8-505d01d448eb)Ataques de Hydra
+## 1️⃣ ![image](https://github.com/user-attachments/assets/6b426a14-1c83-4c62-b4f8-505d01d448eb) Ataques de Hydra
+
+### Protección contra ataques de Hydra
+Los ataques de fuerza bruta como Hydra se realizan para adivinar contraseñas o credenciales de usuario mediante un proceso automatizado que intenta miles o millones de combinaciones. Aquí os mostraremos como podemos evitar algunos de estos ataques:
+
+1. Implementar un sistema de autenticación robusto
+    * Utiliza autenticación multifactor (MFA): Agregar una capa adicional de seguridad con códigos enviados por SMS, correos electrónicos o aplicaciones como Google Authenticator.
+
+    * Implementa límites de intentos fallidos de inicio de sesión: Después de varios intentos fallidos de iniciar sesión (por ejemplo, 3 o 5 intentos), bloquea la cuenta temporalmente o requiere CAPTCHA.
+   
+    * Usa contraseñas fuertes: En nuestro sistema de registro y cambio de contraseñas, aplicamos reglas estrictas para crear contraseñas seguras, como la inclusión de caracteres especiales, mayúsculas, minúsculas y números.
 
 
+
+2. CAPTCHA y reCAPTCHA
+    * reCAPTCHA de Google es una excelente herramienta para asegurarte de que las solicitudes de inicio de sesión o registro no provengan de bots. Implementar un sistema de CAPTCHA en el formulario de inicio de sesión puede dificultar un ataque de fuerza bruta.
+
+    * Script:
+   ```
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <form action="..." method="POST">
+      <div class="g-recaptcha" data-sitekey="tu_clave_del_sitio"></div>
+      <input type="submit" value="Iniciar sesión">
+   </form>
+   ```
+
+
+3. Almacenamiento seguro de contraseñas
+
+    * Usar hashing de contraseñas con algoritmos seguros como bcrypt o argon2 en lugar de almacenarlas en texto plano.
+    * Salts: Añadir un salt único por cada contraseña para prevenir ataques como rainbow tables.
 
 
 <br>
 
-2️⃣
+## 2️⃣ 💉🍃 Inyecciones MongoDB
+
+### Prevención de Inyecciones en MongoDB
+Las inyecciones son ataques en los que los datos de los usuarios se manipulan para ejecutar comandos maliciosos en la base de datos. Aunque MongoDB es más seguro contra las inyecciones que SQL, aún es vulnerable si no se toman las precauciones adecuadas. Ahora os mostraremos que prevenciones podemos utilizar para evitar inyecciones en nuestra BBDD MongoDB:
+
+1. Usar consultas parametrizadas
+Nos asegúramos de que todas las consultas a la base de datos estén parametrizadas y no interpolen directamente datos de los usuarios en las consultas. En lugar de construir consultas dinámicas concatenando cadenas de texto, usamos las consultas adecuadas con filtros explícitos.
+  
+    * Script:
+  
+    ```
+    db.users.find({ "username": username });
+    ```
 
 
 
+2. Validación de entradas de usuario
+Antes de almacenar cualquier dato en MongoDB, validamos y limpiamos todas las entradas. Podemos utilizar librerías como Joi o express-validator para asegurarnos de que los datos cumplen con el formato esperado.
+
+    * Nos aseguramos de que los datos de entrada no contengan caracteres especiales o comandos que puedan ser interpretados como parte de una consulta.
 
 
 
+3. Desactivar funciones peligrosas de MongoDB
+Algunas funciones, como eval(), permiten la ejecución de código JavaScript dentro de MongoDB. Nos tenemos que asegurar de desactivar funciones peligrosas en la configuración de nuestro servidor MongoDB.
+
+    * Ejemplo de script:
+    ```
+    # En el archivo de configuración mongod.conf
+    security:
+      javascriptEnabled: false
+    ```
+
+
+
+4. Limitar permisos de acceso
+Configura roles y permisos en MongoDB para asegurarte de que las aplicaciones o usuarios solo tengan acceso a las bases de datos y colecciones que realmente necesitan. Utilizamos el modelo de control de acceso basado en roles (RBAC) de MongoDB.
+
+
+
+5. Evitar la exposición pública de MongoDB
+No hay que dejar la bbdd MongoDB accesible desde internet sin una capa de protección. Usa firewalls para restringir el acceso solo a las direcciones IP autorizadas.
+
+    * Script:
+    ```
+    net:
+      bindIp: 127.0.0.1  # Solo permite conexiones locales
+    ```
+
+
+<br>
   
 </details>
 </details>
