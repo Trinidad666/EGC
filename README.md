@@ -1550,7 +1550,7 @@ Este tipo de cifrado es muy popular porque ofrece un alto nivel de privacidad y 
 <details>
 <summary>+---------- 💥⚔️Posibles ataques</summary>
 
-## 1️⃣ ![image](https://github.com/user-attachments/assets/6b426a14-1c83-4c62-b4f8-505d01d448eb) Ataques de Hydra
+## ![image](https://github.com/user-attachments/assets/6b426a14-1c83-4c62-b4f8-505d01d448eb) Ataques de Hydra
 
 ### Protección contra ataques de Hydra
 Los ataques de fuerza bruta como Hydra se realizan para adivinar contraseñas o credenciales de usuario mediante un proceso automatizado que intenta miles o millones de combinaciones. Aquí os mostraremos como podemos evitar algunos de estos ataques:
@@ -1585,7 +1585,7 @@ Los ataques de fuerza bruta como Hydra se realizan para adivinar contraseñas o 
 
 <br>
 
-## 2️⃣ 💉🍃 Inyecciones MongoDB
+## 💉🍃 Inyecciones MongoDB
 
 ### Prevención de Inyecciones en MongoDB
 Las inyecciones son ataques en los que los datos de los usuarios se manipulan para ejecutar comandos maliciosos en la base de datos. Aunque MongoDB es más seguro contra las inyecciones que SQL, aún es vulnerable si no se toman las precauciones adecuadas. Ahora os mostraremos que prevenciones podemos utilizar para evitar inyecciones en nuestra BBDD MongoDB:
