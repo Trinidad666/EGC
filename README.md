@@ -1681,6 +1681,18 @@ En un sistema de E2EE, los datos se cifran en el dispositivo del emisor antes de
 
 <br>
 
+## Video de la explicación del algoritmo ChaCha20:
+https://youtu.be/LIvFSppLDnM?si=Ss0pJPd-QsCV2tyC
+
+
+
+
+
+<br>
+
+
+<br>
+
 
 ## Ventajas de usar ChaCha20 en E2EE
 
