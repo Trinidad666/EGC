@@ -1575,7 +1575,7 @@ Utilizariamos TLS/SSL para cifrar todas las comunicaciones entre el cliente y el
 <summary>+---------- 🔐🌀🔑 ChaCha20</summary>
 
 ## ¿Qué es ChaCha20?
-ChaCha20 es un algoritmo de cifrado que pertenece a la familia de cifrados de flujo. Fue diseñado por el criptógrafo Daniel J. Bernstein en 2008 como una mejora de su predecesor, el algoritmo Salsa20. ChaCha20 fue creado con el objetivo de ofrecer una alta seguridad, velocidad y eficiencia, especialmente en sistemas que no cuentan con instrucciones de hardware dedicadas para acelerar los cálculos de cifrado.
+ChaCha20 es un algoritmo de cifrado simetrico que pertenece a la familia de cifrados de flujo. Fue diseñado por el criptógrafo Daniel J. Bernstein en 2008 como una mejora de su predecesor, el algoritmo Salsa20. ChaCha20 fue creado con el objetivo de ofrecer una alta seguridad, velocidad y eficiencia, especialmente en sistemas que no cuentan con instrucciones de hardware dedicadas para acelerar los cálculos de cifrado.
 
 
   * Mejoras del ChaCha20 en comparación al Salsa20:
