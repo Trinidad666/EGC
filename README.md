@@ -1593,6 +1593,7 @@ ChaCha20 es un algoritmo de cifrado simetrico que pertenece a la familia de cifr
 ChaCha20 es un cifrado de flujo, lo que significa que en lugar de cifrar bloques de datos como lo hace un cifrado de bloque (por ejemplo, AES), cifra los datos bit a bit, generando una secuencia de bits pseudoaleatorios que luego se combina con los datos mediante una operación XOR.
 
   * Proceso básico de funcionamiento de ChaCha20:
+
     1. Clave y nonce: ChaCha20 toma como entrada una clave de 256 bits (32 bytes) y un nonce de 64 bits (8 bytes). El nonce asegura que el flujo de claves generado es único para cada mensaje cifrado, evitando ataques por repetición de claves.
 
     2. Inicialización: ChaCha20 utiliza un estado interno de 512 bits que se configura con la clave y el nonce. Este estado es una matriz de 16 enteros de 32 bits cada uno.
