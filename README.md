@@ -1543,8 +1543,156 @@ async function encryptData(data, publicKey) {
 Este tipo de cifrado es muy popular porque ofrece un alto nivel de privacidad y seguridad, ya que ni siquiera los proveedores del servicio (como las plataformas de mensajería) tienen acceso a los contenidos de los mensajes.
 
 
-</details>
+<br>
 
+
+## Protección contra ataques punto a punto
+Los ataques punto a punto en aplicaciones de chat implican que un atacante se haga con el control de las comunicaciones o manipule las conversaciones entre los usuarios.
+
+
+### Cifrado de extremo a extremo (E2EE)
+Para proteger los mensajes de ser interceptados y leídos por atacantes, implementamos un cifrado de extremo a extremo (E2EE). Esto significa que los mensajes se cifran en el dispositivo del usuario y solo pueden ser descifrados en el dispositivo del receptor. Algunos enfoques incluyen:
+
+
+   * E2EE en el cliente: Podríamos utilizar bibliotecas como libsignal (que usa el protocolo Signal) o WebCrypto API para cifrar los mensajes en el cliente antes de enviarlos al servidor.
+
+  * Algoritmos de cifrado recomendados: Podríamos utilizar algoritmos como AES-256 para cifrar los mensajes y RSA o ECDSA para intercambiar claves de cifrado de forma segura.
+
+
+### Protección de las claves de cifrado
+Las claves de cifrado deben almacenarse de forma segura y no deben estar en el código fuente ni en el servidor de forma accesible. Utiliza almacenamiento seguro de claves, como Hardware Security Modules (HSM) o KMS (Key Management Systems) en proveedores como AWS o Google Cloud.
+
+
+
+### Protección de la transmisión de datos
+Utilizariamos TLS/SSL para cifrar todas las comunicaciones entre el cliente y el servidor. Esto evitará que los datos sean interceptados mientras viajan por la red.
+
+
+<br>
+<br>
+
+
+<summary>+---------- 🔐🌀🔑 ChaCha20</summary>
+
+## ¿Qué es ChaCha20?
+ChaCha20 es un algoritmo de cifrado que pertenece a la familia de cifrados de flujo. Fue diseñado por el criptógrafo Daniel J. Bernstein en 2008 como una mejora de su predecesor, el algoritmo Salsa20. ChaCha20 fue creado con el objetivo de ofrecer una alta seguridad, velocidad y eficiencia, especialmente en sistemas que no cuentan con instrucciones de hardware dedicadas para acelerar los cálculos de cifrado.
+
+
+  * Mejoras del ChaCha20 en comparación al Salsa20:
+    * Rondas de transformación: ChaCha20 mejora Salsa20 al aumentar el número de rondas de transformación de 12 (en Salsa20) a 20. Esto mejora la seguridad al hacer que los datos sean más difíciles de predecir o manipular en cada ronda de cifrado.
+
+    * Modificación en la función de mezcla: Se realizaron pequeños cambios en la estructura interna del algoritmo para mejorar la distribución de bits y hacer el proceso de cifrado más resistente a los ataques.
+
+    * ChaCha20 se consideró más seguro que Salsa20, ya que ofrece un mejor nivel de aleatoriedad y tiene una mayor resistencia a ciertos ataques.
+
+
+<br>
+
+
+## Funcionamoento del ChaCha20
+ChaCha20 es un cifrado de flujo, lo que significa que en lugar de cifrar bloques de datos como lo hace un cifrado de bloque (por ejemplo, AES), cifra los datos bit a bit, generando una secuencia de bits pseudoaleatorios que luego se combina con los datos mediante una operación XOR.
+
+  * Proceso básico de funcionamiento de ChaCha20:
+    1. Clave y nonce: ChaCha20 toma como entrada una clave de 256 bits (32 bytes) y un nonce de 64 bits (8 bytes). El nonce asegura que el flujo de claves generado es único para cada mensaje cifrado, evitando ataques por repetición de claves.
+
+    2. Inicialización: ChaCha20 utiliza un estado interno de 512 bits que se configura con la clave y el nonce. Este estado es una matriz de 16 enteros de 32 bits cada uno.
+
+    3. Rondas: El algoritmo realiza 20 rondas de transformación (frente a las 12 rondas de Salsa20). En cada ronda, el estado interno se somete a una serie de operaciones matemáticas (como rotaciones y adiciones) que mezclan los bits de manera compleja.
+
+    4. Generación de flujo: Tras las rondas, el estado se transforma en una secuencia de 64 bits que se usa como clave de flujo. Esta secuencia se combina con los datos mediante una operación XOR para cifrar o descifrar los datos. El mismo proceso se usa para descifrar los datos, ya que el cifrado de flujo es reversible si se conoce la misma clave y nonce.
+
+
+<br>
+
+
+## Ejemplos de uso de ChaCha20
+ChaCha20 es ampliamente utilizado en aplicaciones modernas que requieren cifrado eficiente y seguro. Algunos de los ejemplos más comunes son:
+
+  * **TLS 1.3:** En el protocolo TLS 1.3 (usado para asegurar las comunicaciones en internet, como en HTTPS), ChaCha20 se utiliza como una opción para cifrar la comunicación, en lugar de AES. Esto es particularmente útil cuando el hardware de los dispositivos no soporta aceleración de AES.
+
+  * **WireGuard:** WireGuard es un protocolo de VPN (Red Privada Virtual) que utiliza ChaCha20 para cifrar el tráfico de red entre los dispositivos conectados. La razón por la que se utiliza ChaCha20 en lugar de otros algoritmos más tradicionales, como AES, es que ChaCha20 es más rápido y eficiente en dispositivos sin aceleración de hardware.
+  
+  * **Signal:** La aplicación de mensajería segura Signal utiliza ChaCha20-Poly1305 para cifrar los mensajes entre los usuarios. Poly1305 se usa para asegurar la integridad y autenticidad del mensaje, proporcionando tanto confidencialidad como autenticidad.
+  
+  * **Google Chrome y otros navegadores:** ChaCha20 también es soportado por algunos navegadores modernos como Google Chrome en combinación con TLS 1.3 para cifrar las conexiones HTTPS, especialmente en dispositivos móviles y otras plataformas que no tienen soporte de hardware para AES.
+
+
+<br>
+
+
+## Ventajas de ChaCha20
+
+  * **Seguridad robusta:** Gracias a las 20 rondas de cifrado y su diseño matemáticamente sólido, ChaCha20 es muy seguro frente a una variedad de ataques criptográficos.
+  
+  * **Velocidad en software:** ChaCha20 es extremadamente rápido en software, lo que lo hace ideal para dispositivos móviles y otros sistemas sin aceleración de hardware como AES-NI.
+  
+  * **Resistencia a backdoors:** No depende de instrucciones de hardware específicas, lo que lo hace más difícil de comprometer a través de vulnerabilidades en hardware, un factor de seguridad importante en el contexto de la privacidad.
+  
+  * **Facilidad de implementación:** ChaCha20 es relativamente fácil de implementar correctamente, lo que reduce el riesgo de errores en su integración en aplicaciones.
+
+
+<br>
+
+
+## Comparación con otros algoritmos
+  
+  * **ChaCha20 vs. AES:**
+    * AES es un algoritmo de cifrado de bloque, mientras que ChaCha20 es un cifrado de flujo. Esto significa que ChaCha20 puede ser más eficiente para cifrar datos de longitud variable sin la necesidad de padding (relleno).
+    * Aunque AES es muy seguro, su rendimiento puede ser más lento en plataformas sin soporte de hardware como AES-NI. ChaCha20, por otro lado, ofrece un rendimiento constante incluso en plataformas con recursos limitados.
+  
+  * **ChaCha20 vs. Salsa20:**
+    * ChaCha20 es una mejora sobre Salsa20, con más rondas de cifrado (20 en lugar de 12) y una estructura más robusta que lo hace más seguro frente a ciertos ataques. ChaCha20 también es más resistente a ciertos tipos de colisiones, lo que aumenta su nivel de seguridad.
+
+
+<br>
+
+
+## ChaCha20 en E2EE
+
+  1. **Alta seguridad:**
+    * ChaCha20 ha sido diseñado para ser resistente a ataques criptográficos. Tiene 20 rondas de cifrado, lo que lo hace más seguro que su predecesor, Salsa20. Además, ha pasado por una extensa revisión académica y práctica, lo que lo convierte en una opción muy confiable.
+  
+  2. **Velocidad y eficiencia:**
+    * ChaCha20 es muy eficiente en software, lo que es una gran ventaja en dispositivos móviles o plataformas sin aceleración de hardware (como en muchos teléfonos inteligentes, tabletas o dispositivos IoT). A diferencia de AES, que puede depender de instrucciones especializadas de hardware (como AES-NI), ChaCha20 es rápido incluso en plataformas que no tienen esas optimizaciones, lo que lo hace ideal para aplicaciones de E2EE en dispositivos con recursos limitados.
+  
+  3. **Resistencia a vulnerabilidades de hardware:**
+    * ChaCha20 no depende de instrucciones de hardware específicas, lo que lo hace menos vulnerable a posibles vulnerabilidades relacionadas con implementaciones de hardware o backdoors, una preocupación que a veces se menciona con respecto a otros algoritmos como AES.
+  
+  4. **Fácil de implementar:**
+    * Comparado con otros algoritmos como AES, ChaCha20 tiene un diseño más simple, lo que reduce la posibilidad de errores en la implementación. En sistemas de E2EE, donde la seguridad depende de la implementación correcta del cifrado, esto es un factor muy importante.
+
+
+<br>
+
+
+## ¿Cómo se usa ChaCha20 en E2EE?
+En un sistema de E2EE, los datos se cifran en el dispositivo del emisor antes de ser enviados y solo el receptor puede descifrarlos. Aquí es donde entra en juego ChaCha20 como algoritmo de cifrado:
+
+  1. **Cifrado de los datos:**
+    * ChaCha20 utiliza una clave secreta (generalmente de 256 bits) y un nonce (número único que garantiza que cada cifrado sea único). Usando estos, genera una secuencia de bits pseudoaleatorios que se combinan con los datos a cifrar mediante una operación XOR, produciendo el texto cifrado.
+  
+  2. **Integración con autenticación:**
+    * ChaCha20 generalmente se combina con un algoritmo de autenticación como Poly1305 para garantizar no solo la confidencialidad, sino también la integridad de los datos. Esto se denomina ChaCha20-Poly1305. Este enfoque asegura que los datos no hayan sido alterados en el camino y permite a los receptores verificar la autenticidad de los mensajes.
+  
+  3. **Uso en aplicaciones populares:**
+    * Algunos ejemplos de su uso son WireGuard (una tecnología de VPN) y Signal (una aplicación de mensajería segura), que utilizan ChaCha20 para cifrar y asegurar las comunicaciones de extremo a extremo.
+
+
+<br>
+
+
+## Ventajas de usar ChaCha20 en E2EE
+
+  * **Eficiencia:** Funciona bien en plataformas con recursos limitados, como teléfonos móviles y dispositivos sin aceleración de hardware.
+
+  * **Seguridad robusta:** Ofrece un alto nivel de seguridad frente a los ataques conocidos.
+
+  * **Simplificación de la implementación:** Su diseño es más simple, lo que reduce el riesgo de errores en la implementación del cifrado.
+
+
+
+</details>
+<br>
 <br>
 
 <details>
