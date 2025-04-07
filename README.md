@@ -1569,9 +1569,9 @@ Utilizariamos TLS/SSL para cifrar todas las comunicaciones entre el cliente y el
 
 
 <br>
-<br>
 
 
+<details>
 <summary>+---------- 🔐🌀🔑 ChaCha20</summary>
 
 ## ¿Qué es ChaCha20?
@@ -1690,9 +1690,8 @@ En un sistema de E2EE, los datos se cifran en el dispositivo del emisor antes de
   * **Simplificación de la implementación:** Su diseño es más simple, lo que reduce el riesgo de errores en la implementación del cifrado.
 
 
-
 </details>
-<br>
+</details>
 <br>
 
 <details>
