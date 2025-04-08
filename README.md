@@ -1825,11 +1825,11 @@ Uso en el código:
 
 Se usa cuando no se necesita un salt o se desea generar un hash básico:
 
-’’’
+```
 hashlib.md5(password.encode()).hexdigest()
 hashlib.sha256(password.encode()).hexdigest()
 hashlib.sha512(password.encode()).hexdigest()
-’’’
+```
 
 
 ### Secrets
@@ -1842,9 +1842,9 @@ Uso en el código:
 
 Se utiliza para generar un salt aleatorio si el usuario elige esa opción:
 
-’’’
+```
 secrets.token_hex(4)  # genera un salt aleatorio de 8 caracteres hexadecimales
-’’’
+```
 
 
  
@@ -1867,12 +1867,28 @@ Se usan estas tres variantes del módulo passlib.hash:
 
 Ejemplo:
 
-’’’
+```
 sha512_crypt.using(salt=salt, rounds=5000).hash(password)
-’’’
+```
 
 <details>
   <summary>📦🐍Codígo de Python para el Hash</summary>
+
+
+Este código es una aplicación gráfica en Python (Tkinter) que permite:
+
+🧪 Generar hashes (md5, sha256, sha512) con o sin salt (manual o aleatorio).
+
+🧩 Romper hashes usando un ataque de diccionario o una contraseña manual.
+
+📋 Puedes copiar o guardar el hash generado.
+
+Pantallas principales:
+
+* "Generar Hashes": escribes una contraseña, eliges el tipo de hash, y genera el resultado.
+
+* "Romper Hashes": introduces un hash y prueba contraseñas desde un diccionario o manualmente.
+
 
 ```
 import tkinter as tk
@@ -2212,9 +2228,9 @@ if __name__ == "__main__":
 
 OpenSSL es una herramienta de línea de comandos usada para implementar protocolos de seguridad como SSL/TLS. Sirve para generar claves, certificados, cifrar datos, crear hashes y gestionar conexiones seguras. Es esencial para proteger comunicaciones, autenticar identidades y asegurar archivos en sistemas Linux y servidores web.
 
-’’’
+```
 openssl passwd -6 -salt SALT CONTRASEÑA
-’’’
+```
 
 * -6 → Usa SHA-512 (-5 para SHA-256, -1 para MD5)
 
@@ -2224,6 +2240,33 @@ openssl passwd -6 -salt SALT CONTRASEÑA
 
 
 
+
+## Hash vs KDF
+
+Un hash transforma datos en una cadena fija e irrepetible para verificar integridad. 
+
+
+Un KDF (Key Derivation Function) genera claves seguras a partir de contraseñas, usando hash + sal y múltiples rondas. KDFs son más resistentes a ataques por fuerza bruta que un hash simple.
+
+
+Función	Ventajas	Desventajas
+
+Hash	- Muy rápido y eficiente
+
+- Fácil de implementar
+
+- Útil para integridad de datos	- No seguro para contraseñas
+
+- Vulnerable a ataques de diccionario o fuerza bruta
+
+
+KDF	- Seguro para contraseñas
+
+- Usa sal y rondas para mayor resistencia
+
+- Previene ataques de fuerza bruta	- Más lento por diseño
+
+-  Más complejo de implementar
 
 
 </details>
