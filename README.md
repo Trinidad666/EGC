@@ -1685,10 +1685,20 @@ En un sistema de E2EE, los datos se cifran en el dispositivo del emisor antes de
 https://youtu.be/LIvFSppLDnM?si=Ss0pJPd-QsCV2tyC
 
 
+## Función en Cyberchef
 
+Necesitamos una clave de 256 bits en Hexadecimal: **00112233445566778899aabbccddeeff00112233445566778899aabbccddeeff**
 
+Un nonce de Base64: **0102030405060708**
 
-<br>
+Counter: **00000000**
+
+Rounds: **20**
+
+* Texto --> Hola, como estan gente.
+* Código HEX --> 9b 49 04 2e 83 09 d1 5f 2d 56 6e 52 d0 44 79 13 43 f6 b3 24 c2 2f 08
+
+![image](https://github.com/user-attachments/assets/6beadd52-ff43-4d7a-bcb1-932aa73dd605)
 
 
 <br>
@@ -1705,7 +1715,6 @@ https://youtu.be/LIvFSppLDnM?si=Ss0pJPd-QsCV2tyC
 
 </details>
 </details>
-<br>
 
 <details>
 <summary>+---------- 💥⚔️Posibles ataques</summary>
