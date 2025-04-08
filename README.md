@@ -1798,6 +1798,445 @@ No hay que dejar la bbdd MongoDB accesible desde internet sin una capa de protec
 <br>
   
 </details>
+
+<details>
+<summary>+---------- 🔐#️⃣Hash</summary>
+
+## hashcat – como herramienta  para romper hashes
+    
+Una herramienta para romper hashes intenta descubrir el valor original de un hash usando técnicas como fuerza bruta, diccionario o ataques por arco iris. Compara múltiples entradas cifradas con el hash objetivo hasta hallar coincidencias, aprovechando debilidades o patrones comunes en contraseñas.
+
+
+
+
+## Generar hashes en python 
+
+####hashlib
+
+Función:
+
+Es el módulo estándar de Python para generar hashes como MD5, SHA-256 y SHA-512.
+
+Uso en el código:
+
+Se usa cuando no se necesita un salt o se desea generar un hash básico:
+
+Uso en el código:
+
+Se usa cuando no se necesita un salt o se desea generar un hash básico:
+
+’’’
+hashlib.md5(password.encode()).hexdigest()
+hashlib.sha256(password.encode()).hexdigest()
+hashlib.sha512(password.encode()).hexdigest()
+’’’
+
+
+#### Secrets
+
+Función:
+
+Genera datos aleatorios seguros, ideal para generar salts.
+
+Uso en el código:
+
+Se utiliza para generar un salt aleatorio si el usuario elige esa opción:
+
+’’’
+secrets.token_hex(4)  # genera un salt aleatorio de 8 caracteres hexadecimales
+’’’
+
+
+ 
+#### passlib.hash
+
+
+Función:
+
+Permite aplicar algoritmos de hash más complejos con soporte para salt y rounds (iteraciones).
+
+Uso en el código:
+
+Se usan estas tres variantes del módulo passlib.hash:
+
+* md5_crypt – Para MD5 con salt.
+
+* sha256_crypt – SHA-256 con salt y rounds.
+
+* sha512_crypt – SHA-512 con salt y rounds.
+
+Ejemplo:
+
+’’’
+sha512_crypt.using(salt=salt, rounds=5000).hash(password)
+’’’
+
+<details>
+  <summary>📦🐍Codígo de Python para el Hash</summary>
+
+```
+import tkinter as tk
+from tkinter import ttk, filedialog, messagebox
+import hashlib
+import secrets
+import pyperclip
+from passlib.hash import md5_crypt, sha256_crypt, sha512_crypt
+
+class HashToolApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Herramienta de Hashes Avanzada")
+        self.root.geometry("900x650")
+        
+        # Variables
+        self.password_var = tk.StringVar()
+        self.salt_var = tk.StringVar()
+        self.use_salt_var = tk.BooleanVar(value=True)
+        self.auto_salt_var = tk.BooleanVar(value=False)
+        self.hash_type_var = tk.StringVar(value="sha512")
+        self.rounds_var = tk.IntVar(value=5000)
+        self.dict_path_var = tk.StringVar(value="diccionario.txt")
+        self.use_dict_var = tk.BooleanVar(value=True)
+        self.target_hash_var = tk.StringVar()
+        self.single_password_var = tk.StringVar()
+        
+        # Notebook
+        self.notebook = ttk.Notebook(root)
+        self.tab_generate = ttk.Frame(self.notebook)
+        self.tab_crack = ttk.Frame(self.notebook)
+        self.notebook.add(self.tab_generate, text="Generar Hashes")
+        self.notebook.add(self.tab_crack, text="Romper Hashes")
+        self.notebook.pack(expand=True, fill="both")
+        
+        # Pestaña Generar
+        self.setup_generate_tab()
+        
+        # Pestaña Romper
+        self.setup_crack_tab()
+    
+    def setup_generate_tab(self):
+        frame = ttk.LabelFrame(self.tab_generate, text="Generar Hash", padding=10)
+        frame.pack(pady=10, padx=10, fill="both", expand=True)
+        
+        # Controles
+        ttk.Label(frame, text="Contraseña:").grid(row=0, column=0, sticky="e")
+        ttk.Entry(frame, textvariable=self.password_var).grid(row=0, column=1, pady=5, sticky="ew")
+        
+        # Opciones de Salt
+        salt_frame = ttk.LabelFrame(frame, text="Opciones de Salt", padding=5)
+        salt_frame.grid(row=1, column=0, columnspan=2, pady=5, sticky="ew")
+        
+        ttk.Checkbutton(salt_frame, text="Usar Salt", variable=self.use_salt_var).pack(anchor="w")
+        ttk.Checkbutton(salt_frame, text="Generar Salt Aleatorio", variable=self.auto_salt_var, 
+                       command=self.toggle_salt_entry).pack(anchor="w")
+        ttk.Label(salt_frame, text="Salt Personalizado:").pack(anchor="w")
+        self.salt_entry = ttk.Entry(salt_frame, textvariable=self.salt_var, state="normal")
+        self.salt_entry.pack(fill="x", pady=2)
+        
+        # Tipo de Hash
+        ttk.Label(frame, text="Tipo de Hash:").grid(row=2, column=0, sticky="e")
+        ttk.Combobox(frame, textvariable=self.hash_type_var, 
+                    values=["md5", "sha256", "sha512"]).grid(row=2, column=1, pady=5, sticky="ew")
+        
+        ttk.Label(frame, text="Rounds (SHA-256/512):").grid(row=3, column=0, sticky="e")
+        ttk.Entry(frame, textvariable=self.rounds_var).grid(row=3, column=1, pady=5, sticky="ew")
+        
+        ttk.Button(frame, text="Generar Hash", command=self.generate_hash).grid(row=4, column=0, columnspan=2, pady=10)
+        
+        # Resultado
+        ttk.Label(frame, text="Hash Generado:").grid(row=5, column=0, sticky="ne")
+        
+        self.hash_text = tk.Text(frame, height=5, wrap="word", state="disabled", font=('Courier', 10))
+        scrollbar = ttk.Scrollbar(frame, command=self.hash_text.yview)
+        self.hash_text.configure(yscrollcommand=scrollbar.set)
+        
+        self.hash_text.grid(row=5, column=1, sticky="ew", pady=5)
+        scrollbar.grid(row=5, column=2, sticky="ns")
+        
+        # Botones de acción
+        button_frame = ttk.Frame(frame)
+        button_frame.grid(row=6, column=1, pady=5, sticky="e")
+        
+        ttk.Button(button_frame, text="Copiar Hash", command=self.copy_hash).pack(side="left", padx=5)
+        ttk.Button(button_frame, text="Descargar TXT", command=self.download_hash).pack(side="left", padx=5)
+    
+    def setup_crack_tab(self):
+        frame = ttk.LabelFrame(self.tab_crack, text="Romper Hash", padding=10)
+        frame.pack(pady=10, padx=10, fill="both", expand=True)
+        
+        # Hash objetivo
+        ttk.Label(frame, text="Hash a Romper:").grid(row=0, column=0, sticky="e")
+        ttk.Entry(frame, textvariable=self.target_hash_var).grid(row=0, column=1, pady=5, sticky="ew")
+        
+        # Opciones de Salt
+        ttk.Label(frame, text="Salt (si aplica):").grid(row=1, column=0, sticky="e")
+        ttk.Entry(frame, textvariable=self.salt_var).grid(row=1, column=1, pady=5, sticky="ew")
+        
+        # Tipo de Hash
+        ttk.Label(frame, text="Tipo de Hash:").grid(row=2, column=0, sticky="e")
+        ttk.Combobox(frame, textvariable=self.hash_type_var, 
+                     values=["md5", "sha256", "sha512"]).grid(row=2, column=1, pady=5, sticky="ew")
+        
+        # Método de ataque
+        attack_frame = ttk.LabelFrame(frame, text="Método de Ataque", padding=5)
+        attack_frame.grid(row=3, column=0, columnspan=2, pady=5, sticky="ew")
+        
+        ttk.Radiobutton(attack_frame, text="Usar Diccionario (diccionario.txt)", variable=self.use_dict_var, 
+                        value=True).pack(anchor="w")
+        dict_subframe = ttk.Frame(attack_frame)
+        dict_subframe.pack(fill="x", padx=20)
+        ttk.Label(dict_subframe, text="Ruta:").pack(side="left")
+        ttk.Entry(dict_subframe, textvariable=self.dict_path_var).pack(side="left", fill="x", expand=True)
+        ttk.Button(dict_subframe, text="Examinar", command=self.select_dictionary).pack(side="left")
+        
+        ttk.Radiobutton(attack_frame, text="Probar Contraseña Manual", variable=self.use_dict_var,
+                        value=False).pack(anchor="w")
+        ttk.Entry(attack_frame, textvariable=self.single_password_var).pack(fill="x", pady=2)
+        
+        ttk.Button(frame, text="Iniciar Ataque", command=self.crack_hash).grid(row=4, column=0, columnspan=2, pady=10)
+        
+        # Resultado
+        self.result_text = tk.Text(frame, height=10, state="disabled")
+        self.result_text.tag_config("success", foreground="green")
+        self.result_text.tag_config("error", foreground="red")
+        self.result_text.grid(row=5, column=0, columnspan=2, sticky="ew")
+    
+    def toggle_salt_entry(self):
+        if self.auto_salt_var.get():
+            self.salt_entry.config(state="disabled")
+            self.salt_var.set(secrets.token_hex(4))  # 4 bytes = 8 caracteres hex
+        else:
+            self.salt_entry.config(state="normal")
+    
+    def generate_hash(self):
+        password = self.password_var.get()
+        if not password:
+            messagebox.showerror("Error", "Ingresa una contraseña.")
+            return
+        
+        salt = self.salt_var.get() if self.use_salt_var.get() else None
+        hash_type = self.hash_type_var.get()
+        rounds = self.rounds_var.get()
+        
+        try:
+            if hash_type == "md5" and salt:
+                if len(salt) > 8:
+                    messagebox.showerror("Error", 
+                        "MD5 no soporta salts de más de 8 caracteres.\n"
+                        "Por favor usa un salt más corto o selecciona otro algoritmo.")
+                    return
+                
+                salt = salt[:8]
+                hash_result = md5_crypt.using(salt=salt).hash(password)
+            
+            elif hash_type == "md5":
+                hash_result = hashlib.md5(password.encode()).hexdigest()
+            
+            elif hash_type == "sha256":
+                if salt:
+                    hash_result = sha256_crypt.using(salt=salt, rounds=rounds).hash(password)
+                else:
+                    hash_result = hashlib.sha256(password.encode()).hexdigest()
+            
+            elif hash_type == "sha512":
+                if salt:
+                    hash_result = sha512_crypt.using(salt=salt, rounds=rounds).hash(password)
+                else:
+                    hash_result = hashlib.sha512(password.encode()).hexdigest()
+            
+            self.hash_text.config(state="normal")
+            self.hash_text.delete(1.0, tk.END)
+            self.hash_text.insert(tk.END, hash_result)
+            self.hash_text.config(state="disabled")
+            
+        except Exception as e:
+            messagebox.showerror("Error", f"Error al generar hash: {e}")
+    
+    def copy_hash(self):
+        hash_content = self.hash_text.get(1.0, tk.END).strip()
+        if hash_content:
+            pyperclip.copy(hash_content)
+            messagebox.showinfo("Copiado", "Hash copiado al portapapeles.")
+    
+    def download_hash(self):
+        hash_content = self.hash_text.get(1.0, tk.END).strip()
+        if not hash_content:
+            messagebox.showerror("Error", "No hay hash generado para descargar.")
+            return
+        
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=".txt",
+            filetypes=[("Archivos de texto", "*.txt"), ("Todos los archivos", "*.*")],
+            title="Guardar hash como"
+        )
+        
+        if file_path:
+            try:
+                with open(file_path, "w") as f:
+                    f.write(hash_content)
+                messagebox.showinfo("Éxito", f"Hash guardado correctamente en:\n{file_path}")
+            except Exception as e:
+                messagebox.showerror("Error", f"No se pudo guardar el archivo:\n{str(e)}")
+    
+    def select_dictionary(self):
+        filepath = filedialog.askopenfilename(
+            title="Seleccionar diccionario",
+            filetypes=[("Archivos de texto", "*.txt"), ("Todos los archivos", "*.*")],
+            initialfile="diccionario.txt"
+        )
+        if filepath:
+            self.dict_path_var.set(filepath)
+    
+    def crack_hash(self):
+        self.result_text.config(state="normal")
+        self.result_text.delete(1.0, tk.END)
+        
+        target_hash = self.target_hash_var.get().strip()
+        if not target_hash:
+            self.show_error_message("❌ Debes ingresar un hash objetivo")
+            return
+        
+        salt = self.salt_var.get() if self.use_salt_var.get() else None
+        hash_type = self.hash_type_var.get()
+
+        if self.use_dict_var.get():
+            dict_path = self.dict_path_var.get()
+            if not dict_path:
+                self.show_error_message("❌ Debes seleccionar un archivo de diccionario")
+                return
+            
+            try:
+                with open(dict_path, "r", encoding="utf-8", errors="ignore") as f:
+                    passwords = [line.strip() for line in f if line.strip()]
+                    
+                    self.result_text.insert(tk.END, f"🔍 Buscando en {dict_path} ({len(passwords)} contraseñas)...\n")
+                    self.root.update()
+                    
+                    found = False
+                    for i, password in enumerate(passwords, 1):
+                        if self.check_password(password, target_hash, salt, hash_type):
+                            found = True
+                            break
+                        
+                        if i % 50 == 0:
+                            self.result_text.insert(tk.END, f"⏳ Progreso: {i}/{len(passwords)}...\n")
+                            self.result_text.see(tk.END)
+                            self.root.update()
+                    
+                    if not found:
+                        self.show_error_message("❌ Contraseña no encontrada en el diccionario")
+            
+            except FileNotFoundError:
+                self.show_error_message(f"❌ Archivo no encontrado: {dict_path}")
+            except Exception as e:
+                self.show_error_message(f"❌ Error al leer el diccionario: {str(e)}")
+        
+        else:
+            password = self.single_password_var.get().strip()
+            if not password:
+                self.show_error_message("❌ Ingresa una contraseña para probar")
+                return
+            
+            self.check_password(password, target_hash, salt, hash_type)
+    
+    def check_password(self, password, target_hash, salt, hash_type):
+        try:
+            if hash_type == "md5":
+                if salt:
+                    salt = salt[:8]
+                    current_hash = md5_crypt.using(salt=salt).hash(password)
+                else:
+                    current_hash = hashlib.md5(password.encode()).hexdigest()
+                
+                if current_hash == target_hash:
+                    self.show_success_message(f"✅ ¡Éxito! Contraseña encontrada: {password}")
+                    return True
+            
+            elif hash_type == "sha256":
+                if salt:
+                    current_hash = sha256_crypt.using(salt=salt).hash(password)
+                else:
+                    current_hash = hashlib.sha256(password.encode()).hexdigest()
+                
+                if current_hash == target_hash:
+                    self.show_success_message(f"✅ ¡Éxito! Contraseña encontrada: {password}")
+                    return True
+            
+            elif hash_type == "sha512":
+                if target_hash.startswith('$6$'):
+                    if not salt and len(target_hash.split('$')) >= 3:
+                        salt = target_hash.split('$')[2]
+                    
+                    if salt:
+                        current_hash = sha512_crypt.using(salt=salt, rounds=5000).hash(password)
+                        
+                        if current_hash == target_hash or current_hash.split('$')[-1] == target_hash.split('$')[-1]:
+                            self.show_success_message(f"✅ ¡Éxito! Contraseña encontrada: {password}")
+                            return True
+                
+                current_hash = hashlib.sha512(password.encode()).hexdigest()
+                if current_hash == target_hash:
+                    self.show_success_message(f"✅ ¡Éxito! Contraseña encontrada: {password}")
+                    return True
+            
+            return False
+        
+        except Exception as e:
+            self.show_error_message(f"❌ Error durante la verificación: {str(e)}")
+            return False
+    
+    def show_success_message(self, message):
+        self.result_text.config(state="normal")
+        self.result_text.insert(tk.END, message + "\n", "success")
+        self.result_text.see(tk.END)
+        self.result_text.config(state="disabled")
+        messagebox.showinfo("Éxito", message)
+    
+    def show_error_message(self, message):
+        self.result_text.config(state="normal")
+        self.result_text.insert(tk.END, message + "\n", "error")
+        self.result_text.see(tk.END)
+        self.result_text.config(state="disabled")
+        messagebox.showerror("Error", message)
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = HashToolApp(root)
+    root.mainloop()
+```
+
+</details>
+
+
+## Generar hashes de contraseñas Linux con OpenSSL
+
+OpenSSL es una herramienta de línea de comandos usada para implementar protocolos de seguridad como SSL/TLS. Sirve para generar claves, certificados, cifrar datos, crear hashes y gestionar conexiones seguras. Es esencial para proteger comunicaciones, autenticar identidades y asegurar archivos en sistemas Linux y servidores web.
+
+’’’
+openssl passwd -6 -salt SALT CONTRASEÑA
+’’’
+
+* -6 → Usa SHA-512 (-5 para SHA-256, -1 para MD5)
+
+* -salt SALT → Opcional. Puedes dejarlo y OpenSSL genera uno aleatorio.
+
+* CONTRASEÑA → La contraseña que quieres hashear
+
+
+
+
+
+</details>
+
+
+
+
+
+<br>
+
+
+
+
 </details>
 
 
