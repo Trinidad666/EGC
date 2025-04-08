@@ -1811,7 +1811,7 @@ Una herramienta para romper hashes intenta descubrir el valor original de un has
 
 ## Generar hashes en python 
 
-#### hashlib
+### hashlib
 
 Función:
 
@@ -1832,7 +1832,7 @@ hashlib.sha512(password.encode()).hexdigest()
 ’’’
 
 
-#### Secrets
+### Secrets
 
 Función:
 
@@ -1848,7 +1848,7 @@ secrets.token_hex(4)  # genera un salt aleatorio de 8 caracteres hexadecimales
 
 
  
-#### passlib.hash
+### passlib.hash
 
 
 Función:
