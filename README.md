@@ -1632,6 +1632,23 @@ ChaCha20 es ampliamente utilizado en aplicaciones modernas que requieren cifrado
   * **Facilidad de implementación:** ChaCha20 es relativamente fácil de implementar correctamente, lo que reduce el riesgo de errores en su integración en aplicaciones.
 
 
+## Desventajas
+
+  * **No tan ampliamente adoptado como AES:**
+    * Aunque está ganando terreno, AES sigue siendo el estándar más utilizado en muchas aplicaciones y hardware.
+    * Algunos sistemas o bibliotecas antiguas podrían no tener soporte para ChaCha20 de forma nativa.
+  
+  * **No tiene soporte por hardware tan extendido:**
+    * AES puede aprovechar instrucciones específicas del procesador (AES-NI) para hacerlo extremadamente rápido en muchos dispositivos.
+    * ChaCha20, aunque rápido en software, no tiene soporte por hardware dedicado en la mayoría de CPUs.
+
+  * **No es adecuado para todos los casos de uso criptográfico:**
+    * ChaCha20 es un stream cipher, por lo que no tiene modos de operación como CBC o GCM propios.
+    * Se suele usar con Poly1305 para autenticación (ChaCha20-Poly1305), pero eso requiere una implementación conjunta segura.
+  
+  * **Mayor tamaño de nonce en algunas implementaciones:**
+    * ChaCha20 requiere un nonce de 96 bits (12 bytes). Esto no es un problema en la mayoría de los casos, pero puede ser inconveniente si estás migrando desde algoritmos que usan tamaños de nonce diferentes.
+
 <br>
 
 
