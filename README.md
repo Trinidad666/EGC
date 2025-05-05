@@ -477,18 +477,17 @@ Si mysqli no se activa correctamente después de instalarlo con docker-php-ext-i
 
 <details>
 <summary>⚙️ Funcionalidades</summary>
-Funcionalidades que vamos a implementar:
+Funcionalidades que hemos implementado
 
-- Funcionalidades de Registro e inicio de sesión.(Víctor)
-- Que los usuarios puedan tener contactos o conversación con técnicos informáticos.(Hugo)
-- Los usuarios pueden crear una tabla de técnicos informáticos. (Víctor)
+- Funcionalidades de Registro e inicio de sesión.
+- Que los usuarios puedan tener contactos o conversación con otros usuarios.
+- Los usuarios pueden crear grupos y chats privados.
 
 
 Seguridad (en función de vuestro proyecto):
 
 - MongoDB
-- Protección de código fuente
-- toda la parte de monitorización y seguridad que vais a implementar
+- Cifrado de Extremo a Extremo(E2EE)
 </details>
 <br>
 
@@ -526,69 +525,6 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 
 </details>
 <br>
-
-
-<details>
-<summary>📦☁️Maquinas Virtuales</summary>
-
-<br>
-
-
-<details>
-<summary>+----------🌐🔄🖥️ DNS</summary>
-
-  
-</details>
-<br>
-
-
-<details>
-<summary>+----------🌐🖥️ WEB/NGINX</summary>
-
-  
-</details>
-<br>
-
-
-<details>
-<summary>+----------🍃🗃️ MongoDB</summary>
-
-  
-</details>
-<br>
-
-
-<details>
-<summary>+----------👤 Cliente</summary>
-
-  
-</details>
-<br>
-
-
-<details>
-<summary>+----------🐳 Docker</summary>
-
-  
-</details>
-<br>
-
-
-<details>
-<summary>+----------📧 Server Email</summary>
-
-  
-</details>
-<br>
-
-
-<details>
-<summary>+----------💾🔒 Backup/Recuperación</summary>
-
-  
-</details>
-<br>
-
 
 
 <details>
