@@ -497,11 +497,7 @@ Seguridad (en función de vuestro proyecto):
 <summary>🖥️ Arquitectura del Sistema</summary>
 Estos seran los componentes de tecnología que utilizaremos en el sistema:
 
-- **NGINX:** Servidor web y proxy inverso que gestiona eficazmente el tráfico y balancea la carga de las aplicaciones.
-
 - **MongoDB:** Base de datos NoSQL que almacena documentos en lugar de tablas, ideal para manejar grandes volúmenes de datos no estructurados.
-
-- **PHP:** Lenguaje de programación del lado del servidor, usado para generar contenido dinámico en páginas web.
 
 - **HTML:** Lenguaje para estructurar y organizar el contenido de una página web.
 
@@ -513,11 +509,9 @@ Estos seran los componentes de tecnología que utilizaremos en el sistema:
 
 - **Docker:** Plataforma que facilita la creación y gestión de contenedores para ejecutar aplicaciones de manera aislada.
 
-- **Composer:** Herramienta para gestionar las dependencias y bibliotecas en proyectos PHP.
-
 - **WebSocket:** Protocolo para comunicación bidireccional en tiempo real entre cliente y servidor.
 
-- **WebRTC:** Es para hacer llamadas en tiempo real sin necesidad de tener un número de teléfono.
+- **WebRTC:** Es para hacer llamadas en tiempo real sin necesidad de tener un número de teléfono.(No funciona)
 
 - **IPTables:** Herramienta en Linux para configurar un firewall y controlar el tráfico de red.
 
@@ -537,8 +531,7 @@ Estos son los Sistemas Operativos que vamos a implementar en la Maquina virtuale
   
 - Alpine (Docker)
 
-- Firewall
-
+- Proxmox
 
   
 </details>
@@ -1094,6 +1087,8 @@ sudo chmod -R u+w /home/hugo/buckup
 
 <details>
 <summary>+----------🧱🔥 PFSense</summary>
+
+**No estamos utilizando PFSense**
 
 # ¿Qué es PFSense?
 Es una distribución de **FreeBSD** adaptada como **firewall** y **router**. Es de código abierto y se puede instalar en dispositivos físicos y virtuales. Está respaldada comercialmente por **Electric Sheep Fencing LLC**, además de ser de código abierto.
@@ -2269,17 +2264,23 @@ KDF	- Seguro para contraseñas
 
 </details>
 
+<br>
 
-
-
+</details>
 
 <br>
 
 
+<details>
+<summary>¿Qué seguridad hemos implementado?</summary>
+
+## Hemos implementado el cifrado extremo a extremo (E2EE)
+
+![image](https://github.com/user-attachments/assets/986ecb9d-3a36-4014-9a82-9183205aad51)
+
 
 
 </details>
-
 
 <br>
 
