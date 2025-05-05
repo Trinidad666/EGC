@@ -23,7 +23,7 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 ## Mockup
 
 <details>
-<summary>----------------->Diseño que queriamos implementar</summary>
+<summary>Diseño que queriamos implementar</summary>
 
 ### Home
 
@@ -92,7 +92,7 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 <br>
 
 <details>
-<summary>----------------->Diseño de la web que hemos implementado</summary>
+<summary>Diseño de la web que hemos implementado</summary>
 
 ### Registro
 * Así es como se vería la sección donde se registrarían nuestros usuarios. En el formulario de registro, el usuario deberá ingresar nombre de usuario y una contraseña.
