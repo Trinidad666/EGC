@@ -88,8 +88,37 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 
 </details>
 
+
+
 <details>
-<sumary>Diseño de la web que hemos implementado</sumary>
+  <sumary>Diseño de la web que hemos implementado</sumary>
+  ### Registro
+* Así es como se vería la sección donde se registrarían nuestros usuarios. En el formulario de registro, el usuario deberá ingresar nombre de usuario y una contraseña.
+
+![image](https://github.com/user-attachments/assets/37bc91ac-d20b-4de7-9a5a-7fbd4e7e4d98)
+
+
+### Inicio Sesión
+* Así es como se vería nuestro inicio de sesión. El usuario solo deberá ingresar su correo electrónico y contraseña.
+
+![image](https://github.com/user-attachments/assets/b765d3db-171e-4802-86c1-1a858ad72e24)
+
+
+### Chat
+* Así es como se vería nuestro chat. Una vez que el usuario se ha registrado se encuentra en una pantalla donde puede enviar y recibir mensajes. También contamos con dos botones que permiten hacer llamadas y colgarlas.
+
+* En la zona izquierda, se encuentra la sección de Contactos, donde puedes crear un nuevo chat y buscar a un amigo mediante un buscador. Más abajo, encontrarás una lista de tus amigos, donde se indica si están activos o no con un punto verde. Además, se ofrece la opción de eliminarlos.
+
+* En la zona derecha, está la sección de Grupos, donde puedes crear un nuevo grupo. También hay un buscador para encontrar los grupos que has creado o en los que te has unido. Más abajo, aparece una lista de los grupos a los que perteneces, con la opción de salir y la cantidad de miembros del grupo.
+
+![image](https://github.com/user-attachments/assets/d3bdf5f8-2e22-4e1a-8b0d-ed8c9c9b298d)
+
+
+### Creación de Grupos
+* Así es como se vería la creación de grupos. Al crear un grupo, se nos presentan varias secciones donde debemos ingresar el nombre del grupo, una descripción, el tipo de grupo (público o privado) y etiquetas. Las etiquetas sirven para indicar la temática del grupo, como música, juegos, estudio, etc.
+
+![image](https://github.com/user-attachments/assets/7441775d-9835-454c-b09c-de08dfa15d1a)
+
 
 </details>
 
