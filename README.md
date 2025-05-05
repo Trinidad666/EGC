@@ -127,6 +127,8 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 ![image](https://github.com/user-attachments/assets/7441775d-9835-454c-b09c-de08dfa15d1a)
 
 
+
+</details>
 </details>
 
 
