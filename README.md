@@ -29,6 +29,7 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 
 <details>
 <summary>Diseño que queriamos implementar</summary>
+
 ### Home
 
 * En la página de inicio tendríamos una imagen de fondo, y en la parte superior de la pestaña se mostraría el logo junto a tres enlaces que dirigirían a páginas donde hablaríamos sobre nosotros, nuestra seguridad y soporte técnico, así como al inicio de sesión. Además, contaríamos con un footer que incluiría los logotipos de nuestras redes sociales.
@@ -124,8 +125,6 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 * Así es como se vería la creación de grupos. Al crear un grupo, se nos presentan varias secciones donde debemos ingresar el nombre del grupo, una descripción, el tipo de grupo (público o privado) y etiquetas. Las etiquetas sirven para indicar la temática del grupo, como música, juegos, estudio, etc.
 
 ![image](https://github.com/user-attachments/assets/7441775d-9835-454c-b09c-de08dfa15d1a)
-
-
 
 
 </details>
