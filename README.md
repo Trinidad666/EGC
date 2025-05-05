@@ -3794,3 +3794,141 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 
 
+
+
+
+<details>
+  <summary>🌐🗨️👥Codigo de la Página Web-Chat</summary>
+
+
+  # Las tecnologías que se utilizan en la página Web.
+
+  
+  ## 🌐 Core del Backend
+  
+  * Node.js 🟩
+  
+  Motor de ejecución JavaScript del lado del servidor. Hace posible que tu aplicación corra fuera del navegador.
+  
+  * Express 🟦
+  
+  Framework web minimalista. Maneja las rutas HTTP (GET/POST), middlewares y la API REST.
+  
+  * Mongoose 🍃
+  
+  ODM (Mapeo Objeto-Documento) para MongoDB. Modela tus datos (usuarios, mensajes) y valida esquemas.
+
+
+  <br>
+
+
+  ## 🗃️ Base de Datos
+  
+  * MongoDB Atlas ☁️
+  
+  Base de datos NoSQL en la nube. Almacena usuarios, chats, grupos y mensajes en formato JSON (BSON).
+
+
+  <br>
+
+
+  ## 🎨 Frontend
+  
+  * HTML5 🏗️
+    
+  Estructura ósea de tu aplicación (formularios, contenedores de chat).
+  
+  * CSS3 🎨
+  
+  Estilos visuales (colores, diseños responsive, animaciones).
+  
+  * JavaScript Vanilla ⚡
+  
+  Lógica del cliente: manejo de eventos, interacción con WebSockets y DOM.
+
+
+  <br>
+
+  
+  ## 🔌 Comunicación en Tiempo Real
+  * WebSocket (ws) 📡
+  
+  Protocolo para conexiones persistentes bidireccionales. Notifica mensajes nuevos sin refrescar la página.
+  
+  * WebRTC 📹
+ 
+  Permite llamadas de voz/video P2P (usado en tu módulo de videollamadas).
+
+
+  <br>
+
+  
+  ## 🔐 Seguridad
+  * Bcrypt 🔒
+    
+  Encripta contraseñas antes de guardarlas en la BD (protección contra filtraciones).
+  
+  * JWT 🪙
+  
+  Tokens de autenticación sin estado. Verifica la identidad del usuario en cada petición.
+  
+  * Web Crypto API 🛡️
+  
+  API nativa del navegador para el cifrado E2EE (RSA-OAEP en tu caso).
+
+
+  <br>
+
+
+  ## ⚙️ Utilidades
+  
+  * Dotenv 📝
+  
+  Carga variables de entorno (.env) como claves secretas y configuraciones.
+  
+  * CORS ↔️
+  
+  Permite comunicación segura entre frontend y backend cuando están en dominios diferentes.
+  
+  * Nodemon 👹
+  
+  Reinicia automáticamente el servidor cuando detecta cambios (solo para desarrollo).
+
+
+
+  <br>
+  <br>
+  <br>
+
+  # Ruta del codigo:
+
+  https://github.com/Trinidad666/EGC/tree/main/Web/Codigo-Web 
+
+
+  <br>
+  <br>
+  <br>
+
+  # 🛠️ Flujo de Trabajo
+
+  ![deepseek_mermaid_20250505_11f74f](https://github.com/user-attachments/assets/2218fb49-07b8-48ea-9814-df3e9e343a6d)
+
+
+  
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
