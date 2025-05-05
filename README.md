@@ -27,6 +27,8 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 
 ## Mockup
 
+<details>
+<summary>Diseño que queriamos implementar</summary>
 ### Home
 
 * En la página de inicio tendríamos una imagen de fondo, y en la parte superior de la pestaña se mostraría el logo junto a tres enlaces que dirigirían a páginas donde hablaríamos sobre nosotros, nuestra seguridad y soporte técnico, así como al inicio de sesión. Además, contaríamos con un footer que incluiría los logotipos de nuestras redes sociales.
@@ -88,7 +90,49 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 
 ![image](https://github.com/user-attachments/assets/37ec7c4c-e221-415c-9b8d-cca2adff63e8)
 
+</details>
+
+
 <br>
+
+<details>
+<sumary>Diseño de la web que hemos implementado</sumary>
+
+### Registro
+* Así es como se vería la sección donde se registrarían nuestros usuarios. En el formulario de registro, el usuario deberá ingresar nombre de usuario y una contraseña.
+
+![image](https://github.com/user-attachments/assets/37bc91ac-d20b-4de7-9a5a-7fbd4e7e4d98)
+
+
+### Inicio Sesión
+* Así es como se vería nuestro inicio de sesión. El usuario solo deberá ingresar su correo electrónico y contraseña.
+
+![image](https://github.com/user-attachments/assets/b765d3db-171e-4802-86c1-1a858ad72e24)
+
+
+### Chat
+* Así es como se vería nuestro chat. Una vez que el usuario se ha registrado se encuentra en una pantalla donde puede enviar y recibir mensajes. También contamos con dos botones que permiten hacer llamadas y colgarlas.
+
+* En la zona izquierda, se encuentra la sección de Contactos, donde puedes crear un nuevo chat y buscar a un amigo mediante un buscador. Más abajo, encontrarás una lista de tus amigos, donde se indica si están activos o no con un punto verde. Además, se ofrece la opción de eliminarlos.
+
+* En la zona derecha, está la sección de Grupos, donde puedes crear un nuevo grupo. También hay un buscador para encontrar los grupos que has creado o en los que te has unido. Más abajo, aparece una lista de los grupos a los que perteneces, con la opción de salir y la cantidad de miembros del grupo.
+
+![image](https://github.com/user-attachments/assets/d3bdf5f8-2e22-4e1a-8b0d-ed8c9c9b298d)
+
+
+### Creación de Grupos
+* Así es como se vería la creación de grupos. Al crear un grupo, se nos presentan varias secciones donde debemos ingresar el nombre del grupo, una descripción, el tipo de grupo (público o privado) y etiquetas. Las etiquetas sirven para indicar la temática del grupo, como música, juegos, estudio, etc.
+
+![image](https://github.com/user-attachments/assets/7441775d-9835-454c-b09c-de08dfa15d1a)
+
+
+
+
+</details>
+
+
+<br>
+
 
 ## Gamma de colores + Logo
 
@@ -2468,10 +2512,6 @@ Aquí almacenamos la información de los usuarios registrados en nuestra web. Pu
 Nuestro profesor Joaquín
 Tutoríales de Youtube:
 
-* f
-* f
-* f
-* f
 
 
 <br>
@@ -3633,7 +3673,7 @@ En resumen, el servidor DNS actúa como una especie de "agenda telefónica" de I
 
 # Servidor Correo
 
-Un servidor de correo es una computadora o sistema que gestiona y distribuye los correos electrónicos entre los usuarios. Su función principal es recibir, almacenar y enviar mensajes de correo electrónico. Los servidores de correo se encargan de facilitar la comunicación a través del correo electrónico en redes locales o en Internet.
+Un servidor de correo es un sistema que gestiona y distribuye los correos electrónicos entre los usuarios. Su función principal es recibir, almacenar y enviar mensajes de correo electrónico. Los servidores de correo se encargan de facilitar la comunicación a través del correo electrónico en redes locales o en Internet.
 
 ![imagen_2025-03-17_170139970-removebg-preview](https://github.com/user-attachments/assets/a2bbb248-9043-45a1-9ec1-26706097fff0)
 
@@ -3647,10 +3687,6 @@ Se encarga de recibir y almacenar los correos en una bandeja de entrada. El usua
 
 ## 2. Servidor de correo saliente (SMTP)
 Es el responsable de enviar los correos electrónicos a otros servidores o destinatarios. SMTP (Simple Mail Transfer Protocol) es el protocolo utilizado para enviar los mensajes.
-
-
-## Cual es nuestro servidor de correo
-
 
 
 
@@ -3783,150 +3819,6 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
   
 </details>
-
-
-
-<br><br><br><br>
-
-
-
-
-# Tema sobre la WEB
-
-<details>
-  <summary>🇹🇩 Chat</summary>
-  
-  # Chat Interface Concept
-  
-  https://codepen.io/emilcarlsson/pen/ZOQZaV
-  
-  ![image](https://github.com/user-attachments/assets/15b8bdd0-554e-4116-b73e-086db5766ed0)
-
-
-  # 5 Живой чат / Live chat
-  
-  https://codepen.io/retyui/pen/zxGqPJ
-  
-  ![image](https://github.com/user-attachments/assets/12b26776-440e-474e-89f1-c7695ad79702)
-
-
-  # Sidebar AdminLTE
-  
-  https://codepen.io/jasp402/pen/VrYzNw
-  
-  ![image](https://github.com/user-attachments/assets/bec42ba2-6cfc-4304-b220-cf128d50d4c9)
-
-
-  # Material Messaging App Concept
-  
-  https://codepen.io/ThomasDaubenton/pen/QMqaBN
-  
-  ![image](https://github.com/user-attachments/assets/9b322906-8ead-4d2a-ba92-3e964af13b26)
-
-
-  # Discord Mockup
-  
-  https://codepen.io/odensc/pen/vxpMPp
-  
-  ![image](https://github.com/user-attachments/assets/3d085bc8-4ab1-4b66-8061-8894e0c203a2)
-
-
-</details>
-<br>
-
-
-
-<details>
-  <summary>📧 Enviar email a la empresa</summary>
-  
-  # Responsive Contact Form
-  
-  https://codepen.io/wgnr/pen/ExKzNJ
-
-  ![image](https://github.com/user-attachments/assets/5a7ec21a-ad85-4233-a0f6-54e7b55af226)
-
-
-  
-
-  ##
-
-
-
-</details>
-<br>
-
-
-
-<details>
-  <summary>📝|▶️ Registrar | Inicio</summary>
-  
-  # Responsive Registration Form
-  
-  https://codepen.io/anandaprojapati/pen/GmrwYE
-
-  ![image](https://github.com/user-attachments/assets/29bfc20d-0d2a-4ef1-bdfb-7d361b2c3ae3)
-
-
-  #
-
-
-
-</details>
-<br>
-
-
-
-
-<details>
-  <summary>🎨 Diseños graficos</summary>
-  
-  # 🔲 H Y P E R H E D R O N 🔲
-
-  https://codepen.io/shshaw/pen/eGYZOe
-
-  ![image](https://github.com/user-attachments/assets/1455a975-41b5-4e03-9d98-42e1d57146c8)
-
-
-
-  # canvas base typeface
-
-  https://codepen.io/ara_node/pen/DdNQqQ
-
-  ![image](https://github.com/user-attachments/assets/5793e444-87d7-40be-80b9-172d0b93ea7d)
-
-
-  # #Anonymous Hacker Portfolio
-
-  https://codepen.io/Breekee/pen/QWjjdOQ
-  
-  ![image](https://github.com/user-attachments/assets/2443b86b-ee03-4f8a-92f5-4db8135efbd1)
-
-
-  # Text Glitch
-
-  https://codepen.io/alexr4/pen/BqVbLr
-
-  ![image](https://github.com/user-attachments/assets/567ab563-e313-4e3b-9283-8133a3e4bfb2)
-
-
-  #
-
-</details>
-<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
 
 
