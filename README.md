@@ -91,13 +91,10 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 <br>
 <br>
 
-<details></details>
+<details>
+<sumary>----------------->Diseño de la web que hemos implementado</sumary>
 
-
-
-
-  <sumary>----------------->Diseño de la web que hemos implementado</sumary>
-  ### Registro
+### Registro
 * Así es como se vería la sección donde se registrarían nuestros usuarios. En el formulario de registro, el usuario deberá ingresar nombre de usuario y una contraseña.
 
 ![image](https://github.com/user-attachments/assets/37bc91ac-d20b-4de7-9a5a-7fbd4e7e4d98)
@@ -123,6 +120,10 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 * Así es como se vería la creación de grupos. Al crear un grupo, se nos presentan varias secciones donde debemos ingresar el nombre del grupo, una descripción, el tipo de grupo (público o privado) y etiquetas. Las etiquetas sirven para indicar la temática del grupo, como música, juegos, estudio, etc.
 
 ![image](https://github.com/user-attachments/assets/7441775d-9835-454c-b09c-de08dfa15d1a)
+
+  
+</details>
+
 
 
 <br>
