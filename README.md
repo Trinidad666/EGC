@@ -3800,11 +3800,11 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
   * Contiene 3 secciones principales:
 
-  ** Auth Section: Formularios de login/registro
+  * * Auth Section: Formularios de login/registro
 
-  ** Main App: Interfaz de chat (oculta inicialmente)
+  * * Main App: Interfaz de chat (oculta inicialmente)
   
-  ** Modales: Para llamadas y creación de grupos
+  * * Modales: Para llamadas y creación de grupos
 
   
   **Componentes clave:**
