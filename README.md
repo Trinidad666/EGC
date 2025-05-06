@@ -4112,7 +4112,9 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 
 
-  ## auth.js
+  ## 5. Rutas y Controladores
+  
+  ### auth.js
   
   **Endpoints:**
   
@@ -4132,43 +4134,41 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
   
     * Genera token JWT (expira en 1h)
    
-    
 
+  <br>
 
-
-
-
-
-api.js
-Grupos principales:
-
-Autenticación:
-
-GET /api/me: Obtiene perfil de usuario
-
-Contactos:
-
-GET /api/contacts: Lista amigos
-
-POST/DELETE /api/friends/:userId: Gestiona amistades
-
-Mensajería:
-
-GET/POST /api/private-chat/:userId: Chat 1-a-1
-
-GET/POST /api/channels/:id/messages: Mensajes grupales
-
-Grupos:
-
-POST /api/channels: Crea grupos
-
-POST /api/channels/:id/join: Unirse a grupos
-
-E2EE:
-
-POST /api/e2ee/keys: Almacena clave pública
-
-GET /api/e2ee/keys/:userId: Obtiene clave de contacto
+  
+  ### api.js
+  
+  **Grupos principales:**
+  
+  1. Autenticación:
+  
+  * ```GET /api/me```: Obtiene perfil de usuario
+  
+  2. Contactos:
+  
+  * ```GET /api/contacts```: Lista amigos
+  
+  * ```POST/DELETE /api/friends/:userId```: Gestiona amistades
+  
+  3. Mensajería:
+  
+  * ```GET/POST /api/private-chat/:userId```: Chat 1-a-1
+  
+  * ```GET/POST /api/channels/:id/messages```: Mensajes grupales
+  
+  4. Grupos:
+  
+  * ```POST /api/channels```: Crea grupos
+  
+  * ```POST /api/channels/:id/join```: Unirse a grupos
+  
+  5. E2EE:
+  
+  * ```POST /api/e2ee/keys```: Almacena clave pública
+  
+  * ```GET /api/e2ee/keys/:userId```: Obtiene clave de contacto
 
 
 
