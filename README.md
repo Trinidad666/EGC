@@ -3790,6 +3790,8 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 
   <br>
+  <br>
+
 
 
   ## 2. Frontend (Carpeta public/)
@@ -3808,7 +3810,368 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
   
   **Componentes clave:**
+
+  * ```<div id="auth-section">```: Formularios de autenticación
+
+  * ```<div id="main-app">```:
   
+    * Sidebar con contactos y grupos
+  
+    * Área de chat principal
+  
+    * Input para mensajes
+  
+  * WebSocket: Conexión en tiempo real
+
+
+  <br>
+
+  
+  ### style.css
+
+  **Estructura CSS:**
+
+  * Variables CSS para colores (--primary-color, etc.)
+
+  * Diseño responsive con Flexbox/Grid
+  
+  * Estilos para:
+  
+    * Mensajes (burbujas diferenciadas)
+  
+    * Estado de usuarios (online/offline)
+  
+    * Modales y elementos interactivos
+  
+
+  **Características especiales:**
+
+  * Animaciones para mensajes y notificaciones
+
+  * Diseño modular con clases reutilizables
+
+
+  <br>
+
+
+  ### auth.js
+
+  **Funciones principales:**
+
+  1. Registro:
+
+    * Valida datos
+  
+    * Envía petición POST a /auth/register
+  
+    * Almacena token JWT en localStorage
+  
+  2. Login:
+  
+    * Verifica credenciales
+  
+    * Envía petición POST a /auth/login
+  
+    * Inicializa la app con initApp()
+  
+  3. Logout:
+  
+    * Limpia localStorage
+  
+    * Oculta la interfaz de chat
+  
+  
+  **Flujo E2EE:**
+
+  * Genera par de claves RSA al iniciar sesión
+
+  * Almacena clave privada en localStorage
+  
+  * Envía clave pública al servidor
+
+
+  <br>
+
+
+  ### chat.js
+
+  **Núcleo del sistema de mensajería:**
+
+  * WebSocket Connection:
+  
+    * Maneja eventos ```onopen```, ```onmessage```, ```onclose```
+  
+    * Tipos de mensajes: ```message```, ```group-message```, ```user-status```
+  
+  * Funciones clave:
+  
+    * ```openPrivateChat()```: Carga historial de mensajes
+  
+    * ```sendMessage()```: Envía mensajes cifrados E2EE
+  
+    * ```loadContacts()```: Muestra lista de contactos
+  
+  * Cifrado/Descifrado:
+  
+    * ```encryptMessage()```: Usa RSA-OAEP con clave pública
+  
+    * ```decryptMessage()```: Usa clave privada del localStorage
+
+
+  <br>
+
+
+  ### webrtc.js (No funciona)
+
+  **Sistema de llamadas:**
+
+  1. Iniciar llamada:
+  
+  * Crea RTCPeerConnection
+  
+  * Obtiene stream de micrófono
+  
+  * Negociación ICE/SDP
+  
+  2. Manejar llamadas entrantes:
+  
+  * Muestra modal con opción aceptar/rechazar
+  
+  * Establece conexión P2P
+  
+  3. Señalización:
+  
+  * Usa WebSocket para intercambiar:
+  
+    * Ofertas/Respuestas SDP
+  
+    * Candidatos ICE
+
+  
+  **Configuración:**
+  
+  * Usa servidores STUN de Google
+  
+  * Soporta reinicio automático en fallos
+
+
+  <br>
+
+
+  ### groups.js
+  
+  **Gestión de grupos:**
+  
+  * Creación:
+  
+    * Modal con formulario (nombre, descripción, tipo)
+  
+    * Petición POST a ```/api/channels```
+  
+  * Búsqueda:
+  
+    * Filtra grupos públicos por nombre/descripción
+  
+  * Membresía:
+  
+    * Unirse/Salir de grupos
+  
+    * Eliminación (solo para creadores)
+
+
+  <br>
+
+
+  ## 3. Backend (Carpeta server/)
+  
+  ### server.js
+  
+  **Configuración principal:**
+  
+  1. Express:
+  
+  * Middlewares: CORS, JSON parsing
+  
+  * Rutas: /auth, /api
+  
+  * Sirve archivos estáticos
+  
+  2. WebSocket Server:
+  
+  * ```activeUsers```: Mapa de conexiones activas
+  
+  * Maneja eventos:
+  
+    * register: Asocia usuario con WebSocket
+  
+    * message: Rutea mensajes privados
+  
+    * group-message: Distribuye a miembros
+  
+  3. Conexión a MongoDB:
+  
+  * Usa URI de .env
+  
+  * Maneja reconexiones automáticas
+
+
+  <br>
+
+
+  ### db.js
+
+  ```mongoose.connect(process.env.MONGODB_URI)```
+
+  **Función:**
+
+  * Establece conexión a MongoDB Atlas
+
+  * Maneja eventos de conexión/error
+
+
+  <br>
+  <br>
+
+
+  ## 4. Modelos de Datos
+  
+  ### User.js
+  
+  **Campos principales:**
+  
+  * ```username```, ```email```, ```password_hash``` (bcrypt)
+  
+  * ```status```: online/offline/away
+  
+  * ```friends```, ```blocked_users```: Arrays de referencias
+  
+  * ```public_key```: Para E2EE
+  
+  **Hooks:**
+  
+  * Hashea contraseñas antes de guardar
+
+
+  <br>
+
+
+  ### Message.js
+  
+  **Tipos de mensaje:**
+  
+  * ```text```, ```image```, ```video```, ```file```
+  
+  * Relaciones:
+  
+    * ```user_id```: Remitente
+  
+    * ```channel_id``` o ```private_chat_id```
+  
+  **Índices:**
+  
+  * Optimiza búsquedas por chat y fecha
+
+
+  <br>
+
+
+  ### Channel.js
+  
+  **Estructura de grupos:**
+  
+  * ```name```, ```description```, ```type``` (public/private)
+  
+  * ```members```, ```admins```: Arrays de usuarios
+  
+  * ```tags```: Para búsquedas
+  
+  **Métodos útiles:**
+  
+  * isMember(), isAdmin(): Verifican permisos
+
+
+  <br>
+
+
+  ### PrivateChat.js
+  
+  **Chats 1-a-1:**
+  
+  * ```user1_id```, ```user2_id```: Participantes
+  
+  * ```messages```: Array embebido con:
+  
+    * ```sender_id```, ```content```, ```timestamp```
+  
+    * ```isEncrypted```: Flag para E2EE
+
+
+
+  <br>
+  <br>
+
+
+
+  ## auth.js
+  
+  **Endpoints:**
+  
+  * POST /auth/register:
+  
+    * Valida unicidad de email/usuario
+  
+    * Hashea contraseña
+  
+    * Retorna JWT
+  
+  * POST /auth/login:
+  
+    * Verifica credenciales
+  
+    * Actualiza last_login
+  
+    * Genera token JWT (expira en 1h)
+   
+    
+
+
+
+
+
+
+api.js
+Grupos principales:
+
+Autenticación:
+
+GET /api/me: Obtiene perfil de usuario
+
+Contactos:
+
+GET /api/contacts: Lista amigos
+
+POST/DELETE /api/friends/:userId: Gestiona amistades
+
+Mensajería:
+
+GET/POST /api/private-chat/:userId: Chat 1-a-1
+
+GET/POST /api/channels/:id/messages: Mensajes grupales
+
+Grupos:
+
+POST /api/channels: Crea grupos
+
+POST /api/channels/:id/join: Unirse a grupos
+
+E2EE:
+
+POST /api/e2ee/keys: Almacena clave pública
+
+GET /api/e2ee/keys/:userId: Obtiene clave de contacto
+
+
+
 
 
 
