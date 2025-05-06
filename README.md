@@ -166,14 +166,11 @@ Este es nuestro esquema de nuestra web EGC:
 ## Diagrama de RED
 Como podemos ver en nuestro esquema de red, las máquinas de nuestro Proxmox se conectan al switch (vmbr0), que a su vez se conecta al router de IFP, proporcionándonos la conexión a Internet. Ahora, os mostraremos las máquinas virtuales que contiene nuestro **Proxmox**:
 
-1. Contamos con una máquina virtual (MV) que actúa como router y se conecta a través de **pfSense**, que funciona como el firewall de nuestro proyecto.
-2. Tenemos una con el **DNS**.
-3. Tenemos una MV donde almacenaremos la **WEB** y el **NGINX**.
-4. Una con la bas de datos de **MongoDB**.
-5. Contamos con una a la que hemos llamado **cliente** que utilizamos como prueba para verificar si nuestra web funciona correctamente.
-6. Otra que contiene nuestro **Docker**.
-7. Nuestro **servidor de correo**.
-8. Contamos con una MV donde se almacenarán nuestros **backups** de **copias de seguridad** y **recuperación**.
+1. Tenemos una con el **DNS**.
+2. Tenemos una MV donde almacenaremos la **WEB**.
+3. Una con la bas de datos de **MongoDB**.
+4. Contamos con una a la que hemos llamado **cliente** que utilizamos como prueba para verificar si nuestra web funciona correctamente.
+5. Otra que contiene nuestro **Docker**.
 
 ![Captura de pantalla 2025-05-05 195936](https://github.com/user-attachments/assets/19d983eb-22ed-48ac-912a-ae856323dc58)
 
