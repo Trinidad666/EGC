@@ -1,4 +1,3 @@
-# Intoducción
 
 <details>
   <summary>🚀 Explicación de EGC</summary>
