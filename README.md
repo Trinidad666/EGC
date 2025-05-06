@@ -3752,6 +3752,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
   ### .env
 
+  Archivo de configuración que almacena variables sensibles como la clave secreta para JWT, puerto del servidor y URI de conexión a MongoDB. Estas variables son accesibles en toda la aplicación mediante process.env. Por seguridad, debe excluirse del control de versiones para evitar exponer credenciales. El sistema fallará si este archivo falta o tiene valores incorrectos.
+
+
+
   ```
   JWT_SECRET=lo_que_pongas
   PORT=3000
@@ -4172,6 +4176,33 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 
 
+  <br>
+  <br>
+
+
+
+  ## Consideraciones de Seguridad
+
+  1. E2EE Implementado:
+
+  * Claves RSA 2048-bit
+  
+  * Cifrado AES-GCM para mensajes largos
+  
+  * Claves privadas nunca salen del cliente
+  
+  2. Protección de Rutas:
+  
+  * Middleware auth.js verifica JWT
+  
+  * Validación de permisos en cada endpoint
+  
+  3. WebSocket:
+  
+  * Autenticación con JWT en registro
+  
+  * Mensajes solo a usuarios autorizados
+  
 
 
 
