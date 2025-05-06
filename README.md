@@ -3742,6 +3742,84 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
   ![deepseek_mermaid_20250505_11f74f](https://github.com/user-attachments/assets/2218fb49-07b8-48ea-9814-df3e9e343a6d)
 
 
+  <br>
+  <br>
+  <br>
+
+  # Lo que hace cada archivo
+
+  ## 1. Configuración Inicial y Variables de Entorno
+
+  ### .env
+
+  ```
+  JWT_SECRET=lo_que_pongas
+  PORT=3000
+  MONGODB_URI=mongodb+srv://EGC:tu_contraseña@cluster0.kbtve.mongodb.net/messaging-platform
+  ```
+
+  **Función:**
+
+  * Almacena variables de configuración sensibles
+  
+  * JWT_SECRET: Clave para firmar tokens de autenticación
+  
+  * PORT: Puerto donde corre el servidor
+  
+  * MONGODB_URI: URL de conexión a MongoDB Atlas
+
+
+  <br>
+
+
+  ### .gitignore
+
+  ```
+  # Archivos de entorno
+  .env
+  # Dependencias
+  node_modules/
+  ```
+
+
+  **Función:**
+  
+  * Especifica qué archivos no deben subirse a Git
+  
+  * Protege información sensible y dependencias
+
+
+  <br>
+
+
+  ## 2. Frontend (Carpeta public/)
+
+  ### index.html
+
+  **Estructura principal:**
+
+  * Contiene 3 secciones principales:
+
+  ** Auth Section: Formularios de login/registro
+
+  ** Main App: Interfaz de chat (oculta inicialmente)
+  
+  ** Modales: Para llamadas y creación de grupos
+
+  
+  **Componentes clave:**
+  
+
+
+
+
+
+
+
+
+
+
+
   
 </details>
 
