@@ -3755,7 +3755,6 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
   Archivo de configuración que almacena variables sensibles como la clave secreta para JWT, puerto del servidor y URI de conexión a MongoDB. Estas variables son accesibles en toda la aplicación mediante process.env. Por seguridad, debe excluirse del control de versiones para evitar exponer credenciales. El sistema fallará si este archivo falta o tiene valores incorrectos.
 
 
-
   ```
   JWT_SECRET=lo_que_pongas
   PORT=3000
@@ -3777,6 +3776,8 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 
   ### .gitignore
+
+  Lista de archivos y directorios que Git debe ignorar, incluyendo node_modules (dependencias), .env (variables sensibles) y archivos temporales del IDE. Evita subir accidentalmente información confidencial o innecesaria al repositorio. Esencial para mantener limpio el proyecto y proteger datos como claves de API o contraseñas de bases de datos.
 
   ```
   # Archivos de entorno
@@ -3801,6 +3802,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
   ## 2. Frontend (Carpeta public/)
 
   ### index.html
+
+  Estructura base de la aplicación web con tres secciones principales: formularios de autenticación, interfaz de chat y modales para llamadas/grupos. Incluye todos los contenedores dinámicos donde se renderizarán mensajes, contactos y grupos. Carga los scripts JS necesarios y define la estructura visual inicial antes de que CSS y JavaScript la modifiquen.
+
+
 
   **Estructura principal:**
 
@@ -3833,6 +3838,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
   
   ### style.css
 
+  Define todos los estilos visuales usando variables CSS para colores principales. Organiza la interfaz con Flexbox/Grid, creando un diseño responsive. Estiliza elementos como burbujas de chat diferenciadas (emisor/receptor), indicadores de estado y modales. Incluye animaciones para transiciones y efectos visuales, mejorando la experiencia de usuario durante interacciones.
+
+
+
   **Estructura CSS:**
 
   * Variables CSS para colores (--primary-color, etc.)
@@ -3858,7 +3867,11 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
   <br>
 
 
-  ### auth.js
+  ### auth.js (frontend)
+
+  Gestiona autenticación mediante peticiones POST a /auth/login y /auth/register. Almacena el token JWT en localStorage para mantener sesión. Implementa generación de claves RSA para E2EE: guarda la privada localmente y envía la pública al servidor. Controla la transición entre formularios de login/registro y redirige al chat tras autenticación exitosa.
+
+
 
   **Funciones principales:**
 
@@ -3899,6 +3912,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
   ### chat.js
 
+  Núcleo del sistema de mensajería que maneja conexión WebSocket, envía/recibe mensajes en tiempo real y gestiona cifrado E2EE. Implementa funciones para cargar historiales de chat, mostrar mensajes con estilos diferenciados y sincronizar estados de usuarios. También controla la búsqueda/gestión de contactos y la navegación entre chats.
+
+
+
   **Núcleo del sistema de mensajería:**
 
   * WebSocket Connection:
@@ -3926,6 +3943,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 
   ### webrtc.js (No funciona)
+
+  Configura conexiones peer-to-peer para llamadas de voz usando la API WebRTC. Maneja toda la negociación (ofertas/respuestas SDP, candidatos ICE) a través de WebSockets. Controla dispositivos multimedia (micrófono/cámara), gestiona streams en tiempo real y proporciona interfaz para aceptar/rechazar llamadas. Usa servidores STUN para NAT traversal.
+
+
 
   **Sistema de llamadas:**
 
@@ -3963,6 +3984,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 
   ### groups.js
+
+  Implementa lógica para creación, búsqueda y gestión de grupos. Maneja el modal de creación con validación de campos, búsqueda en tiempo real de grupos públicos y participación (unirse/salir). Coordina con WebSockets para notificar a miembros sobre nuevos mensajes y actualizar listas de grupos dinámicamente.
+
+
   
   **Gestión de grupos:**
   
@@ -3989,6 +4014,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
   ## 3. Backend (Carpeta server/)
   
   ### server.js
+
+  Configuración principal del backend con Express para rutas REST y WebSocket para tiempo real. Inicia el servidor HTTP, conecta middleware (CORS, JSON parsing) y sirve archivos estáticos. Gestiona conexiones WebSocket manteniendo mapa de usuarios activos y distribuyendo mensajes. También maneja eventos de conexión/desconexión.
+
+
   
   **Configuración principal:**
   
@@ -4024,6 +4053,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
   ### db.js
 
+  Establece y mantiene conexión con MongoDB Atlas usando la URI del .env. Implementa lógica de reconexión automática y maneja eventos de conexión/error. Punto central para todas las operaciones de base de datos, asegurando disponibilidad antes de iniciar el servidor.
+
+
+
   ```mongoose.connect(process.env.MONGODB_URI)```
 
   **Función:**
@@ -4040,6 +4073,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
   ## 4. Modelos de Datos
   
   ### User.js
+
+  Modelo Mongoose para usuarios con campos como email (único), username, hash de contraseña (bcrypt), estado (online/offline) y lista de amigos. Incluye pre-hook para hashear contraseñas antes de guardar. Almacena clave pública para E2EE y relaciones con otros usuarios (amigos/bloqueados).
+
+
   
   **Campos principales:**
   
@@ -4060,6 +4097,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 
   ### Message.js
+
+  Modelo para mensajes con referencia a usuario (remitente) y canal/chat destino. Campos para contenido, tipo (texto/imagen), timestamp y flag isEncrypted. Índices optimizan búsquedas por canal y fecha. Diferencia entre mensajes grupales (channel_id) y privados (private_chat_id).
+
+
   
   **Tipos de mensaje:**
   
@@ -4080,6 +4121,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 
   ### Channel.js
+
+  Modelo de grupos con nombre, descripción, tipo (público/privado), tags y límite de miembros. Relaciones con usuarios (creador, miembros, admins). Implementa métodos para verificar membresía/administración. Middleware asegura que el creador sea miembro/admin al crear grupo.
+
+
   
   **Estructura de grupos:**
   
@@ -4098,6 +4143,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
 
   ### PrivateChat.js
+
+  Modelo para chats 1-a-1 con referencia a dos usuarios y array de mensajes embebidos. Mensajes contienen sender_id, contenido cifrado, timestamp y flag isEncrypted. Índice único evita chats duplicados entre mismos usuarios. Optimizado para cargas rápidas de historial.
+
+
   
   **Chats 1-a-1:**
   
@@ -4119,6 +4168,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
   ## 5. Rutas y Controladores
   
   ### auth.js
+
+  Router Express para /auth/login y /auth/register. Valida credenciales, hashea contraseñas con bcrypt y genera tokens JWT (expiración 1h). Actualiza last_login en éxito. Rechaza credenciales inválidas o usuarios existentes (en registro). Interfaz segura entre frontend y DB.
+
+
   
   **Endpoints:**
   
@@ -4143,6 +4196,10 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
   
   ### api.js
+
+  Agrupa todas las rutas REST bajo /api con middleware de autenticación JWT. Incluye gestión de contactos (añadir/eliminar), mensajería (enviar/leer), grupos (crear/unirse) y claves E2EE. Validaciones en cada endpoint verifican permisos y sanean inputs. Responde con JSON estandarizado.
+
+
   
   **Grupos principales:**
   
@@ -4202,10 +4259,23 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
   * Autenticación con JWT en registro
   
   * Mensajes solo a usuarios autorizados
+
+
+
   
+  <br>
+  <br>
 
 
+  ## Flujo de Comunicación Completo
 
+  ### Conexión Inicial:
+
+  ![deepseek_mermaid_20250506_b054f6](https://github.com/user-attachments/assets/6249916c-e2d2-4213-9246-094a3873d27b)
+
+  ### Envío de Mensaje:
+
+  ![deepseek_mermaid_20250506_83efd4](https://github.com/user-attachments/assets/99b69383-1773-4d92-8fde-d259ea08178d)
 
 
 
