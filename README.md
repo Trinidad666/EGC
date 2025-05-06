@@ -175,7 +175,7 @@ Como podemos ver en nuestro esquema de red, las máquinas de nuestro Proxmox se 
 7. Nuestro **servidor de correo**.
 8. Contamos con una MV donde se almacenarán nuestros **backups** de **copias de seguridad** y **recuperación**.
 
-![Esquema-Red-Visual-Paradigm](https://github.com/user-attachments/assets/0e365779-b6c6-4654-9f4b-aa757ba3182c)
+![Captura de pantalla 2025-05-05 195936](https://github.com/user-attachments/assets/19d983eb-22ed-48ac-912a-ae856323dc58)
 
 
 ## Diagrama de BBDD
