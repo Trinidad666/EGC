@@ -4282,12 +4282,42 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
   ## Flujo de Comunicación Completo
 
   ### Conexión Inicial:
+  * Frontend → Backend:
+    * El usuario envía credenciales (email/contraseña) mediante una petición POST /auth/login.
+    * Si es registro, se crea un nuevo usuario en la base de datos.
+ 
+  * Backend → MongoDB:
+    * El backend verifica las credenciales (login) o registra al usuario en la base de datos.
+    * Si es exitoso, genera un JWT (token de autenticación) y devuelve los datos del usuario al frontend.
+ 
+  * Backend → WebSocket:
+    * Notifica al servidor WebSocket que el usuario está online (ej: register(userId)).
+    * Esto permite actualizar su estado en tiempo real para otros usuarios (ej: "Usuario X está conectado").
+
 
   
 
   ![deepseek_mermaid_20250506_b054f6](https://github.com/user-attachments/assets/6249916c-e2d2-4213-9246-094a3873d27b)
 
   ### Envío de Mensaje:
+  * Usuario (Remitente):
+    * Escribe un mensaje en el frontend (interfaz de usuario).
+  
+  * Frontend:
+    * Realiza una petición GET /api/e2ee/keys/recipient al backend para obtener las claves públicas del destinatario (necesarias para cifrar el mensaje).
+    * Cifra el mensaje localmente con encryptMessage() (usando algoritmos como RSA o AES).
+    * Envía el mensaje cifrado (etiquetado como cf/rado o similar, indicando que está cifrado) al backend.
+  
+  * Backend:
+    * Almacena el mensaje cifrado en MongoDB (como un registro seguro).
+    * Notifica al WebSocket que hay un nuevo mensaje para el destinatario.
+  
+  * WebSocket:
+    * Entrega el mensaje cifrado al destinatario en tiempo real (si está conectado) o lo deja pendiente.
+ 
+  * Destinatario:
+    * Su frontend recibe el mensaje cifrado y lo descifra localmente con decryptMessage() (usando su clave privada).
+    * Muestra el mensaje original al usuario.
 
   
 
