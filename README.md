@@ -79,7 +79,7 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 ![image](https://github.com/user-attachments/assets/587a3bd2-9e8c-4737-8d00-9a2e71e7e9d7)
 
 
-### Inicio Sesión
+### Inicio de Sesión
 
 * Así es como se vería nuestro inicio de sesión. El usuario solo deberá ingresar su correo electrónico y contraseña.
 
@@ -150,7 +150,7 @@ Al registrarse en nuestra web, los usuarios podrán acceder a grupos creados por
 
 <details>
 <summary>🗺️ Nuestros esquemas</summary>
-Este es nuestro esquema de nuestra web EGC:
+Esquema de nuestra web EGC
 
 ![image](https://github.com/user-attachments/assets/d29a31b2-477b-47cb-b0c9-4ed494235236)
 
@@ -197,7 +197,7 @@ Como podemos ver en nuestro diagrama, la tabla **users** se conecta a la tabla c
 <details>
 <summary>🐋 Docker</summary>
 
-# ¿Que es el Docker?
+# ¿Qué es Docker?
 
 Docker es una plataforma que permite crear, distribuir y ejecutar aplicaciones en contenedores. Un contenedor es un entorno ligero y portátil que incluye todo lo necesario para ejecutar un software, como código, bibliotecas y dependencias, asegurando que funcione igual en cualquier sistema. Docker facilita la gestión y escalabilidad de aplicaciones, optimizando el uso de recursos y mejorando la eficiencia en desarrollo y despliegue. Se basa en imágenes preconfiguradas y permite automatizar procesos, haciéndolo ideal para entornos de desarrollo, pruebas y producción en la nube o servidores locales.
 
@@ -375,7 +375,7 @@ A continuación, accedemos al archivo **conexion_be.php**, que se encuentra en l
 <br>
 <br>
 
-# Las mejoras que hemos añadido
+# Mejoras que hemos añadido
 
 Estos son los comandos que le hemos puesto en el archivo **docker-compose.yml**.
 
@@ -451,7 +451,7 @@ Luego, instala extensiones de PHP con docker-php-ext-install:
 Agrega manualmente la línea **extension=mysqli.so** al archivo de configuración de PHP. Se usará cuando PHP no detecta automáticamente la extensión mysqli.
 
 
-🔹 ¿Cuándo usarlo?
+🔹 ¿Cuándo es útil utilizarlo?
 
 Si mysqli no se activa correctamente después de instalarlo con docker-php-ext-install para asegurar de que PHP cargue la extensión en cada inicio.
 
@@ -675,7 +675,7 @@ Imagina que tienes un cuaderno en el que anotas información crucial para tu esc
 Por ello, realizar copias de seguridad regularmente es esencial. Es como tener una segunda versión de tu cuaderno guardada en un lugar seguro, lista para ser utilizada en caso de emergencia, evitando así pérdidas irreparables y garantizando la estabilidad de la información.
 
 
-# ¿Qué copias de seguridad hariamosa?
+# ¿Qué tipos de copias de seguridad implementaríamos?
 Para definir qué información debe incluirse en las copias de seguridad, primero es necesario realizar un inventario de activos y clasificar los datos según su importancia para el negocio. Esta clasificación nos permitirá priorizar la protección de la información crítica y definir estrategias adecuadas de respaldo:
 
 * Confidencialidad: (confidencial, interna, pública).
@@ -1177,7 +1177,7 @@ La interfaz LAN se usa para la red interna y suele tener una dirección IP está
 
    Puedes desactivarlo si no lo necesitas o usarlo si tu red lo soporta.
 
-6. ¿Activar servidor DHCP en LAN?
+5. ¿Activar servidor DHCP en LAN?
 
 * Sí (para que los dispositivos en la red obtengan IP automáticamente).
 
@@ -1211,6 +1211,9 @@ Tendremos que activar **Kea DHCP**, que se encarga de asignar direcciones IP din
 <br>
 
 # ¿Qué es OpenVPN?
+
+**No lo utilizamos**
+
 
 **OpenVPN** es una solución de software libre para crear redes privadas virtuales (VPN). Permite establecer una conexión segura y cifrada entre dispositivos a través de una red no segura, como **Internet**. Es utilizado para proteger la privacidad en línea, asegurar la comunicación entre dispositivos remotos y permitir el acceso a redes internas de forma segura.
 
@@ -1513,7 +1516,7 @@ Este tipo de cifrado es muy popular porque ofrece un alto nivel de privacidad y 
 Los ataques punto a punto en aplicaciones de chat implican que un atacante se haga con el control de las comunicaciones o manipule las conversaciones entre los usuarios.
 
 
-### Cifrado de extremo a extremo (E2EE)
+### Cifrado de extremo a extremo (E2EE) (Hemos implementado el cifrado E2EE, para más información )
 Para proteger los mensajes de ser interceptados y leídos por atacantes, implementamos un cifrado de extremo a extremo (E2EE). Esto significa que los mensajes se cifran en el dispositivo del usuario y solo pueden ser descifrados en el dispositivo del receptor. Algunos enfoques incluyen:
 
 
@@ -1536,6 +1539,8 @@ Utilizariamos TLS/SSL para cifrar todas las comunicaciones entre el cliente y el
 
 <details>
 <summary>+---------- 🔐🌀🔑 ChaCha20</summary>
+
+**No implementado**
 
 ## ¿Qué es ChaCha20?
 ChaCha20 es un algoritmo de cifrado simetrico que pertenece a la familia de cifrados de flujo. Fue diseñado por el criptógrafo Daniel J. Bernstein en 2008 como una mejora de su predecesor, el algoritmo Salsa20. ChaCha20 fue creado con el objetivo de ofrecer una alta seguridad, velocidad y eficiencia, especialmente en sistemas que no cuentan con instrucciones de hardware dedicadas para acelerar los cálculos de cifrado.
@@ -1584,7 +1589,7 @@ ChaCha20 es ampliamente utilizado en aplicaciones modernas que requieren cifrado
 <br>
 
 
-## Ventajas de ChaCha20
+## Ventajas
 
   * **Seguridad robusta:** Gracias a las 20 rondas de cifrado y su diseño matemáticamente sólido, ChaCha20 es muy seguro frente a una variedad de ataques criptográficos.
   
@@ -1661,11 +1666,14 @@ En un sistema de E2EE, los datos se cifran en el dispositivo del emisor antes de
 
 <br>
 
-## Video de la explicación del algoritmo ChaCha20:
+## Video de la explicación del algoritmo ChaCha20
+
+  * A continuación, os presentamos un vídeo explicativo sobre el algoritmo ChaCha20.
+
 https://youtu.be/LIvFSppLDnM?si=Ss0pJPd-QsCV2tyC
 
 
-## Función en Cyberchef
+## Cómo funciona ChaCha20 en CyberChef
 
 Necesitamos una clave de 256 bits en Hexadecimal: **00112233445566778899aabbccddeeff00112233445566778899aabbccddeeff**
 
@@ -1701,6 +1709,8 @@ Rounds: **20**
 
 ## ![image](https://github.com/user-attachments/assets/6b426a14-1c83-4c62-b4f8-505d01d448eb) Ataques de Hydra
 
+**No implementado**
+
 ### Protección contra ataques de Hydra
 Los ataques de fuerza bruta como Hydra se realizan para adivinar contraseñas o credenciales de usuario mediante un proceso automatizado que intenta miles o millones de combinaciones. Aquí os mostraremos como podemos evitar algunos de estos ataques:
 
@@ -1733,6 +1743,8 @@ Los ataques de fuerza bruta como Hydra se realizan para adivinar contraseñas o 
 
 
 <br>
+
+**No implementado**
 
 ## 💉🍃 Inyecciones MongoDB
 
@@ -1861,7 +1873,7 @@ sha512_crypt.using(salt=salt, rounds=5000).hash(password)
 ```
 
 <details>
-  <summary>📦🐍Codígo de Python para el Hash</summary>
+  <summary>📦🐍Código de Python para el Hash</summary>
 
 
 Este código es una aplicación gráfica en Python (Tkinter) que permite:
@@ -2282,11 +2294,11 @@ KDF	- Seguro para contraseñas
 
 
 <details>
-  <summary>💾🍃 Base de Datos</summary>
+  <summary>💾🍃 Nuestra Base de Datos</summary>
   
 # Mongo DB
 
-## ¿Qué es el Mongo DB?
+## ¿Qué es Mongo DB?
 
 MongoDB es una base de datos NoSQL orientada a documentos, diseñada para manejar grandes volúmenes de datos de manera flexible y escalable. A diferencia de las bases de datos relacionales tradicionales (como MySQL o PostgreSQL), MongoDB no usa tablas ni filas, sino que almacena los datos en documentos JSON (BSON, específicamente).
 
@@ -2442,7 +2454,7 @@ Tutoríales de Youtube:
 <br>
 
 <details>
-  <summary>🔗🍃 Como conectarte a la BBDD desde la Nube de MongoDB</summary>
+  <summary>🔗🍃 Cómo establecer conexión con la base de datos alojada en MongoDB</summary>
 
 Estos pasos son de priva para novatos para que se pueda entender mejor.
 
@@ -2490,7 +2502,7 @@ npm install mongoose@5.11.15 mongodb@3.6.4
 
 
 
-## Configuración del Proyecto:
+## Configuración del Proyecto
 
 ```
 npm init -y
@@ -2499,7 +2511,7 @@ npm install express mongoose bcrypt cors
 <br>
 
 
-## Estructura de Archivos:
+## Estructura de Archivos
 
 ```
 /proyecto
@@ -2515,7 +2527,7 @@ npm install express mongoose bcrypt cors
 
 <br>
 
-## Conexión con MongoDB (server.js):
+## Conexión con MongoDB (server.js)
 
 ```
 const express = require('express');
