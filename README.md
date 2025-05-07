@@ -2845,7 +2845,7 @@ WebSocket es un protocolo de comunicación que proporciona un canal de comunicac
 <br>
 
 <details>
-  <summary>+----------🌱💬 Lo basico</summary>
+  <summary>+----------🌱💬 Código WebSocket basico</summary>
 
 Para crear un **WebSocket** en un servidor Ubuntu Linux, generalmente se utiliza una tecnología de servidor como Node.js, Python (con ```websockets``` o ```socket.io```), o incluso directamente en el servidor web (Apache, Nginx) con soporte para WebSocket. Aquí te voy a explicar cómo crear un servidor WebSocket utilizando Node.js y el paquete ```ws```, que es uno de los métodos más sencillos.
 
@@ -3116,7 +3116,7 @@ En un archivo ```client.html```:
 
 
 <details>
-  <summary>+----------🧠🌐🚀 Avanzado</summary>
+  <summary>+----------🧠🌐🚀 Código de WebSocket/RTC avanzado</summary>
 Para crear un **WebSocket** en un servidor Ubuntu Linux, generalmente se utiliza una tecnología de servidor como Node.js, Python (con ```websockets``` o ```socket.io```), o incluso directamente en el servidor web (Apache, Nginx) con soporte para WebSocket. Aquí te voy a explicar cómo crear un servidor WebSocket utilizando Node.js y el paquete ```ws```, que es uno de los métodos más sencillos.
 
 ## Requisitos Previos
