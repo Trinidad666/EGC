@@ -4281,7 +4281,7 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
   ## Flujo de Comunicación Completo
 
-  ### Conexión Inicial:
+  ### Conexión Inicial
   * Frontend → Backend:
     * El usuario envía credenciales (email/contraseña) mediante una petición POST /auth/login.
     * Si es registro, se crea un nuevo usuario en la base de datos.
@@ -4299,7 +4299,7 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
   ![deepseek_mermaid_20250506_b054f6](https://github.com/user-attachments/assets/6249916c-e2d2-4213-9246-094a3873d27b)
 
-  ### Envío de Mensaje:
+  ### Envío de Mensaje
   * Usuario (Remitente):
     * Escribe un mensaje en el frontend (interfaz de usuario).
   
