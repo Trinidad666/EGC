@@ -4283,9 +4283,13 @@ Es el responsable de enviar los correos electrónicos a otros servidores o desti
 
   ### Conexión Inicial:
 
+  
+
   ![deepseek_mermaid_20250506_b054f6](https://github.com/user-attachments/assets/6249916c-e2d2-4213-9246-094a3873d27b)
 
   ### Envío de Mensaje:
+
+  
 
   ![deepseek_mermaid_20250506_83efd4](https://github.com/user-attachments/assets/99b69383-1773-4d92-8fde-d259ea08178d)
 
